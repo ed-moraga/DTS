@@ -28,10 +28,11 @@ body {
 /* TITULO */
 h1 {
     font-family: var(--font-title);
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 3rem;
     text-align: center;
     color: white;
+    font-size: 4rem;
 }
 
 /* GRID */
