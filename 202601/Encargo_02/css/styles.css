@@ -1,0 +1,65 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* VARIABLES */
+:root {
+    --font-main: "elza", Arial, sans-serif;
+    --font-title: "elza-condensed", Arial, sans-serif;
+}
+
+/* BASE */
+body {
+    font-family: var(--font-main);
+    background: #f4f4f5;
+    color: #111;
+}
+
+/* CONTENEDOR */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* TITULO */
+h1 {
+    font-family: var(--font-title);
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+/* TILE */
+.tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 140px;
+
+    background: white;
+    border-radius: 12px;
+
+    text-decoration: none;
+    color: #111;
+
+    font-family: var(--font-title);
+    font-weight: 700;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+}
+
+.tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
