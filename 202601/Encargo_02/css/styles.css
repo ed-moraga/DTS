@@ -20,23 +20,24 @@ body {
 
 /* CONTENEDOR */
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 3rem 2rem;
 }
 
 /* TITULO */
 h1 {
     font-family: var(--font-title);
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
 }
 
 /* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
 }
 
 /* TILE */
@@ -44,22 +45,24 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 140px;
+
+    height: 180px; /* más grandes */
 
     background: white;
-    border-radius: 12px;
+    border-radius: 14px;
 
     text-decoration: none;
     color: #111;
 
-    font-family: var(--font-title);
+    font-family: var(--font-title); /* elza-condensed */
+    font-size: 3rem; /* número grande */
     font-weight: 700;
 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
     transition: all 0.2s ease;
 }
 
 .tile:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
 }
