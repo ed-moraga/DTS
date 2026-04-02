@@ -18,6 +18,22 @@ body {
     color: #111;
 }
 
+/* CABECERA */
+.header {
+    background: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.header h1 {
+    font-family: var(--font-title);
+    font-weight: 500;
+    font-size: 3rem;
+    color: #2E5C8A; /* azul */
+    letter-spacing: 1px;
+}
+
+
 /* CONTENEDOR */
 .container {
     max-width: 1000px;
