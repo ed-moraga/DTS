@@ -9,6 +9,7 @@
 :root {
     --font-main: "elza", Arial, sans-serif;
     --font-title: "elza-condensed", Arial, sans-serif;
+    --font-subtitle: "elza-narrow", Arial, sans-serif;
 }
 
 /* BASE */
@@ -26,7 +27,7 @@ body {
 }
 
 .header h1 {
-    font-family: var(--font-title);
+    font-family: var(--font-subtitle);
     font-weight: 500;
     font-size: 2rem;
     color: #2E5C8A; /* azul */
