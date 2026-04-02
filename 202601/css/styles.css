@@ -80,6 +80,20 @@ h1 {
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     transition: all 0.2s ease;
 }
+.tile-main {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.tile-sub {
+    font-family: var(--font-title);
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+    font-weight: 300;
+    opacity: 0.7;
+}
+
 
 /* TILE ACTIVA */
 a.tile {
@@ -99,12 +113,12 @@ a.tile:hover {
     cursor: default;
 }
 
-/* evita interacción */
+/* sin interacción */
 .tile.disabled:hover {
     transform: none;
 }
 
-/* opcional: bloquear clics completamente */
+/* bloquear clicks */
 .tile.disabled {
     pointer-events: none;
 }
