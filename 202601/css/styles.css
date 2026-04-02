@@ -71,7 +71,10 @@ h1 {
     border-radius: 14px;
 
     text-decoration: none;
+    text-align: center;
     color: #111;
+
+    flex-direction: column;
 
     font-family: var(--font-title);
     font-size: clamp(2.5rem, 4vw, 4rem);
