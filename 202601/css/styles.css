@@ -81,7 +81,30 @@ h1 {
     transition: all 0.2s ease;
 }
 
-.tile:hover {
+/* TILE ACTIVA */
+a.tile {
+    cursor: pointer;
+}
+
+a.tile:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* TILE INACTIVA  */
+.tile.disabled {
+    background: #e5e7eb; 
+    color: #9ca3af;
+    box-shadow: none;
+    cursor: default;
+}
+
+/* evita interacción */
+.tile.disabled:hover {
+    transform: none;
+}
+
+/* opcional: bloquear clics completamente */
+.tile.disabled {
+    pointer-events: none;
 }
