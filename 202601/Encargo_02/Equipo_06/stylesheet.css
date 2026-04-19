@@ -1,1 +1,28 @@
+<style>
+    body {
+      font-family: 'Playfair Display', serif;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color:darkred;
+    }
+    h5 {
+      font-family:'Arial Narrow', Arial, sans-serif;
+      color:blueviolet;
+      font-weight: lighter;
+      }
+/*Imagen zoom central estatico*/
+img {
+  transform-origin: center center;
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.2);
+}
+
+
+
+  </style>
 
