@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #000000, #1a001f);
+    color: white;
+    text-align: center;
+}
+
+header {
+    padding: 60px 20px;
+}
+
+h1 {
+     font-size: 3rem;
+    color: #fff;
+    text-shadow:
+        0 0 5px #00f2ea,
+        0 0 10px #ff0050,
+        0 0 20px #ff0050;
+}
+
+.bajada {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+section {
+    padding: 50px 20px;
+}
+
+h2 {
+    color: #ff0050;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 70%;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 0, 80, 0.5);
+}
+
+.imagenes-tres {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.imagenes-tres div {
+    width: 300px;
+}
+
+.imagenes-tres img {
+    width: 120%;
+}
+
+.imagenes-tres p {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.wireframe {
+    max-width: 30%;
+}
+
+footer {
+    padding: 30px;
+    background-color: #000;
+    font-size: 0.9em;}
+
+wireframe-img {
+    width: 20% !important;
+    max-width: 200px;
+}
