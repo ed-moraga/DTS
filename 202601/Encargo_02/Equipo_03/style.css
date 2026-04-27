@@ -1,0 +1,215 @@
+@font-face {
+    font-family: instagram-sans;
+    src: url(fonts/Instagram\ Sans.ttf) format("truetype");
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*
+Colores sacados desde el inspeccionar elemento de Instagram.
+*/
+:root {
+    --bg-c: 12,16,20;
+    --bg-h: 34,42,49;
+    --bg-f: 4,5,6;
+    --l-c: 245, 245, 245;
+}
+
+body {
+    font-family: "instagram-snas", sans-serif;
+    background-color: rgb(var(--bg-c));
+    color: rgb(var(--l-c));
+    margin: 0px;
+}
+
+.header, .main {
+    margin-left: 8px;
+    margin-right: 8px
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    padding:0.6rem;
+    padding-bottom: 0.1rem;
+    border-bottom: 2px solid rgba(var(--l-c), 0.1);
+    margin-top: 8px;
+    
+}
+
+.head {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.head-right {
+    margin-left: auto;
+}
+
+.h-item {
+    padding: 0.3rem;
+}
+.h-item span {
+    margin-right: 1rem;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+.h-item span:hover {
+    background-color: rgb(var(--bg-h));
+    transition: all ease-in-out 0.2s;
+}
+.h-item a {
+    text-decoration: none;
+    color: rgb(var(--l-c));
+    font-size: larger;
+}
+
+
+.logo {
+    width: 3rem;
+}
+.logo-letter {
+    width: 20rem;
+}
+
+.cnt {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem;
+    margin-left: .4rem;
+    margin-right: .4rem;
+    
+}
+.container img {
+    width: 18rem;
+    border-radius: 15px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    padding-left: 0.4rem;
+    justify-content: center;
+}
+.title h1 {
+    font-size: 6rem;
+}
+
+.title h2{
+    font-size: 2.5rem;
+    margin: none;
+    padding: none;
+}
+
+.t-item {
+    margin-right: 1rem;
+}
+
+.cnt-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 2rem;
+    background-color: rgb(var(--bg-f));
+    margin: 0px;
+}
+.footer ul {
+    padding-top: 0px;
+    margin-top: 0.1rem;;
+}
+.footer li {
+    padding:0.2rem;
+}
+
+.ref {
+    display: flex;
+    flex-direction: column;
+}
+.ref span, .ref p{
+    padding: 0px;
+    margin: 0px;
+}
+.ref p {
+    margin-left: 1.27cm;
+    margin-bottom: 1.2rem;
+    max-width: 40%;
+}
+.ref a {
+    text-decoration: none;
+    color: rgb(var(--bg-h));
+}
+.ref a:hover {
+    color: #bfbff0;
+    transition: all ease-in-out 0.2s;
+}
+
+.l-dts {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: xx-large;
+    margin-bottom: 0px;
+}
+.l-dts span{
+    margin-right: .05rem;
+}
+
+.viaje {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viaje img {
+    width: 90%;
+
+}
+
+.c-content {
+    max-width: 90%;
+}
+
+
+
+
+
+.l-c {
+    fill: rgb(var(--l-c));
+}
+.l-p {
+    max-width: 40rem;
+}
+#j-c-c {
+    justify-content: center;
+}
+.big {
+    font-size: 8rem;
+    padding-right: 0.2rem;
+}
+.s-big {
+    font-size: 3rem;
+}
+.f-s {
+    align-items: flex-start;
+}
