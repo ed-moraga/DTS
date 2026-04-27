@@ -1,0 +1,221 @@
+body {
+color: white;
+background-color: black;
+}
+
+p {
+	font-family: Stack Sans;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: 200px;
+	margin-right: 200px;
+	padding-bottom: 20px;
+	padding-top: 5px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+
+.titulo {
+text-align: center;
+font-size: 32px;
+font-family: Shrikhand;
+margin-top: 30px;
+margin-bottom: 30px;
+margin-left: 100px;
+margin-right: 100px;
+padding-bottom: 20px;
+padding-top: 5px;
+padding-left: 30px;
+padding-right: 30px;
+}
+
+h2 {
+text-align: left;
+font-size: 28px;
+font-family: Stack Sans;
+border-color: white;
+border-style: double;
+margin-top: 30px;
+margin-bottom: 30px;
+margin-left: 400px;
+margin-right: 400px;
+padding-bottom: 20px;
+padding-top: 5px;
+padding-left: 30px;
+padding-right: 30px;	
+}
+
+.mapa {
+text-align: center;
+
+}
+
+.descripcion {
+text-align: left;
+}
+
+.viaje {
+text-align: center;
+}
+
+.comienzo {
+text-align: center;
+
+}
+
+.inmersion {
+text-align: center;
+
+}
+
+h3 {font-size: 28px;
+font-family: Wendy One;
+text-decoration: underline;
+}
+
+.scripts {
+ text-align: center;
+}
+
+.scroll {
+text-align: left;
+margin-top: 30px;
+margin-bottom: 30px;
+margin-left: 100px;
+margin-right: 100px;
+padding-bottom: 20px;
+padding-top: 5px;
+padding-left: 30px;
+padding-right: 30px;
+}
+
+.fotoroles {
+	text-align: center;
+}
+
+.racha {
+text-align: left;
+margin-top: 30px;
+margin-bottom: 30px;
+margin-left: 100px;
+margin-right: 100px;
+padding-bottom: 20px;
+padding-top: 5px;
+padding-left: 30px;
+padding-right: 30px;
+}
+
+.fotoracha {
+text-align: center;
+margin-top: 20px;
+margin-bottom: 20px;
+margin-left: 120px;
+margin-right: 120px;
+padding-bottom: 20px;
+padding-top: 5px;
+padding-left: 30px;
+padding-right: 30px;
+
+}
+
+
+.gratificacion {
+text-align: left;
+margin-top: 30px;
+margin-bottom: 30px;
+margin-left: 100px;
+margin-right: 100px;
+padding-bottom: 20px;
+padding-top: 5px;
+padding-left: 30px;
+padding-right: 30px;
+}
+
+.fotoslike {
+	text-align: center;
+}
+
+.problema {
+text-align: left;
+margin-top: 30px;
+margin-bottom: 30px;
+margin-left: 100px;
+margin-right: 100px;
+padding-bottom: 20px;
+padding-top: 5px;
+padding-left: 30px;
+padding-right: 30px;
+}
+
+.punteo {
+margin-top: 20px;
+margin-bottom: 20px;
+margin-left: 120px;
+margin-right: 120px;
+padding-bottom: 20px;
+padding-top: 5px;
+padding-left: 30px;
+padding-right: 30px;
+}
+
+.fotopropuesta {
+text-align: center;
+margin-top: 20px;
+margin-bottom: 20px;
+margin-left: 120px;
+margin-right: 120px;
+padding-bottom: 20px;
+padding-top: 5px;
+padding-left: 30px;
+padding-right: 30px;	
+}
+
+
+.texto {
+	display: grid;
+	grid-template-areas:
+	"titulo titulo"
+	"integrantes integrantes"
+	"mapa mapa"
+	"viaje viaje"
+	"comienzo comienzo"
+	"inmersion inmersion"
+	"scripts scripts"
+	"scroll fotoroles"
+	"racha fotoracha"
+}
+
+.texto div.titulo {
+	grid-area: titulo;
+}
+.texto div.integrantes {
+	grid-area: integrantes;
+}
+.texto div.mapa {
+	grid-area: mapa;
+}
+.texto div.viaje {
+	grid-area: viaje;
+}
+.texto div.comienzo {
+	grid-area: comienzo;
+}
+.texto div.inmersion {
+	grid-area: inmersion;
+}
+.texto div.scripts {
+	grid-area: scripts;
+}
+.texto div.scroll {
+	grid-area: scroll;
+}
+.texto div.fotoroles {
+	grid-area: fotoroles;
+}
+.texto div.racha {
+	grid-area: racha;
+}
+.texto div.fotoracha {
+	grid-area: fotoracha;
+}
