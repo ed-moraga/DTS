@@ -1,0 +1,181 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  margin-top: 45px;
+  margin-bottom: 50px;
+  background-color: #ffdbe0;
+  background-image: url("https://littl3nana.neocities.org/starsss.gif");
+  background-size: 10%;
+
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  color: #967e68;
+}
+
+.disc1 {
+background: rgb(237,202,170);
+background: linear-gradient(180deg, #FFE6F7 45%, #FFCDEF 55%);
+margin-top: 5px;
+height: px;
+color: #FFBAE0;
+text-shadow:
+2px 2px white,
+-2px -2px white,
+-2px 2px white,
+0px 2px white,
+0px -2px white,
+2px 0px white,
+-2px 0px white,
+2px -2px white,
+3px 3px #91807C,
+-3px -3px #91807C,
+-3px 3px #91807C,
+0px 3px #91807C,
+0px -3px #91807C,
+3px 0px #91807C,
+-1px -3px #91807C,
+-1px 3px #91807C,
+1px 3px #91807C,
+4px 0px #91807C,
+3px -2px #91807C,
+4px -2px #91807C,
+2px -3px #91807C,
+-4px 2px #91807C,
+-3px 0px #91807C;
+line-height: 1.6rem;
+border-bottom-right-radius: 15px;
+border-top-right-radius: 25px;
+}
+
+.sidebg{
+  background-image: url('https://littl3nana.neocities.org/images/sidebang.png');
+  background-repeat: repeat-y;
+  background-position: top right;
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.side{
+  background-color: #fffefc;
+  width: 230px;
+  height: 100%;
+  padding: 1rem 0.5rem 1rem 1rem;
+  text-align: justify;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.desc{
+  padding: 0.5rem;
+}
+
+.sideheaders{
+  font-family: 'Love Ya Like A Sister', serif;
+  font-weight: normal;
+  font-size: 28px;
+}
+
+.side ul{
+  padding-left: 2.5rem;
+}
+
+.side li{
+  list-style-image: url('https://i.imgur.com/iqIEW3A.gif');
+  font-size: 16px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.headerwrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title{
+  font-family: 'Love Ya Like A Sister', serif;
+  font-size: 46px;
+  color: #8f7c66;
+}
+
+.boxgap{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.box{
+display: flex;
+background-color: white;
+text-align: center;
+margin-left: 10px;
+border-radius: 5px 10px 22px;
+border: 0px solid #e2ffd5;
+filter: drop-shadow(0px 0px 0px #e2ffd5 )
+drop-shadow(0px 0px 1px #e2ffd5 )
+drop-shadow(0px 0px 1.5px #e2ffd5 )
+drop-shadow(0px 0px 0px #e2ffd5 )
+drop-shadow(0px 0px 0px #e2ffd5 )
+drop-shadow(0px 0px 0px #e2ffd5 )
+drop-shadow(0px 0px 0px #e2ffd5 )
+drop-shadow(0px 0px 0px #35230C);
+}
+
+.left{
+border-right: 3px solid #967e68;
+padding: 0.7rem;
+text-align: left;
+font-family: milkywell; 
+color: #b7e7a2; 
+text-decoration: none;
+}
+
+
+.icon{
+  width: 100px;
+  border: 2px solid #967E68;
+}
+
+.right{
+padding: 1rem;
+font-family: milkywell; 
+font-size:20px;
+text-decoration: none;
+}
+
+a{
+font-family: milkywell; 
+  color: #b7e7a2; 
+  font-size:20px;
+  text-decoration: none;
+}
+
+a:hover{
+  font-weight: bold;
+}
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+  background-color: #c6d998;
+    border-radius: 50px;
+    }
+
+::-webkit-scrollbar-track {
+  background-color: #ffcce8;
+  border-radius: 10px;
+}
