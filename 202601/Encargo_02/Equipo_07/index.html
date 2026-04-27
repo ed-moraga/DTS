@@ -1,1 +1,151 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Encargo 2 Equipo 07</title></head><body><h1>Equipo 07</h1></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest Equipo 07</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <div class="logo">P</div>
+            <input type="text" class="search-bar" placeholder="Buscar pines...">
+        </div>
+        <div class="header-right">
+            <span class="nav-link">Inicio</span>
+            <span class="nav-link">Explorar</span>
+            <span class="nav-link">Crear</span>
+            <span class="nav-link">Mi perfil</span>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal -->
+    <div class="container">
+        <div class="pins-grid" id="pinsGrid"></div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeBtn">&times;</span>
+            <img id="modalImage" src="" alt="" class="modal-image">
+            <div class="modal-info">
+
+                <h2 id="modalTitle"></h2>
+                <p id="modalDescription"></p>
+                <button class="modal-button">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 
+        const pinsData = [
+            {
+                id: 1,
+                title: "Sobre Pinterest",
+                description: "Qué es, qué hace, a quién va dirigida, cuál es su modelo de negocio.",
+                image: "images/imagen0.jpg"
+            },
+            {
+                id: 2,
+                title: "Mapa Sistémico",
+                description: "Actores involucrados, flujos que los conectan, retroalimentaciones que sostienen el sistema y puntos donde se concentra el control o el poder.",
+                image: "images/imagen1.jpg"
+            },
+            {
+                id: 3,
+                title: "Viaje de Usuario",
+                description: "Viaje que reconstruye su recorrido en el uso de la plataforma.",
+                image: "images/imagen4.jpg"
+            },
+            {
+                id: 4,
+                title: "Scripts",
+                description: "Tres scripts inscritos en el diseño de la plataforma.",
+                image: "images/imagen2.jpg"
+            },
+            {
+                id: 5,
+                title: "Wireframes",
+                description: "Propuesta de rediseño del script problemático.",
+                image: "images/imagen3.jpg"
+            },
+            {
+                id: 6,
+                title: "Integrantes del grupo",
+                description: "Sara Pimentel, Isidora Sandoval, Skandar Jadue, Fernanda Tapia y Sofía Toro.",
+                image: "images/imagen5.jpg"
+            }
+        ];
+ 
+        function renderPins() {
+            const pinsGrid = document.getElementById('pinsGrid');
+            pinsGrid.innerHTML = '';
+
+            pinsData.forEach(pin => {
+                const pinElement = document.createElement('div');
+                pinElement.className = 'pin';
+                pinElement.innerHTML = `
+                    <img src="${pin.image}" alt="${pin.title}" class="pin-image">
+                    <div class="pin-content">
+                        <h3 class="pin-title">${pin.title}</h3>
+                        <p class="pin-description">${pin.description}</p>
+                    </div>
+                `;
+                 
+                pinElement.addEventListener('click', () => openModal(pin));
+                
+                pinsGrid.appendChild(pinElement);
+            });
+        }
+ 
+        function openModal(pin) {
+            const modal = document.getElementById('modal');
+            document.getElementById('modalImage').src = pin.image;
+            document.getElementById('modalTitle').textContent = pin.title;
+            document.getElementById('modalDescription').textContent = pin.description;
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Evitar scroll
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restaurar scroll
+        }
+
+        document.getElementById('closeBtn').addEventListener('click', closeModal);
+
+        document.getElementById('modal').addEventListener('click', (e) => {
+            if (e.target.id === 'modal') {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Renderizar los pines al cargar la página
+        renderPins();
+
+        // EJEMPLO: Para cambiar un pin, usa esta función:
+        // updatePin(pinId, nuevoTitulo, nuevaDescripcion, nuevaImagenURL);
+        function updatePin(id, title, description, image) {
+            const pin = pinsData.find(p => p.id === id);
+            if (pin) {
+                pin.title = title;
+                pin.description = description;
+                pin.image = image;
+                renderPins();
+            }
+        }
+
+    </script>
+</body>
+</html>
