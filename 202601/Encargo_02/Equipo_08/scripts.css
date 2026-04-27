@@ -73,11 +73,6 @@ border-top-right-radius: 25px;
   flex-direction: column;
 }
 
-.avatar{
-  width: 100%;
-  opacity: 0.9;
-}
-
 .desc{
   padding: 0.5rem;
 }
@@ -100,7 +95,8 @@ border-top-right-radius: 25px;
 .container{
   display: flex;
   flex-direction: column;
-  margin-left: 260px;
+  margin-left: 250px;
+  margin-right: 250px;
 }
 
 .headerwrapper{
@@ -113,11 +109,6 @@ border-top-right-radius: 25px;
   font-family: 'Love Ya Like A Sister', serif;
   font-size: 46px;
   color: #8f7c66;
-}
-
-.headerimg{
-  width: 285px;
-  margin-bottom: -1rem;
 }
 
 .boxgap{
@@ -146,7 +137,7 @@ drop-shadow(0px 0px 0px #35230C);
 .left{
 border-right: 3px solid #967e68;
 padding: 0.7rem;
-text-align: center;
+text-align: left;
 font-family: milkywell; 
 color: #b7e7a2; 
 text-decoration: none;
@@ -188,10 +179,3 @@ a:hover{
   background-color: #ffcce8;
   border-radius: 10px;
 }
-.hidden {
-  display: none;
-}
-
-
-
-
