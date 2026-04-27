@@ -32,9 +32,12 @@
   }
 
   .referencias-website {
-    margin:0 auto;*
-    width: 100%;}
-
+    margin:0 auto;
+    padding: 10px;
+    width: 100%;
+    background-color: beige;
+    border-radius: 10px;
+  }
 
     .barra {
             width: 25%;
