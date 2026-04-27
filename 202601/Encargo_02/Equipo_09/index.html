@@ -1,1 +1,744 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Encargo 2 Equipo 09</title></head><body><h1>Equipo 09</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Wireframe</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Inter Font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top" style="top: 0; z-index: 1030;">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="nav-logo-box">DNO1023</div>
+            <div class="navbar-nav mx-auto d-none d-lg-flex">
+                <a class="nav-link" href="#inicio">Inicio</a>
+                <a class="nav-link" href="#mapa-sistemico">Mapa Sistémico</a>
+                <a class="nav-link" href="#viaje-usuario">Viaje de Usuario</a>
+                <a class="nav-link" href="#scripts">Scripts</a>
+                <a class="nav-link" href="#rediseno">Rediseño</a>
+            </div>
+            <div class="d-flex align-items-center">
+                <button id="theme-toggle" class="btn btn-sm rounded-pill px-3" style="font-weight: 600;">Modo
+                    Oscuro</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="inicio">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5 reveal">
+                    <p class="hero-subtitle">Rediseñando</p>
+                    <h1 class="hero-title">TIKTOK</h1>
+                    <p class="hero-text">TikTok es una plataforma de redes sociales centrada en la creación y consumo de
+                        videos cortos verticales (15 segundos a 10 minutos). Lanzada globalmente en 2018 por la empresa
+                        china ByteDance, se ha convertido en una de las aplicaciones más descargadas del mundo.</p>
+                </div>
+                <div class="col-md-6 offset-md-1 reveal fade-delay-1 text-center">
+                    <img src="imágenes/tiktoklogo.png" alt="TikTok Logo" class="img-fluid"
+                        style="animation: float-blob 6s ease-in-out infinite; max-width: 65%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHITE SECTION: FEATURES -->
+    <section class="white-section" id="mapa-sistemico">
+        <div class="container">
+            <!-- Details Block -->
+            <div class="row align-items-center">
+                <div class="col-md-7 reveal">
+                    <img src="imágenes/mapasistemico.png" alt="Mapa Sistémico" class="img-fluid w-100 shadow-sm"
+                        style="border-radius: 12px; border: 1px solid rgba(0,0,0,0.05);">
+                </div>
+                <div class="col-md-4 offset-md-1 reveal fade-delay-1" style="padding-right: 5rem;">
+                    <h2 class="feature-side-title">Mapa Sistémico</h2>
+                    <p class="text-center text-secondary mt-3" style="line-height: 1.7; font-size: 0.95rem;">
+                        El mapa sistémico de TikTok se representa como un ecosistema tecnológico donde actores humanos
+                        (usuarios, creadores y anunciantes) y no humanos (algoritmo de recomendación y sistemas de
+                        censura) se articulan mediante flujos continuos de datos, contenido, dinero y atención.
+                    </p>
+                </div>
+            </div>
+
+            <!-- TIMELINE / VIAJE DE USUARIO -->
+            <div class="user-journey-section reveal position-relative w-100" id="viaje-usuario">
+                <!-- BLOBS DECORATIVOS -->
+                <div class="blobs-layer d-none d-lg-block">
+                    <!-- Blob 1: Top Left -->
+                    <svg class="timeline-blob blob-1" width="180" height="180" viewBox="0 0 100 100"
+                        style="top: 12%; left: -2%; color: var(--text-primary);">
+                        <path d="M 0 60 Q 50 20 100 60" fill="none" stroke="#25f4ee" stroke-width="4" />
+                        <circle cx="40" cy="50" r="20" fill="#fe2c55" />
+                        <circle cx="60" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="3" />
+                    </svg>
+                    <!-- Blob 4: Top Right -->
+                    <svg class="timeline-blob blob-4" width="200" height="120" viewBox="0 0 150 100"
+                        style="top: 20%; right: 2%;">
+                        <path d="M 10 30 L 30 10 L 50 30 L 70 10 L 90 30 L 110 10 L 130 30 L 150 10" fill="none"
+                            stroke="#fe2c55" stroke-width="4" stroke-linejoin="round" />
+                        <path d="M 10 50 L 30 30 L 50 50 L 70 30 L 90 50 L 110 30 L 130 50 L 150 30" fill="none"
+                            stroke="#25f4ee" stroke-width="4" stroke-linejoin="round" />
+                    </svg>
+                    <!-- Blob 7: Mid Left -->
+                    <svg class="timeline-blob blob-7" width="120" height="120" viewBox="0 0 100 100"
+                        style="top: 30%; left: 8%;">
+                        <path d="M 20 20 L 40 50 L 20 80" fill="none" stroke="#25f4ee" stroke-width="5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M 40 20 L 60 50 L 40 80" fill="none" stroke="#fe2c55" stroke-width="5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M 60 20 L 80 50 L 60 80" fill="none" stroke="#fe2c55" stroke-width="5"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <!-- Blob 5: Mid Right -->
+                    <svg class="timeline-blob blob-5" width="220" height="220" viewBox="0 0 100 100"
+                        style="top: 42%; right: -4%; color: var(--text-primary);">
+                        <rect x="20" y="30" width="80" height="25" rx="12.5" fill="none" stroke="currentColor"
+                            stroke-width="3" />
+                        <rect x="10" y="60" width="10" height="10" fill="#25f4ee" transform="rotate(45 15 65)" />
+                    </svg>
+                    <!-- Blob 2: Bottom Mid Left -->
+                    <svg class="timeline-blob blob-2" width="160" height="260" viewBox="0 0 100 150"
+                        style="top: 52%; left: -3%;">
+                        <path d="M 30 10 L 50 30 L 30 50 L 50 70 L 30 90 L 50 110 L 30 130" fill="none" stroke="#25f4ee"
+                            stroke-width="4" stroke-linejoin="round" />
+                        <path d="M 50 10 L 70 30 L 50 50 L 70 70 L 50 90 L 70 110 L 50 130" fill="none" stroke="#fe2c55"
+                            stroke-width="4" stroke-linejoin="round" />
+                        <circle cx="80" cy="140" r="8" fill="#fe2c55" />
+                    </svg>
+                    <!-- Blob 8: Bottom Mid Right -->
+                    <svg class="timeline-blob blob-8" width="200" height="200" viewBox="0 0 100 100"
+                        style="top: 62%; right: 5%; color: var(--text-primary);">
+                        <circle cx="50" cy="50" r="22" fill="#25f4ee" />
+                        <circle cx="40" cy="40" r="22" fill="none" stroke="currentColor" stroke-width="3" />
+                        <rect x="80" y="80" width="8" height="8" fill="#fe2c55" transform="rotate(45 84 84)" />
+                    </svg>
+                    <!-- Blob 9: Low Left -->
+                    <svg class="timeline-blob blob-9" width="160" height="220" viewBox="0 0 100 150"
+                        style="top: 72%; left: 6%; color: var(--text-primary);">
+                        <rect x="40" y="20" width="25" height="70" rx="12.5" fill="none" stroke="currentColor"
+                            stroke-width="3" />
+                        <path d="M 40 105 L 52.5 120 L 65 105" fill="none" stroke="#fe2c55" stroke-width="4"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M 40 120 L 52.5 135 L 65 120" fill="none" stroke="#fe2c55" stroke-width="4"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <!-- Blob 6: Low Right -->
+                    <svg class="timeline-blob blob-6" width="240" height="200" viewBox="0 0 150 100"
+                        style="top: 80%; right: -2%; color: var(--text-primary);">
+                        <path d="M 0 80 Q 50 100 100 50 T 200 0" fill="none" stroke="#fe2c55" stroke-width="3" />
+                        <path d="M -20 100 Q 30 120 80 70 T 180 20" fill="none" stroke="currentColor"
+                            stroke-width="2" />
+                        <rect x="120" y="70" width="10" height="10" fill="#25f4ee" transform="rotate(45 125 75)" />
+                    </svg>
+                    <!-- Blob 3: Bottom Left -->
+                    <svg class="timeline-blob blob-3" width="180" height="180" viewBox="0 0 100 100"
+                        style="top: 86%; left: 2%; color: var(--text-primary);">
+                        <circle cx="30" cy="30" r="15" fill="none" stroke="currentColor" stroke-width="3" />
+                        <polygon points="70,30 80,50 60,50" fill="#25f4ee" />
+                        <rect x="20" y="70" width="8" height="8" fill="#fe2c55" transform="rotate(45 24 74)" />
+                    </svg>
+                </div>
+
+                <h2 class="section-heading-center"
+                    style="font-size: 2.3rem; color: #1e293b; margin-bottom: 3.5rem; position: relative; z-index: 1;">
+                    VIAJE DE USUARIO</h2>
+
+                <div class="user-journey-wrapper mx-auto position-relative" style="max-width: 800px; z-index: 1;">
+                    <!-- Track line -->
+                    <div class="journey-track d-none d-md-block"></div>
+
+                    <div class="journey-list d-flex flex-column" style="gap: 1.5rem;">
+                        <!-- ITEM 1 -->
+                        <div class="journey-item">
+                            <div class="journey-bubble">01</div>
+                            <div class="journey-content-wrapper">
+                                <div class="journey-card">
+                                    <h5 class="fw-bold mb-1 title-color">Crear Cuenta</h5>
+                                    <p class="mb-0 body-size">Crear una cuenta de TikTok vinculada a un mail, número de
+                                        teléfono, facebook o una cuenta de Google.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 2 -->
+                        <div class="journey-item">
+                            <div class="journey-bubble">02</div>
+                            <div class="journey-content-wrapper">
+                                <div class="journey-card">
+                                    <h5 class="fw-bold mb-1 title-color">Ingreso de Datos</h5>
+                                    <p class="mb-0 body-size">Ingresar con una clave de 8 caracteres e indicar tu fecha
+                                        de nacimiento.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 3 -->
+                        <div class="journey-item">
+                            <div class="journey-bubble">03</div>
+                            <div class="journey-content-wrapper">
+                                <div class="journey-card">
+                                    <h5 class="fw-bold mb-1 title-color">Crear Nickname</h5>
+                                    <p class="mb-0 body-size">Cada usuario debe crear su nickname.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 4 -->
+                        <div class="journey-item">
+                            <div class="journey-bubble">04</div>
+                            <div class="journey-content-wrapper">
+                                <div class="journey-card">
+                                    <h5 class="fw-bold mb-1 title-color">Nombre de Usuario</h5>
+                                    <p class="mb-0 body-size">La plataforma elige tu nombre de usuario con los
+                                        antecedentes del nickname que se escogió.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 5 -->
+                        <div class="journey-item">
+                            <div class="journey-bubble">05</div>
+                            <div class="journey-content-wrapper">
+                                <div class="journey-card">
+                                    <h5 class="fw-bold mb-1 title-color">Algoritmo "Para ti"</h5>
+                                    <p class="mb-0 body-size">El usuario finalmente crea un "para ti" específico para
+                                        sus gustos e intereses.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 6 -->
+                        <div class="journey-item">
+                            <div class="journey-bubble">06</div>
+                            <div class="journey-content-wrapper">
+                                <div class="journey-card">
+                                    <h5 class="fw-bold mb-1 title-color">Scroll Infinito</h5>
+                                    <p class="mb-0 body-size">El scroll infinito atrapa al usuario, donde puede pasar
+                                        horas mirando videos de su interés.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 7 -->
+                        <div class="journey-item">
+                            <div class="journey-bubble">07</div>
+                            <div class="journey-content-wrapper">
+                                <div class="journey-card">
+                                    <h5 class="fw-bold mb-1 title-color">Interacción Continua</h5>
+                                    <p class="mb-0 body-size">Comienzan a aparecer videos de distinto contenido,
+                                        dependiendo de cuánto se mire o interactúe con un video, el algoritmo comienza a
+                                        mostrar más videos de ese estilo.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ITEM 8 -->
+                        <div class="journey-item">
+                            <div class="journey-bubble">08</div>
+                            <div class="journey-content-wrapper">
+                                <div class="journey-card">
+                                    <h5 class="fw-bold mb-1 title-color">Creación de Contenido</h5>
+                                    <p class="mb-0 body-size">La plataforma automáticamente te invita a crear contenido,
+                                        agregar una foto de perfil y crear una biografía.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: SS IMAGE & TEXT -->
+    <section class="white-section position-relative overflow-hidden" style="padding-top: 0; padding-bottom: 6rem;">
+        <!-- BLOBS DECORATIVOS -->
+        <div class="blobs-layer d-none d-lg-block" style="z-index: 0; opacity: 0.6;">
+            <!-- Blobs distribuídos para ss y ss2 -->
+            <svg class="timeline-blob blob-1" width="180" height="180" viewBox="0 0 100 100"
+                style="top: 10%; left: 2%; color: var(--text-primary);">
+                <path d="M 0 60 Q 50 20 100 60" fill="none" stroke="#25f4ee" stroke-width="4" />
+                <circle cx="40" cy="50" r="20" fill="#fe2c55" />
+                <circle cx="60" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="3" />
+            </svg>
+            <svg class="timeline-blob blob-4" width="200" height="120" viewBox="0 0 150 100"
+                style="top: 25%; right: 4%;">
+                <path d="M 10 30 L 30 10 L 50 30 L 70 10 L 90 30 L 110 10 L 130 30 L 150 10" fill="none"
+                    stroke="#fe2c55" stroke-width="4" stroke-linejoin="round" />
+                <path d="M 10 50 L 30 30 L 50 50 L 70 30 L 90 50 L 110 30 L 130 50 L 150 30" fill="none"
+                    stroke="#25f4ee" stroke-width="4" stroke-linejoin="round" />
+            </svg>
+            <svg class="timeline-blob blob-7" width="120" height="120" viewBox="0 0 100 100"
+                style="top: 50%; left: 6%;">
+                <path d="M 20 20 L 40 50 L 20 80" fill="none" stroke="#25f4ee" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M 40 20 L 60 50 L 40 80" fill="none" stroke="#fe2c55" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M 60 20 L 80 50 L 60 80" fill="none" stroke="#fe2c55" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <svg class="timeline-blob blob-5" width="220" height="220" viewBox="0 0 100 100"
+                style="top: 75%; right: 2%; color: var(--text-primary);">
+                <rect x="20" y="30" width="80" height="25" rx="12.5" fill="none" stroke="currentColor"
+                    stroke-width="3" />
+                <rect x="10" y="60" width="10" height="10" fill="#25f4ee" transform="rotate(45 15 65)" />
+            </svg>
+            <svg class="timeline-blob blob-3" width="180" height="180" viewBox="0 0 100 100"
+                style="top: 90%; left: 8%; color: var(--text-primary);">
+                <circle cx="30" cy="30" r="15" fill="none" stroke="currentColor" stroke-width="3" />
+                <polygon points="70,30 80,50 60,50" fill="#25f4ee" />
+                <rect x="20" y="70" width="8" height="8" fill="#fe2c55" transform="rotate(45 24 74)" />
+            </svg>
+        </div>
+
+        <div class="container position-relative" style="z-index: 2;">
+            <!-- FOTO 1 (ss) -->
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <img src="imágenes/ss.png" alt="Información suplementaria" class="img-fluid reveal shadow-sm"
+                        style="border-radius: 12px; margin-bottom: 2rem; width: 100%; border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="reveal fade-delay-1"
+                        style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background-color: #ffffff; padding: 2.5rem 3rem; text-align: left; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                        <p class="text-secondary mb-0" style="font-size: 1rem; line-height: 1.7;">
+                            En estas capturas de pantalla, se visualiza el viaje de usuario, en donde la misma
+                            aplicación ayuda a personalizar el contenido que se muestra.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOTO 2 (ss2) -->
+            <div class="row justify-content-center text-center mt-5">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <img src="imágenes/ss2.png" alt="Información suplementaria 2" class="img-fluid reveal shadow-sm"
+                        style="border-radius: 12px; margin-bottom: 2rem; width: 100%; border: 1px solid rgba(0,0,0,0.05);">
+                    <div class="reveal fade-delay-1"
+                        style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background-color: #ffffff; padding: 2.5rem 3rem; text-align: left; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                        <p class="text-secondary mb-0" style="font-size: 1rem; line-height: 1.7;">
+                            La aplicación puede conectarse con otras redes sociales para agregar contactos de manera
+                            instantánea. Otra observación, es la repetición de audios en el contenido que aparece y la
+                            diferencia en el "Explore" antes y después de haber interactuado con el contenido.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLUE SECTION: SCRIPTS -->
+    <section class="scripts-bg" style="padding: 6rem 0;" id="scripts">
+        <div class="container">
+            <h2 class="section-heading-center reveal text-white">SCRIPTS</h2>
+            <p class="text-center text-white mb-5"
+                style="max-width: 600px; margin: 0 auto; line-height: 1.6; font-size: 0.9rem; opacity: 0.9;">
+                Los scripts son un conjunto de comportamientos que el diseño de una plataforma incentiva, facilita o
+                dificulta.
+            </p>
+
+            <div class="row g-4 mt-4 reveal fade-delay-1">
+                <div class="col-md-4">
+                    <div class="script-card text-center">
+                        <div class="script-badge">01</div>
+                        <h4 class="mb-4 text-dark" style="font-weight: 800; text-transform: uppercase;">Scroll Infinito
+                        </h4>
+                        <div class="text-dark text-start" style="font-size: 0.90rem; line-height: 1.6;">
+                            <p>Tiene una interfaz sin paginación ni indicador de progreso. Este diseño de scroll
+                                infinito elimina deliberadamente cualquier límite visible al consumo de contenido.
+                                Tampoco hay un contador de videos vistos.</p>
+
+                            <hr style="opacity: 1; border-top: 1px solid #111; margin: 1.5rem 0;">
+
+                            <p>Esto dificulta el autocontrol y la conciencia de consumo, al no tener límites visibles.
+                            </p>
+
+                            <p class="mb-1">Valores que opera:</p>
+                            <ul style="padding-left: 1.2rem; margin-bottom: 1.5rem;">
+                                <li style="margin-bottom: 0.4rem;">Maximiza tiempo en pantalla, prioriza más el
+                                    engagement que el bienestar del usuario.</li>
+                                <li>Explotación de vulnerabilidades cognitivas, aprovecha que el cerebro humano tiene
+                                    dificultad con las recompensas variables (falta de límites).</li>
+                            </ul>
+
+                            <hr style="opacity: 1; border-top: 1px solid #111; margin: 1.5rem 0;">
+
+                            <p class="mb-0">Este beneficia a TikTok (ByteDance), ya que mientras más tiempo en pantalla,
+                                mayor retención.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="script-card text-center">
+                        <div class="script-badge">02</div>
+                        <h4 class="mb-4 text-dark" style="font-weight: 800; text-transform: uppercase;">Autoplay y
+                            Algoritmo</h4>
+                        <div class="text-dark text-start" style="font-size: 0.90rem; line-height: 1.6;">
+                            <p>Los videos comienzan automáticamente sin interacción del usuario. Incentivando con "hits"
+                                de dopamina con el contenido impredecible de alto interés, elimina la acción de
+                                reproducir el siguiente video y el algoritmo profundiza en temas que captan la atención
+                                del usuario.</p>
+
+                            <hr style="opacity: 1; border-top: 1px solid #111; margin: 1.5rem 0;">
+
+                            <p class="mb-1">Valores que opera:</p>
+                            <ul style="padding-left: 1.2rem; margin-bottom: 1.5rem;">
+                                <li style="margin-bottom: 0.4rem;">Personalización extrema (cuanto más se usa la app,
+                                    más "adicta" se vuelve), el contenido se hace más específico a los gustos del
+                                    usuario.</li>
+                                <li>Gratificación instantánea (algoritmo actualiza las recomendaciones en menos de 1
+                                    segundo después de cada interacción).</li>
+                            </ul>
+
+                            <hr style="opacity: 1; border-top: 1px solid #111; margin: 1.5rem 0;">
+
+                            <p class="mb-0">Este beneficia a Tiktok (su algoritmo) y a los anunciantes, teniendo más
+                                vistas en sus anuncios.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="script-card text-center">
+                        <div class="script-badge">03</div>
+                        <h4 class="mb-4 text-dark" style="font-weight: 800; text-transform: uppercase;">Curación Activa
+                        </h4>
+                        <div class="text-dark text-start" style="font-size: 0.90rem; line-height: 1.6;">
+                            <p>Permite a los consumidores guardar videos en marcadores y organizarlos en carpetas
+                                personalizadas. Transformando la experiencia de consumo de flujo pasivo y efímero a un
+                                archivo personal recuperable, da control sobre qué contenido valora y cuándo lo consume.
+                            </p>
+
+                            <hr style="opacity: 1; border-top: 1px solid #111; margin: 1.5rem 0;">
+
+                            <p class="mb-1">Valores que opera:</p>
+                            <ul style="padding-left: 1.2rem; margin-bottom: 1.5rem;">
+                                <li>Autonomía del usuario.</li>
+                                <li>Intencionalidad.</li>
+                                <li>Utilidad práctica.</li>
+                                <li>Soberanía sobre la experiencia de consumo.</li>
+                                <li>Diseño centrado en la recuperabilidad.</li>
+                            </ul>
+
+                            <hr style="opacity: 1; border-top: 1px solid #111; margin: 1.5rem 0;">
+
+                            <p class="mb-0">Este beneficia al usuario, ya que gana control, organización y transforma el
+                                consumo en una herramienta práctica.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHITE SECTION: PROTOTYPE -->
+    <section class="white-section" style="padding: 6rem 0;" id="rediseno">
+        <div class="container-fluid px-md-5">
+            <h2 class="mb-5 section-heading-center text-dark"
+                style="text-align: left !important; font-weight: 800; font-size: 2.2rem; text-transform: none;">
+                Propuesta de rediseño</h2>
+
+            <div class="row g-4 align-items-stretch">
+                <!-- Izquierda: Actual -->
+                <div class="col-12 col-lg-3 d-flex flex-column align-items-center">
+                    <div class="mb-4 w-100 text-center"
+                        style="background-color: #fe2c55; color: #111; border-radius: 99px; padding: 10px 20px; font-weight: 600; font-size: 1.1rem; max-width: 90%;">
+                        Wireframe actual</div>
+                    <img src="imágenes/tiktokOG.png" alt="Wireframe actual"
+                        style="width: 100%; border-radius: 12px; border: 1px solid #eaeaea; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                </div>
+
+                <div class="col-lg-auto d-none d-lg-block" style="width: 2rem;"></div>
+
+                <!-- Derecha: Propuesta -->
+                <div class="col-12 col-lg-8">
+                    <div class="mb-4 w-100 text-center"
+                        style="background-color: #25f4ee; color: #111; border-radius: 99px; padding: 10px 20px; font-weight: 600; font-size: 1.1rem;">
+                        Propuesta</div>
+                    <div class="row g-3">
+                        <div class="col-6 col-md-3 d-flex flex-column align-items-center">
+                            <div class="mb-3 w-100 text-center"
+                                style="background-color: #fe2c55; color: #111; border-radius: 99px; padding: 8px 16px; font-weight: 600; font-size: 0.95rem;">
+                                Wireframe 1</div>
+                            <img src="imágenes/wireframe1.png" alt="Wireframe 1"
+                                style="width: 100%; border-radius: 12px; border: 1px solid #eaeaea; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        </div>
+                        <div class="col-6 col-md-3 d-flex flex-column align-items-center">
+                            <div class="mb-3 w-100 text-center"
+                                style="background-color: #fe2c55; color: #111; border-radius: 99px; padding: 8px 16px; font-weight: 600; font-size: 0.95rem;">
+                                Wireframe 2</div>
+                            <img src="imágenes/wireframe2.png" alt="Wireframe 2"
+                                style="width: 100%; border-radius: 12px; border: 1px solid #eaeaea; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        </div>
+                        <div class="col-6 col-md-3 d-flex flex-column align-items-center">
+                            <div class="mb-3 w-100 text-center"
+                                style="background-color: #fe2c55; color: #111; border-radius: 99px; padding: 8px 16px; font-weight: 600; font-size: 0.95rem;">
+                                Wireframe 3</div>
+                            <img src="imágenes/wireframe3.png" alt="Wireframe 3"
+                                style="width: 100%; border-radius: 12px; border: 1px solid #eaeaea; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        </div>
+                        <div class="col-6 col-md-3 d-flex flex-column align-items-center">
+                            <div class="mb-3 w-100 text-center"
+                                style="background-color: #fe2c55; color: #111; border-radius: 99px; padding: 8px 16px; font-weight: 600; font-size: 0.95rem;">
+                                Wireframe 4</div>
+                            <img src="imágenes/wireframe4.png" alt="Wireframe 4"
+                                style="width: 100%; border-radius: 12px; border: 1px solid #eaeaea; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPLANATION REDISEÑO -->
+    <section class="white-section position-relative overflow-hidden" style="padding-bottom: 6rem; padding-top: 0;">
+        <!-- BLOBS DECORATIVOS (Copiados de Viaje de Usuario) -->
+        <div class="blobs-layer d-none d-lg-block" style="z-index: 0; opacity: 0.6;">
+            <svg class="timeline-blob blob-1" width="180" height="180" viewBox="0 0 100 100"
+                style="top: -5%; left: 0%; color: var(--text-primary);">
+                <path d="M 0 60 Q 50 20 100 60" fill="none" stroke="#25f4ee" stroke-width="4" />
+                <circle cx="40" cy="50" r="20" fill="#fe2c55" />
+                <circle cx="60" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="3" />
+            </svg>
+            <svg class="timeline-blob blob-4" width="200" height="120" viewBox="0 0 150 100"
+                style="top: 10%; right: 5%;">
+                <path d="M 10 30 L 30 10 L 50 30 L 70 10 L 90 30 L 110 10 L 130 30 L 150 10" fill="none"
+                    stroke="#fe2c55" stroke-width="4" stroke-linejoin="round" />
+                <path d="M 10 50 L 30 30 L 50 50 L 70 30 L 90 50 L 110 30 L 130 50 L 150 30" fill="none"
+                    stroke="#25f4ee" stroke-width="4" stroke-linejoin="round" />
+            </svg>
+            <svg class="timeline-blob blob-7" width="120" height="120" viewBox="0 0 100 100"
+                style="top: 40%; left: 5%;">
+                <path d="M 20 20 L 40 50 L 20 80" fill="none" stroke="#25f4ee" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M 40 20 L 60 50 L 40 80" fill="none" stroke="#fe2c55" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M 60 20 L 80 50 L 60 80" fill="none" stroke="#fe2c55" stroke-width="5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <svg class="timeline-blob blob-5" width="220" height="220" viewBox="0 0 100 100"
+                style="top: 60%; right: 2%; color: var(--text-primary);">
+                <rect x="20" y="30" width="80" height="25" rx="12.5" fill="none" stroke="currentColor"
+                    stroke-width="3" />
+                <rect x="10" y="60" width="10" height="10" fill="#25f4ee" transform="rotate(45 15 65)" />
+            </svg>
+            <svg class="timeline-blob blob-2" width="160" height="260" viewBox="0 0 100 150"
+                style="top: 80%; left: 5%;">
+                <path d="M 30 10 L 50 30 L 30 50 L 50 70 L 30 90 L 50 110 L 30 130" fill="none" stroke="#25f4ee"
+                    stroke-width="4" stroke-linejoin="round" />
+                <path d="M 50 10 L 70 30 L 50 50 L 70 70 L 50 90 L 70 110 L 50 130" fill="none" stroke="#fe2c55"
+                    stroke-width="4" stroke-linejoin="round" />
+                <circle cx="80" cy="140" r="8" fill="#fe2c55" />
+            </svg>
+            <svg class="timeline-blob blob-3" width="180" height="180" viewBox="0 0 100 100"
+                style="top: 90%; right: 8%; color: var(--text-primary);">
+                <circle cx="30" cy="30" r="15" fill="none" stroke="currentColor" stroke-width="3" />
+                <polygon points="70,30 80,50 60,50" fill="#25f4ee" />
+                <rect x="20" y="70" width="8" height="8" fill="#fe2c55" transform="rotate(45 24 74)" />
+            </svg>
+        </div>
+
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-9">
+                    <div
+                        style="border: 1px solid rgba(0,0,0,0.1); border-radius: 16px; background-color: #ffffff; padding: 3rem 4rem; box-shadow: 0 4px 30px rgba(0,0,0,0.06);">
+                        <p class="text-secondary" style="line-height: 1.8; font-size: 1rem; margin-bottom: 1.5rem;">
+                            El rediseño se basó en la lógica de captura atencional de TikTok, en donde se reduce
+                            proporcionalmente el tamaño del video, rompiendo la inmersión total de pantalla completa. En
+                            segundo lugar, se integra un indicador de consumo consciente (que se hace visible mediante
+                            un botón), mostrando el tiempo que lleva el usuario dentro de la app y la cantidad de videos
+                            visualizados. Para no causar esa ansiedad al entrar a la app, se optó a que fuese
+                            información autorregulada y de fácil acceso. Tercero, se implementó una pantalla de espera
+                            intermedia (“cooldown”) que se activa tras superar un umbral de uso personalizado,
+                            estableciendo una pausa obligatoria de 45 minutos o 1 hora, interrumpiendo el ciclo de
+                            recompensa.
+                        </p>
+                        <p class="text-secondary" style="line-height: 1.8; font-size: 1rem; margin-bottom: 1.5rem;">
+                            Con estas modificaciones, los usuarios ganan mayor conciencia sobre los hábitos de consumo,
+                            recuperación del control temporal, reducción de la fatiga visual y cognitiva, y la creación
+                            de espacios de pausa que favorecen la reflexión antes de la reentrada a la plataforma.
+                        </p>
+                        <p class="text-secondary" style="line-height: 1.8; font-size: 1rem; margin-bottom: 0;">
+                            Al hacer visible lo invisible, se prioriza la pausa sobre la continuidad. El rediseño se
+                            orienta hacia un modelo donde el usuario decide activamente cuándo, cómo y cuánto consumir,
+                            priorizando la salud digital y la autonomía sobre la métrica de retención.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <p class="f-text">Diseño, Tecnología y Sociedad - DNO1023</p>
+                    <div class="f-contact">
+                        <div class="f-icon-box d-flex align-items-center justify-content-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M2 22h20M2 11h20M9 22V11M15 22V11M4 22V11M20 22V11M12 2v9M8 6h8M2 11l10-9 10 9">
+                                </path>
+                            </svg>
+                        </div>
+                        <span>Pontificia Universidad Católica de Chile</span>
+                    </div>
+                    <div class="f-contact align-items-start">
+                        <div class="f-icon-box d-flex align-items-center justify-content-center flex-shrink-0 mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <span>Edgardo Moraga Campusano</span>
+                            <span
+                                style="font-size: 0.70rem; opacity: 0.6; margin-top: -1px; font-weight: 500;">Profesor</span>
+                        </div>
+                    </div>
+                    <div class="f-contact align-items-start">
+                        <div class="f-icon-box d-flex align-items-center justify-content-center flex-shrink-0 mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <span>Constanza Castillo</span>
+                            <span style="font-size: 0.70rem; opacity: 0.6; margin-top: -1px; font-weight: 500;">Profesor
+                                Asistente</span>
+                        </div>
+                    </div>
+                    <div class="f-contact align-items-start">
+                        <div class="f-icon-box d-flex align-items-center justify-content-center flex-shrink-0 mt-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <span>María Ignacia Daccarett</span>
+                            <span style="font-size: 0.70rem; opacity: 0.6; margin-top: -1px; font-weight: 500;">Profesor
+                                Asistente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 offset-md-1 mt-4 mt-md-0">
+                    <h5 class="footer-heading">Navegación</h5>
+                    <ul class="footer-links">
+                        <li>Inicio</li>
+                        <li>Mapa Sistémico</li>
+                        <li>Viaje de Usuario</li>
+                        <li>Scripts</li>
+                        <li>Rediseño</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2 mt-4 mt-md-0">
+                    <h5 class="footer-heading">Integrantes</h5>
+                    <ul class="footer-links">
+                        <li>Valentina Catalán</li>
+                        <li>Isabel Constanzo</li>
+                        <li>Monserrat Díaz</li>
+                        <li>Michelle Hong</li>
+                        <li>Monserrat Maquehue</li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+            <div class="footer-bottom">
+                &copy; 2026 Grupo 9 DTS.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    } else {
+                        entry.target.classList.remove('active');
+                    }
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            themeToggleBtn.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                if (document.body.classList.contains('dark-mode')) {
+                    themeToggleBtn.innerText = 'Modo Claro';
+                } else {
+                    themeToggleBtn.innerText = 'Modo Oscuro';
+                }
+            });
+
+            const sections = document.querySelectorAll("section[id], div[id='viaje-usuario']");
+            const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+            window.addEventListener("scroll", () => {
+                let current = "";
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop;
+                    if (window.scrollY >= sectionTop - 120) {
+                        current = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    link.style.opacity = "0.8";
+                    link.style.fontWeight = "500";
+                    link.style.color = "var(--text-primary)";
+
+                    if (link.getAttribute("href").includes(current) && current !== "") {
+                        link.classList.add("active");
+                        link.style.opacity = "1";
+                        link.style.fontWeight = "800";
+                        link.style.color = "#fe2c55";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
