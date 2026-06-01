@@ -1,6 +1,6 @@
 /* colores y tonteras */
 :root {
-    --bg-color: #fcfbf9;        /*  */
+    --bg-color: #fcfbf9;        /* blanco */
     --text-color: #1c1c1e;      /* negro */
     --accent-color: #3a506b;    /* azul */
     --muted-color: #7f7f7f;     /* gris */
@@ -537,18 +537,17 @@ summary:hover {
 
 /* cuadradito de color */
 .evidence-box {
-  /* Toma tu azul grisáceo sofisticado pero le da un 5% de opacidad para un fondo sutil */
   background-color: #DED9E2; 
-  border-left: 4px solid var(--accent-color); /* Una línea vertical elegante al lado izquierdo */
+  border-left: 4px solid var(--accent-color); 
   padding: 2.5rem;
   border-radius: 4px;
   margin: 3rem 0;
 }
 
-/* Ajustes para los textos de adentro del cuadro */
+/* ajustes para los textos de adentro del cuadro */
 .evidence-box h2 {
   margin-bottom: 1rem;
-  font-size: 2.4rem; /* Un pelo más pequeño para que calce bien en la caja */
+  font-size: 2.4rem; 
 }
 
 .evidence-intro {
@@ -558,9 +557,9 @@ summary:hover {
   color: var(--text-color);
 }
 
-/* Estilos para la lista de viñetas */
+/* estilos para la lista de viñetas */
 .evidence-list {
-  list-style-type: square; /* Viñetas cuadraditas que se ven más de diseño */
+  list-style-type: square; 
   padding-left: 1.5rem;
 }
 
@@ -568,44 +567,82 @@ summary:hover {
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 1.2rem; /* Separación entre cada punto */
+  margin-bottom: 1.2rem; 
   color: rgba(28, 28, 30, 0.85);
 }
 
 .evidence-list li:last-child {
-  margin-bottom: 0; /* Quita el espacio de la última viñeta */
+  margin-bottom: 0; 
 }
 
-/* ==========================================================================
-   COLORES PERSONALIZADOS PARA LOS BLOQUES DEL EQUIPO
-   ========================================================================== */
+/* bloques y colores de las reflexiones */
 
-/* Bloque Coni: Un tono cálido/arena sutil */
 .bloque-mali {
     background-color: #f2ede4 !important;
-    border-left: 4px solid #c2b49a !important; /* Línea lateral un poco más oscura */
+    border-left: 4px solid #c2b49a !important; 
 }
 
-/* Bloque Ro: Un tono gris azulado/frío sutil */
 .bloque-fia {
     background-color: #e6ebed  !important;
     border-left: 4px solid #a3b8cc !important;
 }
 
-/* Bloque Anto: Un tono verde musgo/oliva muy suave */
 .bloque-ro {
     background-color: #eaebe4 !important;
     border-left: 4px solid #b8bda8 !important;
 }
 
-/* Bloque Integrante 4: Un tono lavanda/lila apagado */
 .bloque-anto {
     background-color: #eeeaf0 !important;
     border-left: 4px solid #c5b8cc !important;
 }
 
-/* Bloque Integrante 5: Un tono teja/marrón suave */
 .bloque-coni {
     background-color: #f5eae6 !important;
     border-left: 4px solid #dbaea0 !important;
 }
+
+/* fotos  */
+
+.text-image-block {
+    width: 100%;         
+    margin: 3.5rem 0;    
+    padding: 0;
+    display: block;
+}
+
+.text-image-block img {
+    width: 100%;         
+    height: auto;        
+    display: block;
+    border-radius: 2px;  
+}
+
+/* disclaimer de ia */
+
+.site-footer {
+    width: 100%;
+    margin-top: 6rem;      
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color); 
+}
+
+.footer-content {
+    max-width: 100%;        
+}
+
+.site-footer p {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;    
+    line-height: 1.5;
+    color: var(--muted-color); 
+    margin: 0;
+    text-align: left;       
+    opacity: 0.8;
+}
+
+
+/*Declaración de uso de IA: Utilizamos herramientas de Inteligencia Artificial (Gemini de Google) para 
+la búsqueda de archivos y artículos web, y optimización del código html y css. Revisamos y verificamos 
+el contenido final, reconocemos que la herramienta de IA no reemplaza nuestro juicio académico y asumimos
+ la responsabilidad sobre el contenido final.*/
