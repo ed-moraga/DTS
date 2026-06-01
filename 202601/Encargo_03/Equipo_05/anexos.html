@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anexos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #F6F5FB;
+            --bg-card: #FFFFFF;
+            --text-main: #2D2543;
+            --text-muted: #62597A;
+            --primary: #4A3AFF;
+            --primary-hover: #3829DB;
+            --accent-purple: #9A7BFF;
+            --accent-purple-hover: #F6F0FF;
+            --border: #E4E1FA;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 50px 40px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 60px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(160, 150, 210, 0.08);
+            border: 1px solid var(--border);
+        }
+        
+        .header-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+        }
+        .back-to-index {
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--accent-purple);
+            padding: 10px 22px;
+            border: 2px solid var(--accent-purple);
+            border-radius: 50px;
+            transition: all 0.2s ease;
+        }
+        .back-to-index:hover {
+            background-color: var(--accent-purple-hover);
+            transform: translateX(-2px);
+        }
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            background-color: #EBE5FF;
+            color: #633FE7;
+        }
+        
+        h2 { font-size: 2.4rem; font-weight: 700; margin-bottom: 20px; color: var(--text-main); letter-spacing: -0.5px; }
+        .intro-p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 45px; text-align: justify; }
+
+        .download-list {
+            list-style: none;
+            margin-bottom: 45px;
+        }
+        .download-item {
+            background-color: #F8F7FD;
+            border: 1px solid #EAE8F5;
+            padding: 25px 35px;
+            border-radius: 18px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .download-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-purple);
+            box-shadow: 0 6px 20px rgba(154, 123, 255, 0.08);
+        }
+        .item-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+        .download-link-btn {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            background-color: var(--primary);
+            color: #FFFFFF;
+            padding: 12px 28px;
+            border-radius: 50px;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 12px rgba(74, 58, 255, 0.15);
+            white-space: nowrap;
+        }
+        .download-link-btn:hover {
+            background-color: var(--primary-hover);
+            box-shadow: 0 6px 18px rgba(74, 58, 255, 0.3);
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .custom-btn {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            padding: 14px 35px;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            transition: all 0.25s ease;
+        }
+        .custom-btn:hover {
+            background-color: #ECEAF2;
+            color: var(--text-main);
+            border-color: var(--accent-purple);
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 30px 15px; }
+            .container { padding: 35px 25px; }
+            .download-item { flex-direction: column; align-items: flex-start; padding: 20px 25px; }
+            .download-link-btn { width: 100%; text-align: center; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-nav">
+            <a href="index.html" class="back-to-index">← Volver al Inicio</a>
+        </div>
+        
+        <h2>Anexos Entrevistas</h2>
+        <p class="intro-p">
+            Aprieta "descargar" para así ir al compilado de nuestras entrevistas.
+        </p>
+
+        <ul class="download-list">
+            
+            <li class="download-item">
+                <span class="item-text">Paula - Anexo Entrevistas</span>
+                <a href="documentos/Paula_Anexo_Entrevistas.pdf" download class="download-link-btn">Descargar</a>
+            </li>
+
+            <li class="download-item">
+                <span class="item-text">Matilde - Anexo Entrevistas</span>
+                <a href="documentos/Matilde_Anexo_Entrevistas.docx" download class="download-link-btn">Descargar</a>
+            </li>
+
+            <li class="download-item">
+                <span class="item-text">Julieta - Anexo Entrevistas</span>
+                <a href="documentos/Julieta_Anexo_Entrevistas.docx" download class="download-link-btn">Descargar</a>
+            </li>
+
+            <li class="download-item">
+                <span class="item-text">Amelia - Anexo Entrevistas</span>
+                <a href="documentos/Amelia_Anexo_Entrevistas.docx" download class="download-link-btn">Descargar</a>
+            </li>
+
+            <li class="download-item">
+                <span class="item-text">Javiera - Anexo Entrevistas</span>
+                <a href="documentos/Javiera_Anexo_Entrevistas.docx" download class="download-link-btn">Descargar</a>
+            </li>
+
+        </ul>
+
+
+    </div>
+
+<a href="#" id="goTop" style="position: fixed; bottom: 30px; right: 30px; background: #4A3AFF; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 12px rgba(74, 58, 255, 0.3); transition: opacity 0.3s; z-index: 1000; opacity: 0; pointer-events: none;">↑ Go To Top</a>
+
+<script>
+    window.onscroll = function() {
+        var btn = document.getElementById("goTop");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.opacity = "1";
+            btn.style.pointerEvents = "auto";
+        } else {
+            btn.style.opacity = "0";
+            btn.style.pointerEvents = "none";
+        }
+    };
+</script>
+</body>
+</html>

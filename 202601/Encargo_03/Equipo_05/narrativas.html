@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narrativas Identificadas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #F6F5FB;
+            --bg-card: #FFFFFF;
+            --text-main: #2D2543;
+            --text-muted: #62597A;
+            --primary: #4A3AFF;
+            --primary-hover: #EBE9FF;
+            --border: #E4E1FA;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 50px 40px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(160, 150, 210, 0.1);
+            border: 1px solid var(--border);
+        }
+        
+        .header-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .back-to-index {
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            padding: 8px 18px;
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            transition: all 0.2s ease;
+        }
+        .back-to-index:hover {
+            background-color: var(--primary-hover);
+            transform: translateX(-2px);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background-color: #EBE5FF;
+            color: #633FE7;
+        }
+        
+        h2 { font-size: 2rem; font-weight: 700; margin-bottom: 15px; color: var(--text-main); }
+        .intro-p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 35px; text-align: justify; }
+
+        .narratives-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .narrative-box {
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box-blue { background-color: #F0F4FF; border-left: 6px solid #4A3AFF; }
+        .box-red { background-color: #FFF2F2; border-left: 6px solid #FF4D4D; }
+        .box-amber { background-color: #FFF9E6; border-left: 6px solid #FFB800; }
+        .box-purple { background-color: #F6F0FF; border-left: 6px solid #9A7BFF; }
+        .box-teal { background-color: #E6FFFA; border-left: 6px solid #00BFA6; }
+
+        .narrative-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 10px;
+        }
+        .box-blue .narrative-tag { color: #2A1FB3; }
+        .box-red .narrative-tag { color: #B31E1E; }
+        .box-amber .narrative-tag { color: #B37D1E; }
+        .box-purple .narrative-tag { color: #5C32E6; }
+        .box-teal .narrative-tag { color: #00806F; }
+
+        .narrative-box h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1E1633;
+        }
+
+        .quote-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.75);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .quote-item {
+            font-style: italic;
+            color: #251B3D;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 15px;
+            border-left: 3px solid rgba(0, 0, 0, 0.15);
+        }
+
+        .info-content {
+            display: none;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .info-content p {
+            font-size: 0.98rem;
+            color: #3D3550;
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+        .info-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .toggle-btn {
+            align-self: flex-start;
+            background: transparent;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 5px 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.2s ease;
+        }
+        .box-blue .toggle-btn { color: #4A3AFF; }
+        .box-red .toggle-btn { color: #FF4D4D; }
+        .box-amber .toggle-btn { color: #FFB800; }
+        .box-teal .toggle-btn { color: #00BFA6; }
+        .box-purple .toggle-btn { color: #9A7BFF; }
+
+        .toggle-btn:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        .side-by-side {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .custom-btn {
+            display: inline-block;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            padding: 12px 30px;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            background-color: transparent;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+        .custom-btn:hover {
+            background-color: #ECEAF2;
+            color: var(--text-main);
+            border-color: var(--accent-purple);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 950px) {
+            .side-by-side { grid-template-columns: 1fr; }
+            body { padding: 20px 10px; }
+            .container { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-nav">
+            <a href="index.html" class="back-to-index">← Volver al Inicio</a>
+        </div>
+        
+        <h2>Narrativas Identificadas</h2>
+        
+
+        <div class="narratives-grid">
+            
+            <div class="narrative-box box-blue">
+                <span class="narrative-tag">Narrativa 1</span>
+                <h3>Tecno-optimismo / Progresismo</h3>
+                
+                <div class="quote-container">
+                    <div class="quote-item">“La tecnología en general ha cambiado mi vida, pero si lo quiero llevar a algo especifico creo que la programación, eso hizo el switch en mi vida”</div>
+                    <div class="quote-item">“Claramente, la tecnología que cambió mi vida, como periodista, fue Internet.”</div>
+                    <div class="quote-item">“Todos los tipos de avances tecnológicos siento que están para mejorar la vida de los humanos y las funciones del ser humano.”</div>
+                </div>
+
+                <button class="toggle-btn" onclick="toggleNarrative(this)">+ Abrir análisis</button>
+
+                <div class="info-content">
+                    <p>Esta narrativa aparece de manera explícita dentro de las distintas entrevistas y presenta a la tecnología como algo asociado al desarrollo y a los avances en la sociedad. Los entrevistados mencionan tecnologías como el internet, el celular o las redes sociales, las cuales generaron un gran cambio en su vida diaria y para su futuro.</p>
+                    <p>Se presenta de manera clara como algo inevitable ya que algunos participantes mencionan que ya no hay vuelta atrás, refiriéndose a la dependencia de la tecnología y en cómo está presente en casi todo aspecto.</p>
+                    <p>Entre los entrevistados aparece de manera frecuente una contradicción sobre el desarrollo de la tecnología, más específicamente la IA. Estos valoran profundamente el proceso tecnológico, sin embargo, reconocen que también puede tener consecuencias negativas. Algunos afirman que la IA mejora procesos, pero después muestran preocupación porque esta genera dependencia o afecta a sistemas laborales.</p>
+                    <p>El impacto de la tecnología está presente en todos los entrevistados, pero el tipo de tecnología cambia según la edad de la persona. Los más jóvenes y aquellos que tienen muy presente la tecnología en su día a día y dependen más de herramientas digitales, por ejemplo, para trabajos o estudios, se relacionan más con esta narrativa. En sus discursos la tecnología se ve asociada a oportunidades, al acceso a información y mejorar conocimientos y capacidades.</p>
+                    <p>Por otro lado, los entrevistados con mayor edad hablan de la tecnología desde un punto de vista de cambio e impacto histórico. Se enfocan más en las transformaciones dentro de la sociedad y de su propia vida ya que son ellos mismos quienes vivieron esas transformaciones.</p>
+                </div>
+            </div>
+
+            <div class="narrative-box box-red">
+                <span class="narrative-tag">Narrativa 2</span>
+                <h3>Tecno-pesimismo</h3>
+                
+                <div class="quote-container">
+                    <div class="quote-item">“Creo que los seres humanos vamos a tener terminar siendo ya esclavos de la tecnología total”</div>
+                    <div class="quote-item">“Lo adictiva que es la tecnología, sobre todo para aquí… las pequeñas personas (rien), me preocupa. Porque nacieron con eso, nacieron con el chip puesto.”</div>
+                    <div class="quote-item">“Si, a mí la inteligencia artificial. Porque está reemplazando al humano, ¿cachai?”</div>
+                    <div class="quote-item">“Porque eh... la gente está tan acostumbrada ahora a pedirle ayuda a toda la IA que ya no puede razonar por sí misma.”</div>
+                    <div class="quote-item">“Porque la tecnología más bien ayuda, qué sé yo, a contaminar el planeta, diría yo.”</div>
+                </div>
+
+                <button class="toggle-btn" onclick="toggleNarrative(this)">+ Abrir análisis</button>
+
+                <div class="info-content">
+                    <p>La narrativa de tecno-pesimismo también aparece de forma explícita dentro de las entrevistas. Los participantes mencionan que la tecnología se presenta como una amenaza para las personas en su vida personal, relaciones, trabajos, autonomía y la capacidad cognitiva.</p>
+                    <p>Dentro de esta narrativa se da a entender el avance tecnológico como progreso con consecuencias negativas que no son tan fáciles de controlar. Además, esta puede mezclarse un poco con la narrativa de tecnofobia, debido a ciertos discursos de entrevistados relacionados con la inteligencia artificial. Algunos identifican consecuencias negativas, pero también expresan miedo, desconfianza e incluso rechazo hacia la tecnología. Sin embargo, la tecnofobia no aparece de forma total ya que también se reconocen beneficios de esta.</p>
+                    <p>Se presenta como algo casi inevitable al hablar sobre la inteligencia artificial, su avance, sus usos, la dependencia que se genera y no solo eso, sino que también de la tecnología en general según los entrevistados. Los avances ya no se pueden controlar y se presentan como algo fundamental para el futuro de nuestra sociedad.</p>
+                    <p>Las diferencias entre los entrevistados son bastante visibles. Las personas con mayor edad se enfocan más en el impacto cultural de la tecnología, en la pérdida de contacto y en las diferencias de las relaciones hoy en día. Por otro lado, los más jóvenes se centran en los efectos que tiene la tecnología en el aprendizaje o el trabajo y muestran preocupación ante ello.</p>
+                </div>
+            </div>
+
+            <div class="side-by-side">
+                
+                <div class="narrative-box box-amber">
+                    <span class="narrative-tag">Narrativa 3</span>
+                    <h3>Solucionismo</h3>
+                    
+                    <div class="quote-container">
+                        <div class="quote-item">“Y la inteligencia artificial también ayuda a pensar las mejores maneras para hacer las cosas. Entonces puede ayudar en todos los aspectos, en todos los temas.”</div>
+                        <div class="quote-item">“Ayuda a las personas en el día a día, les facilita las tareas y la vida en general.”</div>
+                        <div class="quote-item">“Tiene el propósito de facilitar la vida y de ponerse al servicio del ser humano. Eh, pero también tiene riesgo si no lo sabes usar bien”</div>
+                        <div class="quote-item">“O sea, podría ayudar, pero no del todo según yo.”</div>
+                    </div>
+
+                    <button class="toggle-btn" onclick="toggleNarrative(this)">+ Abrir análisis</button>
+
+                    <div class="info-content">
+                        <p>Esta narrativa aparece de forma explícita pero también implícita a través de las entrevistas, ya que algunos participantes mencionan que sí creen que la tecnología puede solucionar problemas complejos en diferentes ámbitos relevantes. Por otro lado, hay otros entrevistados que no dicen que la tecnología soluciona problemas de forma absoluta, pero sí que puede ayudar de una forma significativa si es que se usa de la forma correcta.</p>
+                        <p>En este caso, la narrativa de solucionismo puede combinarse con la de instrumentalismo ya que, como mencionan algunos entrevistados, la tecnología está al servicio del ser humano, pero no está a su disposición si lo beneficia o no. Se menciona que la tecnología posee capacidades para enfrentar problemas sociales, sin embargo, su efectividad depende de las decisiones humanas que se toman y en que contexto. La tecnología no da soluciones por si sola, sino que aparece más como una herramienta condicionada por factores políticos, sociales o éticos.</p>
+                        <p>El solucionismo se presenta como una idea más natural que inevitable. Los entrevistados suelen mencionar que la tecnología tiene la capacidad de contribuir a la solución de problemas en la sociedad, lo cual aparece como algo lógico para ellos. Sin embargo, esta narrativa no se presenta como algo automático o algo que no podemos evitar, ya que la mayoría de los participantes sostienen que hay factores políticos, sociales, económicos o humanos que influyen dentro de esto.</p>
+                        <p>Los entrevistados más jóvenes tienden a darle a la tecnología una mayor capacidad de transformar y hacer cambios más significativos. Muestran más confianza en el potencial que tiene la tecnología y sus avances para solucionar o modificar situaciones. Por otro lado, los con mayor edad, aunque reconocen que la tecnología puede contribuir en problemas como la pobreza o la desigualdad, enfatizan en que estos problemas se relacionan más con factores políticos, sociales o humanos. La tecnología sirve como herramienta que el humano le da un uso y no como una solución autónoma.</p>
+                    </div>
+                </div>
+
+                <div class="narrative-box box-teal">
+                    <span class="narrative-tag">Narrativa 5</span>
+                    <h3>Instrumentalismo</h3>
+                    
+                    <div class="quote-container">
+                        <div class="quote-item">“La tecnología está hecha como para avanzar y facilitarnos la vida, el estilo de vida.”</div>
+                        <div class="quote-item">“Diría que su propósito es mejorar la calidad de vida de las personas.”</div>
+                        <div class="quote-item">“Todo lo que les facilite la vida a los humanos.”</div>
+                        <div class="quote-item">“Mejorar, como dar herramientas.”</div>
+                    </div>
+
+                    <button class="toggle-btn" onclick="toggleNarrative(this)">+ Abrir análisis</button>
+
+                    <div class="info-content">
+                        <p>La narrativa de instrumentalismo se presenta de manera explícita dentro de las entrevistas, ya que los participantes hablan sobre la tecnología como una herramienta que ayuda al ser humano en sus tareas y en general en su vida diaria. Esta herramienta creada por los humanos está hecha para resolver problemas cotidianos y se entiende como un medio neutral. Su valor depende del uso que se le da, por lo tanto, la agencia está situada principalmente en los seres humanos. En la mayoría de los casos se tiene una visión positiva y neutralizada.</p>
+                        <p>La narrativa instrumentalista está estrechamente relacionada con la tecno optimista. En varios casos los entrevistados hablan de la tecnología como herramienta que ayuda a solucionar tareas cotidianas, pero luego esta visión se amplía a que el desarrollo de la tecnología está asociado al progreso en distintos ámbitos para la sociedad.</p>
+                        <p>A través de las entrevistas, la narrativa se presenta como algo natural, algo que los entrevistados suelen asumir que su propósito es facilitar la vida de las personas, satisfacer necesidades y no cuestionan estas características.</p>
+                        <p>Dentro de la narrativa sí existen diferencias entre los perfiles de las personas. Los entrevistados mayores definen la tecnología por su utilidad en la vida cotidiana, simplifica actividades que antes eran más difíciles de realizar. Por otro lado, los más jóvenes relacionan la tecnología con el desarrollo, el trabajo y los estudios y no solo facilita la vida, sino que da oportunidades para distintas disciplinas.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="narrative-box box-purple">
+                <span class="narrative-tag">Narrativa 4</span>
+                <h3>Tecno-poder</h3>
+                
+                <div class="quote-container">
+                    <div class="quote-item">“Los multimillonarios… Amazon… Elon Musk… Son ellos los que determinan qué hacer o cómo llevar la tecnología hacia la población.”</div>
+                    <div class="quote-item">“Creo que los grandes poderes, los grandes poderes económicos… Está todo presupuestado para hacer grandes riquezas… Y esclavizar un poco a los demás.”</div>
+                    <div class="quote-item">“Básicamente el quien tiene como el acceso a es quien como básicamente controla todo.”</div>
+                    <div class="quote-item">“Esto está… Maquinado por ciertas personas que obviamente, llegan a los gobiernos… Es como para mantener sumisa al resto de la sociedad… Nos están volviendo esclavos de…”</div>
+                    <div class="quote-item">“A ciertas clases como gobernantes y de élite no les conviene [que la tecnología resuelva la pobreza o desigualdad]”</div>
+                </div>
+
+                <button class="toggle-btn" onclick="toggleNarrative(this)">+ Abrir análisis</button>
+
+                <div class="info-content">
+                    <p>La narrativa de tecno-poder, aparece de manera explícita en las entrevistas. Los participantes en general coinciden en tener muy clara su postura sobre el concepto de tecno-poder de la tecnología. Si bien una cosa es creer que existe una idea de tecno-poder, otra es pensar en quién lo posee. Y en general los entrevistados luego de confirmar su postura, la mayoría expresa sus propias hipótesis sobre el manejo del poder y sus objetivos.</p>
+                    <p>Un punto en común de las citas es que los entrevistados creen que este poder que la tecnología posee está manejado por una élite de la sociedad, es decir, creen que un pequeño grupo social o ciertas empresas planifican y diseñan la tecnología para que tenga un impacto de control sobre el resto de la sociedad. Entonces, la mayoría cree que la tecnología posee un poder influyente en la sociedad por si sola, pero que fue otorgado intencionalmente por un grupo acotado y poderoso económicamente. Por otro lado, los entrevistados consideran que este plan de poder tiene el objetivo de beneficiar monetariamente a esta élite y no necesariamente ayudar a la sociedad, incluso un entrevistado menciona que la “utilizan como esclava”. Otra hipótesis que expresan los entrevistados, es que el poder de la élite se sostiene gracias a que se mantienen en cargos de autoridad dentro de la sociedad, lo que genera el acceso a un poder mucho mayor e influyente, que no falla porque funciona como un sistema.</p>
+                    <p>Esta narrativa se puede relacionar directamente con el tecno-pesimismo, ya que se observa, que en general los entrevistados no sostienen una actitud neutral al hablar del tecno-poder, más bien, consideran el poder como una característica negativa sobre la tecnología, que no favorece realmente a la sociedad. Si no más bien, la ocupa como un medio, para beneficiar a un grupo que diseñó la manera de adquirir el control y poder a través del uso de la tecnología.</p>
+                </div>
+            </div>
+
+        </div>
+
+       
+    </div>
+
+    <script>
+        function toggleNarrative(button) {
+            var content = button.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                button.textContent = "+ Abrir análisis";
+            } else {
+                content.style.display = "block";
+                button.textContent = "− Cerrar análisis";
+            }
+        }
+    </script>
+
+<a href="#" id="goTop" style="position: fixed; bottom: 30px; right: 30px; background: #4A3AFF; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 12px rgba(74, 58, 255, 0.3); transition: opacity 0.3s; z-index: 1000; opacity: 0; pointer-events: none;">↑ Go To Top</a>
+
+<script>
+    window.onscroll = function() {
+        var btn = document.getElementById("goTop");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.opacity = "1";
+            btn.style.pointerEvents = "auto";
+        } else {
+            btn.style.opacity = "0";
+            btn.style.pointerEvents = "none";
+        }
+    };
+</script>
+</body>
+</html>

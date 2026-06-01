@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Narrativas Futuras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-page: #F6F5FB;
+            --bg-card: #FFFFFF;
+            --text-main: #2D2543;
+            --text-muted: #62597A;
+            --border: #E4E1FA;
+            --color-teal: #00BFA6;
+            --color-teal-hover: #E6FAF7;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 50px 40px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(160, 150, 210, 0.1);
+            border: 1px solid var(--border);
+        }
+        .header-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .back-btn {
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-teal);
+            padding: 8px 18px;
+            border: 2px solid var(--color-teal);
+            border-radius: 50px;
+            transition: all 0.2s ease;
+        }
+        .back-btn:hover {
+            background-color: var(--color-teal-hover);
+            transform: translateX(-2px);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background-color: #E6FAF7;
+            color: #00A38D;
+        }
+        h1 { font-size: 2.6rem; font-weight: 700; color: #2D2543; margin-bottom: 30px; text-align: left; }
+        p { font-size: 1.05rem; color: var(--text-main); margin-bottom: 22px; text-align: justify; font-weight: 300; }
+        
+        .quote-block {
+            background-color: #F8F7FC;
+            border-left: 4px solid var(--color-teal);
+            padding: 18px 22px;
+            margin: 25px 0;
+            font-style: italic;
+            border-radius: 0 16px 16px 0;
+            color: var(--text-muted);
+        }
+
++        .extended-info {
+            display: none;
+        }
+        
+        .toggle-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .toggle-btn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            background-color: var(--color-teal);
+            padding: 12px 35px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(0, 191, 166, 0.2);
+            transition: all 0.25s ease;
+        }
+        .toggle-btn:hover {
+            background-color: #00A38D;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 191, 166, 0.35);
+        }
+
+        .references-section {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+        }
+        .references-section h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+        .ref-link {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 14px;
+            padding-left: 20px;
+            text-indent: -20px;
+            transition: color 0.2s ease;
+        }
+        .ref-link:hover {
+            color: var(--color-teal);
+        }
+
+        @media (max-width: 900px) {
+            body { padding: 20px 10px; }
+            .container { padding: 30px 20px; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-nav">
+            <a href="index.html" class="back-btn">← Volver al Inicio</a>
+        </div>
+
+        <h1>Narrativas Futuras</h1>
+        
+        <p>Una de las principales tendencias existentes en la actualidad es la tecnología y su relación con la sociedad.</p>
+        
+        <p>Durante los últimos años esta materia se ha desarrollado constantemente y ha estado en boca de diversas noticias, a través de estas se puede crear una línea temporal con las narrativas predominantes en la sociedad.</p>
+        
+        <p>Durante este análisis se buscará proyectar una narrativa para el futuro, pero, para lograr esto es necesario conocer las narrativas del pasado.</p>
+        
+        <p>Al analizar noticias de hace 20 años, encontraremos muchas noticias con relación a nuevos lanzamientos que serían una revolución dentro de lo que es la tecnología, está el lanzamiento del primer iPhone, la presentación del navegador Chrome, la aparición y compra de diversas redes sociales, etc. Al leer boletines vinculados a estos temas se puede notar que el enfoque de la narrativa se encontraba en el instrumentalismo; frases como “facebook’s mission is to make the world open and connected. People use facebook to stay connected with friends and family, to discover what’s going on in the world, and to share and express what matters to them” (Park, 2012) o “iPhone also ushers in an era of software power and sophistication never before seen in a mobile device, which completely redefines what users can do on their mobile phones.” (Apple, 2007) dan evidencia de lo anterior, demuestran como las tecnologías se veían como un medio novedoso para que el ser humano pueda realizar distintas actividades teniendo la responsabilidad de lo que se hacía con sus dispositivos.</p>
+
+        <div class="toggle-container">
+            <button class="toggle-btn" id="toggleBtn" onclick="toggleContent()">Explayar Información</button>
+        </div>
+
+        <div class="extended-info" id="extendedInfo">
+            <p>En la actualidad el desarrollo y la innovación de la tecnología ha avanzado enormemente, por lo mismo han surgido distintas preocupaciones con relación a diversos temas, el más vigente es la IA y sus repercusiones. Siguiendo esta línea, a través de distintas noticias se pudo llegar a la conclusión de que la narrativa en torno al tecno pesimismo es de las más predominantes hoy en día.</p>
+            
+            <div class="quote-block">
+                “The A.I. Security Institute is one of the world’s largest and best-funded government efforts dedicated to probing the technology’s potentially catastrophic risks.” (Satariano y Mozur, 2026).
+            </div>
+            
+            <p>A través de esta cita se puede ver reflejado el esfuerzo impuesto en intentar frenar los posibles riesgos que puede traer la IA, se puede observar claramente el sentimiento de amenaza inevitable que necesita ser contenida. (a pesar de esto también se puede desglosar una pequeña contradicción, dentro de lo que es el tecno pesimismo se tiene como consecuencia una parálisis y desconexión, pero en la noticia se da a entender que se está buscando regular más que paralizar, se está intentando evitar ese tipo de futuro)</p>
+            
+            <p>Dentro de este artículo también se puede presenciar la sensación de la tecnología avanzando a una velocidad difícil de controlar:</p>
+            
+            <div class="quote-block">
+                “The thing that keeps me up at night is the relative speed of the technology compared to the institutions like governments that have to respond” (Leung, como se citó en Satariano y Mozur, 2026).
+            </div>
+            
+            <p>Considerando la evolución de las tendencias, en donde se puede ver cómo se pasó de una visión neutra o positiva a una más ligada al temor, y tomando en cuenta lo que conlleva a nivel de información otorgada a las personas dirigentes de las tecnologías implicadas, es posible proyectar que en las próximas décadas la narrativa dominante se transformará hacia el tecno poder, en donde las personas de élite que controlan los datos y la infraestructura tendrán la facultad de influir en la vida de las demás personas, en donde las tecnologías serán un área de disputa entre los que controlan, esto ya que seguirán evolucionando pero otorgándole de forma centralizada el poder a los que las dirigen.</p>
+            
+            <p>A medida que las distintas tecnologías (sobre todo las automatizadas y generativas) se vayan incorporando cada vez más en las vidas diarias de las personas, se podría ir generando una dependencia hacia estos sistemas, esto generaría que quienes administren estos tengan mayor capacidad de influencia. Además, gran parte de las tecnologías emergentes trabajan mediante la recopilación de datos, si esto se maximiza o continua podría significar que la posesión de información tiene la posibilidad de convertirse en una de las principales fuentes de poder. Bajo este contexto la conversación publica y de los medios de comunicación podría llegar a cambiar desde los “riesgos de la tecnología” hacia el “poder que ejercen quienes controlan las tecnologías gracias a la información que recopilan”.</p>
+            
+            <p>La preocupación por el dominio sobre la gente gracias a la tecnología está presente en diversos medios de comunicación, en el reportaje de El País expres dado por Manuel G. Pascual (2025) se habla de la creciente fiscalización en EE. UU. a la población, sobre todo inmigrantes, mediante aplicaciones y herramientas de inteligencia artificial, lo cual genera un gran temor dentro de la sociedad.</p>
+            
+            <p>La automatización, el rastreo y los datos son herramientas por las cuales se puede mantener un control sobre lo que ocurre en áreas delimitadas, hay gobiernos que actualmente ya están proposing iniciativas de temas similares, por ejemplo: “El secretario de Transporte, Sean Duffy, ha promovido las herramientas de inteligencia artificial como parte de la iniciativa más amplia del Gobierno de Trump para modernizar el obsoleto sistema de control de tráfico aéreo del país.” (Duffy, como se citó en Muntean, 2026).</p>
+            
+            <p>Dentro de esta misma noticia se puede visualizar como poco a poco, a pesar de que actualmente es una idea poco popular entre los trabajadores, se le está otorgando a la automatización mediante IA el control de distintas ramas y trabajos (esto pensando en bajar la carga laboral a los humanos). A través de frases como “es importante, ya que cada vez más compañías aéreas recurren a la IA para impulsar una nueva evolución en los viajes aéreos, utilizándola para automatizar tareas de los pilotos y, quizás algún día, posibilitar vuelos totalmente autónomos.” (Diamond, como se citó en Muntean, 2026) dan a entender que si constantemente se está avanzando en tecnología lo más inteligente sería utilizarla para “mejorar las condiciones humanas”, pero no se toma en cuenta lo que puede implicar a nivel del control que se impone sobre la sociedad por parte de las personas que administrarían estos sistemas.</p>
+            
+            <p>Dentro del mundo contemporáneo ya se ha expresado abiertamente el temor hacia esta narrativa del tecno poder, hace pocos días el papa León XIV expreso en su encíclica su llamado para ir en contra de las nuevas formas de esclavitud surgidas desde la necesidad de generar recursos para el uso de la IA (RFI, 2026). (Dentro de este mismo texto se da a entender cierto rechazo al solucionismo, se menciona la preocupación del papa por la deshumanización, da advertencia en contra de la visión del ser humano reducido a datos explorados por máquinas. (RFI, 2026))</p>
+            
+            <p>Para profundizar un poco más el análisis se puede agregar la advertencia de autores como Delgado en su texto “¿La IA generativa puede dañar el aprendizaje?” (2025) en donde se habla de cómo las inteligencias artificiales pueden afectar habilidades como el pensamiento crítico. Aunque esta tendencia sigue en discusión, podría ser relevante el punto considerando que la ciudadanía al crear mayor dependencia a sistemas automatizados y con el pensamiento crítico disminuido podría tener menos herramientas para cuestionar las decisiones tomadas por quienes controlan dichas tecnologías.</p>
+            
+            <p>En síntesis, a partir de las evidencias a base de noticias que fueron presentadas se logró observar una clara transformación respecto a la relación de la sociedad con las tecnologías, mientras que hace 20 años predominaba una confianza en la tecnología como medio para el ser humano, hoy en día existe una creciente preocupación en relación a los riesgos asociados, la dependencia tecnológica, automatización y a toda la información confiada a las tecnologías, lo que podría significar una concentración en el poder de los datos, esto podría derivar en un futuro en donde el poder se concentre específicamente en quienes poseen la administración de estos sistemas.</p>
+            
+            <p>Las tecnologías se seguirán desarrollando y a futuro probablemente aparezcan distintos desafíos y temores, pero hay que seguir trabajando para garantizar que todos estos servicios no sean un método de control sobre la sociedad, sino que en vez de eso sean una herramienta positiva para las personas.</p>
+        </div>
+
+        <div class="references-section">
+            <h2>Referencias</h2>
+            
+            <a class="ref-link" href="https://www.apple.com/newsroom/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/" target="_blank">
+                Apple. (2007, 9 de enero). <em>Apple reinvents the phone with iPhone.</em> Apple Newsroom.
+            </a>
+            
+            <a class="ref-link" href="https://observatorio.tec.mx/la-ia-generativa-puede-afectar-el-aprendizaje/" target="_blank">
+                Delgado, J. (2025, 24 de abril). <em>¿La IA generativa puede afectar el aprendizaje?</em> Observatorio del Instituto Tecnológico de Monterrey.
+            </a>
+            
+            <a class="ref-link" href="https://about.fb.com/news/2012/04/facebook-to-acquire-instagram/" target="_blank">
+                Facebook. (2012, 9 de abril). <em>Facebook to acquire Instagram.</em> Meta Newsroom.
+            </a>
+            
+            <a class="ref-link" href="https://www.latercera.com/mundo/noticia/el-papa-leon-xiv-denuncia-la-ia-como-una-nueva-forma-de-esclavitud/" target="_blank">
+                La Tercera. (2026, 14 de mayo). <em>El papa León XIV denuncia la IA como una nueva forma de esclavitud.</em> La Tercera.
+            </a>
+            
+            <a class="ref-link" href="https://cnnespanol.cnn.com/2026/05/24/ciencia/ia-pilotear-aviones-aviacion-trax" target="_blank">
+                Muntean, C. N. (2026, 24 de mayo). <em>¿Puede la IA pilotear aviones? La industria de la aviación cree que sí.</em> CNN en Español.
+            </a>
+            
+            <a class="ref-link" href="https://chatgpt.com/" target="_blank">
+                OpenAI. (2026). <em>ChatGPT</em> (modelo de lenguaje basado en inteligencia artificial) [Asistente de inteligencia artificial].
+            </a>
+            
+            <a class="ref-link" href="https://elpais.com/expres/2025-06-05/la-inteligencia-artificial-como-arma-de-vigilancia-asi-espia-el-gobierno-de-ee-uu-a-inmigrantes-y-colectivos-vulnerables.html" target="_blank">
+                Pascual, M. G. (2025, 5 de junio). <em>La inteligencia artificial como arma de vigilancia: así espía el Gobierno de EE. UU. a inmigrantes y colectivos vulnerables.</em> El País Express.
+            </a>
+            
+            <a class="ref-link" href="https://www.nytimes.com/2026/05/24/technology/uk-ai-safety-institute.html" target="_blank">
+                Satariano, A., & Mozur, P. (2026, 24 de mayo). <em>Britain’s A.I. Safety Institute faces uncertainty amid global race for artificial intelligence.</em> The New York Times.
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent() {
+            var extendedDiv = document.getElementById("extendedInfo");
+            var btn = document.getElementById("toggleBtn");
+            
+            if (extendedDiv.style.display === "block") {
+                extendedDiv.style.display = "none";
+                btn.innerHTML = "Explayar Información";
+            } else {
+                extendedDiv.style.display = "block";
+                btn.innerHTML = "Ocultar Información";
+            }
+        }
+    </script>
+
+<a href="#" id="goTop" style="position: fixed; bottom: 30px; right: 30px; background: #4A3AFF; color: white; padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 12px rgba(74, 58, 255, 0.3); transition: opacity 0.3s; z-index: 1000; opacity: 0; pointer-events: none;">↑ Go To Top</a>
+
+<script>
+    window.onscroll = function() {
+        var btn = document.getElementById("goTop");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.opacity = "1";
+            btn.style.pointerEvents = "auto";
+        } else {
+            btn.style.opacity = "0";
+            btn.style.pointerEvents = "none";
+        }
+    };
+</script>
+</body>
+</html>
