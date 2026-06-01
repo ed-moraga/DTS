@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0d1b2a, #1b263b, #415a77, #94ccf7);
+  background-attachment: fixed;
+  color: white;
+}
+
+.banner-superior {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.banner-superior img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 32px;
+  font-family: Shrikhand;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-bottom: 20px;
+  padding-top: 5px;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: white;
+  text-shadow: 
+    -2px -2px 0 #000,  
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000;
+}
+section h1 {
+  color: white; /* Letras blancas */
+  font-family: sans-serif;
+  padding-left: 50px;
+  margin-top: 40px;
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+ul {
+  display: flex;             
+  justify-content: center;   
+  list-style-type: none;     
+  margin: 0;
+  padding: 0;
+  gap: 50px;                 
+  background-color: #94ccf7;
+}
+
+ul li a {
+  display: block;            
+  color: white;              
+  text-align: center;
+  padding: 12px 14px;        
+  text-decoration: none;     
+  font-family: sans-serif;   
+}
+
+ul li a:hover {
+  background-color: #58aced;
+}
+
+.boton-subir {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #1b263b;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease;
+}
+
+.boton-subir:hover {
+    transform: scale(1.1);
+    background-color: #2c3e50;
+}
+
+.boton-subir.mostrar {
+    opacity: 1;
+    visibility: visible;
+}
+
+.boton-subir svg {
+    display: block;
+}
+.tarjeta-evidencia {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-evidencia:hover .link-prensa {
+    color: #ffffff !important;
+}
+nav .indice ul li a.activo {
+    color: #ffffff;
+    border-bottom: 2px solid #94ccf7;
+    padding-bottom: 4px;
