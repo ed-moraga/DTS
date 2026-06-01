@@ -1,0 +1,248 @@
+/* --- CONFIGURACIÓN GENERAL Y PALETA CREMA/AZUL --- */
+:root {
+    --bg-crema-claro: #FDFBF7;
+    --bg-crema-medio: #F5EFEB;
+    --azul-oscuro: #1A365D;
+    --azul-medio: #2B6CB0;
+    --azul-clarito: #EBF8FF;
+    --texto-oscuro: #2D3748;
+    --texto-blanco: #FFFFFF;
+    --borde: #E2E8F0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-crema-claro);
+    color: var(--texto-oscuro);
+    line-height: 1.6;
+}
+
+/* --- ENCABEZADOS Y NAVBAR --- */
+header {
+    background-color: var(--azul-oscuro);
+    color: var(--texto-blanco);
+    padding: 2.5rem 1rem;
+    text-align: center;
+    border-bottom: 5px solid var(--azul-medio);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: var(--bg-crema-medio);
+    font-size: 1.1rem;
+}
+
+nav {
+    background-color: var(--bg-crema-medio);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+nav a {
+    color: var(--azul-oscuro);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 1rem;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--azul-medio);
+}
+
+/* --- DISEÑO DE CONTENEDORES --- */
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    background: var(--texto-blanco);
+    padding: 2.5rem;
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    border: 1px solid var(--borde);
+}
+
+h2 {
+    color: var(--azul-oscuro);
+    border-bottom: 2px solid var(--bg-crema-medio);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+h3 {
+    color: var(--azul-medio);
+    margin: 1.5rem 0 0.5rem 0;
+}
+
+p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* --- FICHA DE PERFIL DE ENTREVISTADOS --- */
+.perfil-box {
+    background-color: var(--bg-crema-medio);
+    padding: 1.5rem;
+    border-radius: 6px;
+    border-left: 5px solid var(--azul-medio);
+    margin-top: 1rem;
+}
+
+/* --- GRILLA DE BOTONES DE NARRATIVAS --- */
+.narrativas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.btn-narrativa {
+    display: block;
+    background-color: var(--azul-clarito);
+    color: var(--azul-oscuro);
+    text-align: center;
+    padding: 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 1px solid var(--azul-medio);
+    transition: all 0.3s ease;
+}
+
+.btn-narrativa:hover {
+    background-color: var(--azul-medio);
+    color: var(--texto-blanco);
+    transform: translateY(-2px);
+}
+
+/* --- SECCIÓN NOTICIAS (CON ESPACIO PARA FOTOS) --- */
+.noticias-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.noticia-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem;
+    background: var(--bg-crema-claro);
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .noticia-card { grid-template-columns: 1fr; }
+}
+
+.noticia-foto-placeholder {
+    background-color: var(--bg-crema-medio);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    border-right: 1px solid var(--borde);
+    position: relative;
+}
+
+.noticia-foto-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.noticia-foto-placeholder span {
+    color: #A0AEC0;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem;
+}
+
+.noticia-info {
+    padding: 1.5rem;
+}
+
+.noticia-info h4 {
+    color: var(--azul-oscuro);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* --- SECCIÓN ANEXOS (ENTREVISTAS LARGO FORMATO) --- */
+.entrevistas-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-entrevista {
+    background-color: azul-medio;
+    color: var(--texto-blanco);
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-entrevista:hover {
+    background-color: var(--azul-medio);
+}
+
+/* --- BLOQUES DE CITAS TEXTUALES EN PÁGINAS INTERNAS --- */
+blockquote {
+    background-color: var(--bg-crema-medio);
+    border-left: 4px solid var(--azul-oscuro);
+    padding: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+    color: #4A5568;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: var(--azul-medio);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--azul-oscuro);
+    color: var(--texto-blanco);
+    font-size: 0.85rem;
+    margin-top: 4rem;
+}
