@@ -1,0 +1,186 @@
+/* Variables con la paleta de colores oficial de TikTok */
+:root {
+  --bg-dark: #121212;
+  --card-bg: #1e1e1e;
+  --text-main: #ffffff;
+  --text-muted: #a1a1a1;
+  --tiktok-cyan: #25f4ee;
+  --tiktok-red: #fe2c55;
+  --border-color: #2f2f2f;
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', 'Proxima Nova', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  padding-bottom: 40px;
+}
+
+/* Encabezado */
+.tiktok-header {
+  text-align: center;
+  padding: 30px 20px 20px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 30px;
+}
+
+.logo-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  /* Efecto Glitch estilo TikTok */
+  text-shadow: -2px -2px 0px var(--tiktok-cyan), 2px 2px 0px var(--tiktok-red);
+}
+
+.tiktok-icon {
+  font-size: 1.8rem;
+  margin-right: 8px;
+}
+
+/* Layout */
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Tarjeta principal */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--tiktok-cyan), var(--tiktok-red));
+}
+
+/* Encabezado de la tarjeta */
+.card-header {
+  margin-bottom: 24px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: rgba(254, 44, 85, 0.15);
+  color: var(--tiktok-red);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(254, 44, 85, 0.3);
+}
+
+.card-header h2 {
+  font-size: 1.6rem;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+/* Secciones de contenido */
+.card-section {
+  margin-bottom: 22px;
+}
+
+.card-section h3 {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-section p {
+  color: #e1e1e1;
+  font-size: 1rem;
+}
+
+/* Caja de destaque para el Script Implícito */
+.highlight-box {
+  background: rgba(37, 244, 238, 0.05);
+  border-left: 4px solid var(--tiktok-cyan);
+  padding: 16px 20px;
+  border-radius: 4px 12px 12px 4px;
+}
+
+.highlight-box h3 {
+  color: var(--tiktok-cyan);
+}
+
+.script-quote {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+/* Lista de valores */
+.values-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.values-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 8px;
+  color: #e1e1e1;
+}
+
+.values-list li::before {
+  content: '⚡';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.9rem;
+}
+
+/*imagenes wireframe 1 y 2 
+Hecho por nosotras */
+.image-placeholder {
+  text-align: center;
+  img {
+  border-radius: 15px;
+}
+
+}
+
+
+/* Video de scrolling
+hecho por nosotras*/
+.videoscroll {
+   display: flex;
+  justify-content: center;
+
+}
+
+/*footer
+hecho por nosotras*/
+.mi-footer {
+  text-align: center;
+  color: dimgrey;
+}
