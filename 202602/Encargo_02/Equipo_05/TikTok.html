@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Anatomía de TikTok</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="fondo-animado"></div>
+
+<header class="pagina-principal">
+	<div class="grupo">
+		<h1>Grupo 5</h1>
+	</div>
+	<section class="titulo">
+		<h2>Examinemos<br> a fondo a</h2>
+		<div class="logo">
+			<img src="img/logo.webp" alt="logo TikTok">
+		</div>
+	</section>
+</header>
+
+<main>
+	<section class="resumen">
+		<h2>¿Qué es?</h2>
+		<div class="texto-video">
+			<div class="texto">
+				<p>
+               <b>TikTok</b> es una plataforma de redes sociales centrada en la creación, difusión y descubrimiento de videos cortos en formato vertical, la cual funciona a través de un <b>algoritmo de recomendación altamente personalizado</b> que analiza el comportamiento en tiempo real del usuario para ofrecerle un flujo infinito de contenido adaptado a sus intereses exactos, complementado con herramientas avanzadas de edición, música y efectos visuales. <br> 
+               Esta aplicación va dirigida principalmente a un público joven perteneciente a la Generación Z y a los Millennials, abarcando un rango de edad clave entre los 13 y los 35 años, aunque su comunidad se ha diversificado hacia <i>creadores, empresas e instituciones</i> de todas las edades debido a su facilidad para viralizar contenido de forma masiva. <br>
+               Finalmente, su modelo de negocio se basa firmemente en la <i>publicidad digital</i> nativa mediante anuncios y desafíos patrocinados, la integración del comercio electrónico con el cobro de comisiones por ventas directas, y la venta de monedas virtuales que los usuarios adquieren para enviar regalos digitales a los creadores de contenido durante sus transmisiones en vivo.
+            </p> <!--Todo lo que es ordenar los textos, me ayudé de: https://www.w3schools.com/html/html_formatting.asp-->
+			</div>
+			<div class="video">
+				<video src="vid/gatos.mp4" width="280" height="500" controls loop></video>
+			</div>
+		</div>
+	</section>	
+
+	<section class="items">
+		<div class="mapa">
+			<h3>¿Cómo funciona?</h3>
+			<div class="mapa-texto">
+				<img src="img/mapasist.png" class="mapasistemico" alt="Mapa Sistémico de TikTok" title="Presiona para ver la información" onclick="document.getElementById('miVentana').showModal()">
+				<dialog id="miVentana">
+   				<p>La aplicación de TikTok puede ser separada en tres secciones principales: <i><b>los usuarios, su empresa y la monetización.</i></b></p><br>
+   				<h4>Los usuarios</h4> 
+   					<p>Generan <b>datos</b> que son administrados por el algoritmo de ByteDance, como sus interacciones, tiempo en pantalla, datos biométricos, microcomportamientos y los metadatos de los dispositivos. Además, utilizan <b>dispositivos</b>, como el smartphone, cuyos recursos (cámara, micrófono, ubicación, contactos y almacenamiento) son accedidos por la plataforma. Estos usuarios, los cuales pueden ser <i>humanos o incluso bots</i>, crean diferentes tipos de <b>cuentas</b> para distintos propósitos. <br>
+   					Por otro lado, existen cuentas personales, falsas, de negocios, o para crear contenido; cada una de estas retroalimenta a la inteligencia artificial y el algoritmo, creando así una relación circular entre los usuarios, sus datos y el el sistema de recomendación personal. <br></p>
+   				<h4>ByteDance</h4>
+   					<p>La empresa propietaria de TikTok, cuenta con un <b>equipo de desarrolladores</b>, que incluye ingenieros de software, científicos de datos, marketing, diseñadores y su centro de ayuda. Por lo tanto, se encargan estrechamente de las actualizaciones de los <b>sistemas de IA y algoritmos</b> las cuales ejecutan las recomendaciones de <i>contenido personalizado</i> ("Para ti", navegación continua, videos más adictos y control de visibilidad) y <i>controlan la moderación</i> de dicho contenido en donde hay una <i>ausensia clara de negociación</i> (reconocimiento audiovisual, filtros, censura, "shadowban").<br>
+   					Finalmente, para que esto funcione, emplean <b>redes de distribución</b> subcontratadas (Akami, Fastly, Edge Services) y APIs (Application Programming Interface) que permiten la comunicación entre diversas redes sociales y los sistemas de pago. <br></p>
+   				<h4>La monetización</h4>
+   					<p>Se gestiona mediante la <b>centralización de pagos y la fijación de tasas</b> (más comisiones) dictadas por ByteDance. Las empresas financian la plataforma mediante <i>anuncios pagados y colaboraciones con los creadores de contenido</i>, y frecuentemente teniendo sus propias cuentas de negocios. No obstante, el <i>tiempo que dura un usuario en la pantalla</i> también representa una ganancia moentaria para ByteDance, gracias a las interacciones, cantidad de anuncios que consuma, regalos dentro de la app, etc.</p>
+					<button class="btn-cerrar" onclick="document.getElementById('miVentana').close()">Cerrar</button>
+				</dialog> <!--Esto fue totalmente ayuda de Gemini, con el prompt: "como poner que al darle click a una imagen, salga una nueva pantalla con texto en html". Luego usé el promt: "Como hago para que la sección no se vea aburrida y sea más estética-->
+			</div>
+		</div>
+
+		<div class="scripts">
+			<h3>¿Qué nos dice implícitamente su uso?</h3>
+			<div class="script1">
+            <div class="script-info1">
+					<h4>“Interactúa y produce contenido para poder monetizarlo”</h4>
+						<p>
+							<b>Incentiva:</b> Dar likes, comentar, compartir, guardar videos, seguir cuentas y eventualmente producir contenido propio.<br>
+							<b>Facilita:</b> La interacción rápida con otros usuarios y la creación de contenido desde la misma plataforma.<br> 
+							<b>Dificulta:</b> Formas de interacción más personales, ya que gran parte de la participación está estructurada alrededor de <i>acciones visibles y cuantificables</i>, como likes, comentarios, seguidores y visualizaciones dentro de la plataforma.<br>
+							<b>Elementos de diseño que lo producen:</b> Los botones de like, comentarios, favoritos y compartir permanecen visibles junto al video, permitiendo interactuar sin abandonar el contenido. Además, el botón + se encuentra permanentemente disponible para acceder a la creación de videos. Las visualizaciones, likes, comentarios y cantidad de seguidores hacen visible la respuesta de otros usuarios y <i>convierten la interacción social en datos cuantificables.</i>
+						</p>
+            </div>
+            <div class="imgscript1">
+               <img src="img/s1img1.jpeg" alt="Íconos inferiores de la página principal: Inicio, Amigos, (Crear contenido), Mensajes y Perfil" title="Íconos inferiores de la página principal">
+               <img src="img/s1img2.jpeg" alt="Muestra de un anuncio en la sección 'Para ti´" title="Muestra de anuncio">
+               <img src="img/s1img3.jpeg" alt="Botones de interacción (like, comentario, compartir) y redes sociales para compartir el video" title="Botones de interacción">
+            </div>
+			</div>
+				<div class="script2">
+               <div class="script-info2">
+                  <h4>“Quédate viendo videos por el mayor tiempo posible” (Problemático)</h4>
+						   <p>
+   							<b>Incentiva:</b> Prolongar las sesiones de uso y continuar consumiendo videos incluso después de haber entrado originalmente por un contenido específico.<br>
+   							<b>Facilita:</b> Permanecer en la aplicación mediante la entrega constante de contenido adaptado a los intereses y comportamientos anteriores del usuario.<br> 
+   							<b>Dificulta:</b> Reconocer un momento claro para detenerse, debido a que el contenido se renueva constantemente y no existe un final definido para el fyp.<br>
+   							<b>Elementos de diseño que lo producen:</b> El algoritmo del <i>fyp</i> ('Para ti') selecciona y ordena los videos según las interacciones y comportamientos del usuario, generando un flujo personalizado de contenido. Además, funciones como la reproducción a velocidad 2x permiten acelerar el consumo y aumentar la cantidad de contenido que puede verse en un período determinado.<br>
+   							También puede considerarse el uso de audios y tendencias, donde fragmentos particularmente reconocibles o llamativos de una canción se utilizan en numerosos videos. Esto genera una <i>estructura de repetición</i> donde el usuario encuentra estímulos similares muchas veces pero dentro de contenidos diferentes.<br>
+                        <b>Argumento:</b> Este funcionamiento beneficia principalmente a la <i>plataforma y a los patrocinadores</i> que invierten en publicidad, ya que mientras más tiempo permanece el usuario en ella, mayor es la cantidad de contenido que puede consumir. Por esta razón, aumentan las oportunidades de interacción, recopilación de datos y exposición a publicidad. En cambio, para el usuario, el beneficio de recibir contenido personalizado puede interferir con su capacidad de regular voluntariamente cuánto tiempo desea permanecer en la aplicación.<br>
+                        El script opera bajo valores como la <i>eficiencia, personalización, continuidad y maximización de la atención</i>. La interfaz permite que el usuario siempre tenga algo nuevo que consumir, reduciendo la interferencia y las pausas dentro de la experiencia. De esta manera, la atención del usuario pasa a funcionar como un recurso que la plataforma busca mantener y administrar.
+   						</p>
+               </div>
+               <div class="imgscript2">
+                  <img src="img/s2img1.jpeg" alt="Uso del 2x en un video" title="Uso del 2x">
+                  <img src="img/s2img2.jpeg" alt="'Para ti' personalizado 1" title="'Para ti' recomendaciones">
+                  <img src="img/s2img3.jpeg" alt="'Para ti' personalizado 2" title="'Para ti' recomendaciones">
+                  <img src="img/s2img4.jpeg" alt="Página de búsqueda de contenido" title="Página de búsqueda de contenido">
+               </div>
+				</div>
+				<div class="script3">
+               <div class="script-info3">
+                  <h4>“Divulga contenido con pares para lograr una estadía prolongada”</h4>
+   						<p>
+   							<b>Incentiva:</b> Enviar videos a amigos, mantener conversaciones a partir del contenido y regresar diariamente a la aplicación para continuar intercambiando videos.<br>
+   							<b>Facilita:</b> Compartir un mismo contenido con varias personas de manera rápida y establecer interacciones recurrentes mediante los chats.<br>
+   							<b>Dificulta:</b> Separar el acto de compartir contenido del uso continuo de la plataforma, ya que compartir puede convertirse en un motivo para volver diariamente a TikTok y mantener conversaciones dentro de la aplicación.<br>
+   							<b>Elementos de diseño que lo producen:</b> El botón de compartir permite enviar un video directamente a distintos contactos y al mantenerlo presionado aparecen opciones adicionales de distribución. También es posible seleccionar varios chats simultáneamente.<br>
+   							Además de eso, las rachas, que para ser mantenidas los usuarios deben interactuar y compartir contenido de manera recurrente. Esto puede generar que la gente cree contenido específicamente para mantener la racha, <i>transformando el acto de compartir en una actividad periódica</i> dentro de la plataforma.
+   						</p>
+               </div>
+               <div class="imgscript3">
+                  <img src="img/s3img1.jpeg" alt="Botones para compartir el video a otras redes sociales o ajustar preferencias" title="Botones para compartir en otras redes sociales">
+                  <img src="img/s3img2.jpeg" alt="Perfil que sube contenido para mantener la 'racha' viva" title="Perfil que sube contenido para compartir">
+                  <img src="img/s3img3.jpeg" alt="Muestra video para mantener la 'racha' 1" title="Video para mantener la 'racha'">
+                  <img src="img/s3img4.jpeg" alt="Muestra video para mantener la 'racha' 2" title="Video para mantener la 'racha'">
+                  <img src="img/s3img5.jpeg" alt="Muestra video para mantener la 'racha' 3" title="Video para mantener la 'racha'">
+                  <img src="img/s3img6.jpeg" alt="Muestra video para mantener la 'racha' 4" title="Video para mantener la 'racha'">
+               </div>
+				</div>
+		</div> <!--Usé Gemini, con el prompt: "Cómo hago para ordenar la información (texto e imágenes) para que esta sección se vea más lindo y estético? Que opciones de css puedo aprovechar para que luzca atractiva?"-->
+
+		<div class="wireframe">
+			<h3>Propuesta de rediseño</h3>
+         <div class="wireframe-galeria">
+<!--Tarjeta 1-->
+            <div class="wireframe-card">
+               <input type="checkbox" id="modal1" class="modal-toggle">
+               <label for="modal1" class="modal-trigger">
+                  <img src="img/wireframe1.svg" alt="Contador de TikToks vistos" title="Presiona para ver la información">
+                  <h4>Contador de TikToks vistos</h4>
+               </label>
+               <div class="modal-overlay">
+                  <div class="modal-content">
+                    <label for="modal1" class="modal-cerrar">&times;</label>
+                    <div class="modal-grid">
+                        <div class="modal-imagen">
+                           <img src="img/wireframe1.svg" alt="Contador de TikToks vistos">
+                        </div>
+                        <div class="modal-texto">
+                           <h4>Contador de Tiktoks vistos</h4>
+                           <p>Se incorpora un contador en una esquina superior de la pantalla que muestra la cantidad de videos consumidos.</p>
+                           <ul>
+                              <li><b>Qué se gana:</b> transparencia y referencia clara del nivel de uso.</li>
+                              <li><b>Qué se pierde:</b> parte de la fluidez del scroll infinito, ya que el contador recuerda constantemente el consumo acumulado.</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="flecha-secuencia">&#10140</div>
+<!--Tarjeta 2-->
+            <div class="wireframe-card">
+               <input type="checkbox" id="modal2" class="modal-toggle">
+               <label for="modal2" class="modal-trigger">
+                  <img src="img/wireframe2.svg" alt="Notificaciones intermitentes">
+                  <h4>Notificaciones intermitentes</h4>
+               </label>
+               <div class="modal-overlay">
+                  <div class="modal-content">
+                     <label for="modal2" class="modal-cerrar">&times;</label>
+                     <div class="modal-grid">
+                        <div class="modal-imagen">
+                           <img src="img/wireframe2.svg" alt="Notificaciones intermitentes" title="Presiona para ver la información">
+                        </div>
+                        <div class="modal-texto">
+                           <h4>Notificaciones intermitentes:</h4>
+                           <p>Cada cierto tiempo aparece un pop-up que interrumpe el scroll para invitar al usuario a hacer una pausa.</p>
+                           <ul>
+                              <li><b>Qué se gana:</b> un recordatorio más visible que evita que el contador se vuelva invisible en la interfaz.</li>
+                              <li><b>Qué se pierde:</b> se rompe momentáneamente la continuidad de la experiencia, sacrificando parte de la inmersión.</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="flecha-secuencia">&#10140</div>
+<!--Tarjerta 3-->
+            <div class="wireframe-card">
+               <input type="checkbox" id="modal3" class="modal-toggle">
+               <label for="modal3" class="modal-trigger">
+                  <img src="img/wireframe3.svg" alt="Temporizador de descanso obligatorio" title="Presiona para ver la información">
+                  <h4>Temporizador de descanso obligatorio</h4>
+               </label>
+               <div class="modal-overlay">
+                  <div class="modal-content">
+                     <label for="modal3" class="modal-cerrar">&times;</label>
+                     <div class="modal-grid">
+                        <div class="modal-imagen">
+                           <img src="img/wireframe3.svg" alt="Temporizador de descanso obligatorio">
+                        </div>
+                        <div class="modal-texto">
+                           <h4>Temporizador de descanso obligatorio:</h4>
+                           <p>Tras un número determinado de notificaciones, la aplicación ya no permite continuar de inmediato. Se activa un temporizador de aproximadamente 10 minutos, congelando la app y promoviendo un descanso real.</p>
+                           <ul>
+                              <li><b>Qué se gana:</b> un mecanismo fuerte de autocontrol que protege al usuario del uso prolongado.</li>
+                              <li><b>Qué se pierde:</b> se limita la libertad de consumo continuo, lo que puede generar frustración en algunos usuarios.</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+		</div> <!--Todo lo relacionado a la sección de Wireframe me ayudó Gemini, con el prompt: "Necesito decorar esta sección de forma muy específica. Quiero que las 3 imágenes "wireframe1", "wireframe2" y "wireframe2" estén una al lado de la otra, estas van a tener la misma función que el del mapa sistémico: al presionar la imágen se abre un cuadro pop-up con la información que se corresponde a cada imágen (es decir, la que actualmente está debajo de cada una). A su vez, quiero que cuando se presione alguna de las imágenes, esta se posicione a la izquierda de la pantalla y el pop-up a la derecha: la imagen y la información deben resaltar mientras que el fondo (el resto de la página) se mantiene borrosa. 
+      Por lo demás, te puedes tomar la creatividad de organizar los detalles (radio del borde, sombra de la caja, animación al presionar la imagen, etc) para que quede coherente con el resto de la página"-->
+	</section>
+</main>
+
+<footer>
+	<p>Tibisay Arévalo, Lisandro Cavallaro, Francisca Linzmayer, Alessandre Saravia.<br>
+	Diseño, Tecnología y Sociedad.</p>
+</footer>
+
+</body>
+</html>
+<!--Nota final: Utilizamos herramientas de Inteligencia Artificial generativa (Gemini de Google, modelo Gemini 3.1 Pro) para la tarea de ayuda al momento de revisar el código html para los diversos requerimentos creativos de diseño visual. Revisamos y verificamos el contenido final, reconocemos que la herramienta de IA no reemplaza nuestro juicio académico y asumimos la responsabilidad sobre el contenido final.-->

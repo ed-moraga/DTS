@@ -1,0 +1,457 @@
+/*General*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "TikTok Sans", sans-serif;
+} /*super chistoso que encontré la fuente oficial de TikTok en Google Fonts*/
+main {
+	width: 100%;
+	height: 100%;
+}
+.fondo-animado {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(40deg, #fe2858, #de8c9d, #2af0ea, #397684);
+	background-size: 400% 400%;
+	z-index: -1;
+	animation: moverColores 16s ease infinite;
+}
+@keyframes moverColores {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+} /*Kiubo, todo el fondo animado fue ayuda de Gemini, con el prompt: "cómo poner una animación de fondo en html"*/
+
+/*Página principal*/
+header{
+	width: 100%;
+	min-height: 100vh;
+	background: linear-gradient(to right, #de8c9d, #2af0ea);
+	display: flex;
+	flex-direction: column;
+}
+
+/*Grupo 5*/
+.grupo {
+	width: 100%;
+	color: white;
+	padding: 20px;
+	font-size: 15px;
+}
+
+/*Título + logo tiktok*/
+.titulo {
+	width: 90%;
+	margin: 0 auto;
+	flex-grow: 1;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.titulo h2 {
+	font-size: 7rem;
+    color: black;
+    text-shadow: 3px 3px 4px rgb(255, 255, 255);
+}/*Animación movimiento del logo*/
+
+.logo img {
+	max-width: 300px;
+	width: 100%;
+}
+.logo {
+	animation: movimiento 2.5s linear infinite;
+}
+@keyframes movimiento {
+	0%{
+		transform: translateY(0);
+	}
+	50%{
+		transform: translateY(30px);
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
+/*Lo anterior, todo lo correspondiente a Header, lo saqué de un tutorial en 
+ Youtube: https://youtu.be/N8ZppRiqU7E?si=-RfHgnR1J_eJDp7i */
+
+
+/*Resúmen de TikTok*/
+.resumen {
+	min-height: 100vh;
+	padding: 50px 30px;
+	background-color: rgba(255, 255, 255, 0.95);
+}
+.resumen h2 {
+	font-size: 50px;
+	margin-bottom: 40px;
+	text-align: center;
+	background-color: #fe2858;
+	color: white;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*Ayuda de mi hermano programador p.2*/
+}
+.texto-video{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+	flex-wrap: wrap;
+}
+.texto{
+	flex: 1;
+	min-width: 300px;
+}
+.resumen p {
+	font-size: 20px;
+	line-height: 1.6;
+}
+
+
+.video video {
+	border-radius: 15px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}/*Este elemento de "float" lo saqué de https://www.w3schools.com/cssref/pr_class_float.php*/
+
+h3 {
+	font-size: 40px;
+	margin-bottom: 20px;
+}
+
+
+/*ITEMS*/
+/*Mapa sistémico*/
+.mapa {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 40px 20px;
+	color: white;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.mapa-texto {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin-top: 20px;
+}
+.mapa-texto h4 {
+	color: #de8c9d;
+}
+.mapasistemico {
+	max-width: 90%;
+	border-radius: 10px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+.mapasistemico:hover {
+	transform: scale(1.02);
+}
+dialog {
+	max-width: 1000px;
+	width: 90%;
+	margin: auto;
+	padding: 20px;
+	background-color: white;
+	color: #333;
+	border-radius: 20px;
+	text-shadow: none;
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+	/*font-size: 30px;*/
+}
+dialog::backdrop {
+	background-color: rgba(0, 0, 0, 0.7);
+	backdrop-filter: blur(5px);
+}
+dialog[open] {
+	animation: subir 0.4s ease-out;
+} /*Todo lo que tenga que ver con 'dialog' fue con ayuda de Gemini, usando el 
+  prompt: "Como hago para que la sección no se vea aburrida y sea más estética"*/
+@keyframes subir {
+	0%{
+		transform: translateY(50px); opacity: 0;
+	}
+	100%{
+		transform: translateY(0%); opacity: 1;
+	}
+}/*la animación de que suba en pop-up de información, la logré hacer yo sola, gracias al ejemplo del logo*/
+.btn-cerrar {
+	background-color: #de8c9d;
+	color: white;
+	padding: 12px 24px;
+	border: none;
+	border-radius: 8px;
+	font-size: 18px;
+	cursor: pointer;
+	margin-top: 20px;
+	font-family: inherit;
+	font-weight: bold;
+	transition: background-color 0.3s ease;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.btn-cerrar:hover {
+	background-color: #de8c9d;
+}/*lo mismo del prompt: "Como hago para (...)sea más estética"*/
+
+/*Scripts*/
+.scripts {
+	min-height: 100vh;
+	background-color: #f8f9fa;
+	padding: 60px 40px;
+}
+.scripts h3{
+	text-align: center;
+	font-size: 40px;
+	margin-bottom: 40px;
+	color: #17a2b8;
+	font-weight: 700;
+}
+.script1, .script2, .script3 {
+	display: flex;
+	flex-direction: column; 
+	background: #ffffff;
+	padding: 40px;
+	border-radius: 16px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+	margin-bottom: 30px;
+	gap: 25px;
+}
+.script-info1, .script-info2, .script-info3 {
+	width: 100%;
+}
+.script1 h4, .script2 h4, .script3 h4 {
+	font-size: 22px;
+	color: #1a1a1a;
+	margin-top: 0;
+	margin-bottom: 20px;
+	padding-left: 12px;
+}
+.script1 p, .script2 p, .script3 p {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.8;
+	text-align: justify;
+	color: #444;
+}
+.script1 h4 { border-left: 4px solid #17a2b8; }
+.script1 p b { color: #17a2b8; }
+
+.script2 h4 { border-left: 4px solid #17a2b8; } 
+.script2 p b { color: #17a2b8; }
+
+.script3 h4 { border-left: 4px solid #17a2b8; }
+.script3 p b { color: #17a2b8; }
+
+.imgscript1, .imgscript2, .imgscript3 {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+	gap: 15px;
+	width: 100%;
+	margin-top: 10px;
+}
+.imgscript1 img, .imgscript2 img, .imgscript3 img {
+	width: 100%;
+	object-fit: cover; 
+	border-radius: 10px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease;
+}
+.imgscript1 img:hover, .imgscript2 img:hover, .imgscript3 img:hover {
+	transform: translateY(-4px);
+}/*Usé Gemini, con el prompt: "Cómo hago para ordenar la información (texto 
+ e imágenes) para que esta sección se vea más lindo y estético? Que opciones de
+ css puedo aprovechar para que luzca atractiva?"*/
+
+/*Re-diseño*/
+.wireframe {
+	min-height: 100vh;
+    padding: 60px 40px;
+    color: white;
+    text-align: center;
+}
+.wireframe h3 {
+	font-size: 38px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 700;
+}
+.wireframe-galeria {
+	display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.modal-toggle {
+	display: none;
+}
+.wireframe-card {
+    padding: 25px;
+    border-radius: 16px;
+    width: 290px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-trigger {
+	cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+.modal-trigger:hover {
+	transform: translateY(-6px);
+}
+.wireframe-card h4 {
+	font-size: 20px;
+    color: white;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.4;
+}
+.modal-overlay {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+.modal-toggle:checked ~ .modal-overlay {
+	opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+	background: #ffffff;
+    border: 1px solid rgba(42, 240, 234, 0.3);
+    width: 90%;
+    max-width: 850px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+.modal-toggle:checked ~ .modal-overlay .modal-content {
+	transform: scale(1);
+}
+.modal-cerrar {
+	position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #397684;
+    font-size: 50px;
+    cursor: pointer;
+}
+.modal-grid {
+	display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    align-items: center;
+}
+.modal-imagen img {
+	width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 15px;
+}
+.modal-texto {
+	text-align: left;
+    color: #e2e8f0;
+}
+.modal-texto h4 {
+	color: #397684;
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+.modal-texto p {
+	font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    color: black;
+}
+.modal-texto ul {
+	margin: 0;
+    padding-left: 20px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: black;
+}
+.modal-texto ul b {
+	color: #397684;
+}
+.modal-texto li {
+	margin-bottom: 6px;
+}
+.flecha-secuencia {
+	display: flex;
+    align-items: center;      
+    justify-content: center;
+    font-size: 45px;       
+    color: white;
+}/*Para la realización de la sección de Wireframe, me ayudó Gemini, con el prompt: "Necesito
+ decorar esta sección de forma muy específica. Quiero que las 3 imágenes "wireframe1", 
+ "wireframe2" y "wireframe2" estén una al lado de la otra, estas van a tener la misma función 
+ que el del mapa sistémico: al presionar la imágen se abre un cuadro pop-up con la información 
+ que se corresponde a cada imágen (es decir, la que actualmente está debajo de cada una). A su 
+ vez, quiero que cuando se presione alguna de las imágenes, esta se posicione a la izquierda de 
+ la pantalla y el pop-up a la derecha: la imagen y la información deben resaltar mientras que el 
+ fondo (el resto de la página) se mantiene borrosa. 
+ Por lo demás, te puedes tomar la creatividad de organizar los detalles (radio del borde, sombra 
+ de la caja, animación al presionar la imagen, etc) para que quede coherente con el resto de la 
+ página"*/
+
+/*Nombres y curso*/
+footer {
+	background: linear-gradient(to right, #de8c9d, #2af0ea);
+	color: white;
+	text-align: center;
+	padding: 20px 20px;
+	font-size: 15px;
+	line-height: 1.5; /*Ayuda de mi hermano programador p.3*/
+}
+
+
+
+/*Nota final: Utilizamos herramientas de Inteligencia Artificial generativa 
+(Gemini de Google, modelo Gemini 3.1 Pro) para la tarea de ayuda al momento 
+de revisar el código css para los diversos requerimentos creativos de diseño 
+visual. Revisamos y verificamos el contenido final, reconocemos que la herramienta 
+de IA no reemplaza nuestro juicio académico y asumimos la responsabilidad sobre el 
+contenido final.*/
