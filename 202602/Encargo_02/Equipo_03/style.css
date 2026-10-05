@@ -1,0 +1,144 @@
+footer{
+background: linear-gradient(45deg, #fa8f218f 0%, #dd3b708f 50%, #a5389a8f 100% );
+
+
+}
+img{
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+.divisor{
+  width: 100% 
+  height: auto;
+    display: block;
+    margin: 30px 0;
+}
+.flecha{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 30px;
+	height: auto;
+}
+.nombres{ 
+font-size:15px }
+
+.fondo{
+  font-size: 40px;
+  color: black;
+  padding: 20px;
+  
+  background-image: url('Imagenes/deco.png'); 
+  background-size: 570px; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+}
+.scriptsima {
+  display: flex;  
+  flex-wrap: wrap;          
+  justify-content: center;  
+  gap: 20px;                
+  width: 100%; 
+
+}
+
+.scriptsima img {
+  width: 220px;              
+  height: auto;             
+  object-fit: cover;
+  border-radius: 8px;         
+}
+li{
+	line-height: 1.6;
+	margin-bottom: 10px;
+	margin-left: 20px;
+	margin-right: 40px;
+}
+p {
+	margin-left: 40px;
+	margin-right: 20px;
+}
+.rosado{
+	background-color: #f09ca5b0;
+	padding-top: 60px;
+	padding-bottom: 40px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
+.piramide{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	max-width: 700px;
+	margin: 0 auto; 
+}
+.piramide img { 
+width: width: calc(100% - 40px / 3); 
+max-width: 220px;
+ height: auto;           
+ object-fit: cover;
+  border-radius: 8px; }
+  
+  body {
+  	text-align: center;
+  	margin-left: 160px;
+  	margin-right: 160px;
+  }
+
+  .logo{
+  	width: 40%;
+  	height: auto;
+  	object-fit: cover;
+  }
+  .lado{ 
+display: flex;
+align-items: center;
+gap: 30px;
+max-width: 800px;
+margin: 0 auto;
+padding: 50xp 30xp;
+   }
+   .derecha{
+width: 60%;
+   }
+   ul{
+   	text-align: left;
+   }
+  
+  
+@font-face {
+  font-family: 'Instagram Sans Headline';
+  
+  src: url('fuentes/Instagram_Sans_Headline.otf') format('opentype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+h1, h3 {
+  font-family: 'Instagram Sans Headline', sans-serif;
+  font-weight: normal;
+  
+  /* Truco de renderizado para que la letra se vea más fina y limpia */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@font-face{
+  font-family: "Inter";
+  src: url('fuentes/Inter_18pt-Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+li, p {
+font-family: 'Inter', sans-serif;
+font-weight: normal;
+font-size: 14.5px !important;
+
+}
+.nombres{
+  font-size: 11px !important;
+}
+
+/*Declaración de IA: Usamos herramientas de Inteligencia artificial de Gemini IA para obtener codigos css al incluir las nuevas fuentes al 
+documento y hacer que se vean finas y limpias. Así como para el orden de las imagenes y así saber exactamente como hacer que se vean ordenadas 
+sin salirse de los margenes. */
