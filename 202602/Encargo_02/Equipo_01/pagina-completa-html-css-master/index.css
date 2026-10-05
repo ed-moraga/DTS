@@ -1,0 +1,536 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+h1{
+    font-size: 3.5em;
+}
+
+h2{
+    font-size: 2.7em;
+}
+
+h3{
+    font-size: 2em;
+}
+
+p{
+    font-size: 1.25em;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    font-size: 1.25em;
+}
+
+
+/* BOTÓN */
+
+button{
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border: 2px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    color: white;
+    background-color: darkred;
+}
+
+button:hover{
+    background-color: darkred;
+}
+
+
+/* CONTENEDOR */
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+.color-acento{
+    color: darkred;
+}
+
+
+/* HEADER */
+
+header{
+    background-color: rgb(245,245,245);
+}
+
+header .logo{
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    color: darkred;
+    font-size: 1.6em;
+}
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+header a:hover{
+    color: darkred;
+}
+
+
+/* PORTADA */
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+
+    height: 90vh;
+
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url("media/fondo.png");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#hero h1{
+    color: lightpink;
+}
+
+#hero button{
+    font-size: 1.75em;
+}
+
+
+/* INTRO */
+
+#intro .container{
+    text-align: center;
+    padding: 200px 12px;
+}
+
+
+/* MAPA SISTÉMICO */
+
+#mapa{
+    background-color: white;
+    color: darkred;
+}
+
+#mapa .container{
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#mapa h2{
+    margin-top: 0;
+    margin-bottom: 50px;
+    font-size: 3em;
+}
+
+#mapa img{
+    display: block;
+    width: 90%;
+    max-width: 1100px;
+    height: auto;
+    margin: 0 auto 40px auto;
+}
+
+#mapa img:last-child{
+    margin-bottom: 0;
+}
+
+
+/* SCRIPTS */
+
+#scripts{
+    background-color: rgb(30,30,30);
+    color: white;
+    text-align: center;
+}
+
+#scripts .container{
+    padding: 150px 12px;
+}
+
+#scripts h2{
+    margin-top: 0;
+    font-size: 3.2em;
+}
+
+#scripts p{
+    display: none;
+}
+
+#scripts .carta{
+    background-position: center center;
+    background-size: cover;
+
+    padding: 50px 0px;
+    margin: 30px;
+
+    border-radius: 15px;
+}
+
+
+/* IMAGEN CARTA 1 */
+
+.carta:first-child{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url("media/luisito.jpg");
+}
+
+
+/* IMAGEN CARTA 2 */
+
+.carta:nth-child(2){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url("media/calidad.jpg");
+}
+
+
+/* IMAGEN CARTA 3 */
+
+.carta:nth-child(3){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url("media/placa.jpg");
+}
+
+
+/* REDISEÑO */
+
+#rediseno{
+    background-color: darkred;
+    color: white;
+    text-align: center;
+}
+
+#rediseno .container{
+    padding: 120px 20px;
+}
+
+#rediseno h2{
+    font-size: 3em;
+    margin-top: 0;
+}
+
+#rediseno p{
+    max-width: 1000px;
+    margin: 30px auto;
+    line-height: 1.6;
+}
+
+
+/* WIREFRAME */
+
+#rediseno .wireframe{
+    margin-top: 80px;
+    text-align: center;
+}
+
+#rediseno .wireframe h2{
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+#rediseno .wireframe img{
+    display: block;
+    width: 90%;
+    max-width: 1400px;
+    height: auto;
+    margin: 0 auto;
+}
+
+
+/* FOOTER */
+
+footer{
+    background-color: rgb(230,230,230);
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: rgb(100,100,100);
+}
+
+footer .container{
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+/* PANTALLAS GRANDES */
+
+@media (min-width: 850px){
+
+    /* HEADER */
+
+    header{
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+    }
+
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+
+    /* PORTADA */
+
+    #hero h1{
+        font-size: 5em;
+    }
+
+
+    /* INTRO */
+
+    #intro .container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #intro .texto{
+        width: 50%;
+        max-width: 600px;
+
+        text-align: initial;
+
+        padding-left: 30px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #intro h2{
+        margin-top: 0px;
+    }
+
+    #intro .img-container{
+        background-image: url("media/grabacion.jpg");
+
+        background-size: cover;
+        background-position: center center;
+
+        height: 500px;
+        width: 400px;
+    }
+
+
+    /* MAPA SISTÉMICO */
+
+    #mapa{
+        background-color: white;
+        color: black;
+    }
+
+    #mapa .container{
+        text-align: center;
+        padding: 100px 20px;
+    }
+
+    #mapa h2{
+        margin-top: 0;
+        margin-bottom: 50px;
+        font-size: 3em;
+    }
+
+    #mapa img{
+        display: block;
+        width: 90%;
+        max-width: 1100px;
+        height: auto;
+        margin: 0 auto 40px auto;
+    }
+
+    #mapa img:last-child{
+        max-width: 1100px;
+        margin-bottom: 0;
+    }
+
+
+    /* SCRIPTS */
+
+    #scripts .programas{
+        display: flex;
+        justify-content: center;
+    }
+
+    #scripts p{
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #scripts h2{
+        font-size: 4em;
+    }
+
+    #scripts h3{
+        margin-top: 0;
+    }
+
+    #scripts .carta{
+        padding: 50px;
+
+        background-size: 100% 150px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+
+        background-color: rgba(50,50,50,1);
+
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+
+        width: 30%;
+        min-height: 650px;
+
+        display: grid;
+        grid-template-rows: 150px 1fr;
+    }
+
+
+    /* ALINEAR TÍTULOS */
+
+    #scripts .carta h3{
+        height: 100px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 0;
+
+        text-align: center;
+    }
+
+
+    /* IMÁGENES DE LAS CARTAS */
+
+    .carta:first-child{
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ),
+        url("media/luisito.jpg");
+    }
+
+    .carta:nth-child(2){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ),
+        url("media/calidad.jpg");
+    }
+
+    .carta:nth-child(3){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ),
+        url("media/placa.jpg");
+    }
+
+
+    /* REDISEÑO */
+
+    #rediseno .container{
+        text-align: center;
+        padding: 150px 30px;
+    }
+
+    #rediseno h2{
+        font-size: 3.5em;
+    }
+
+    #rediseno p{
+        max-width: 1000px;
+        margin: 25px auto;
+    }
+
+
+    /* WIREFRAME */
+
+    #rediseno .wireframe{
+        margin-top: 100px;
+    }
+
+    #rediseno .wireframe h2{
+        font-size: 4em;
+        margin-bottom: 50px;
+    }
+
+    #rediseno .wireframe img{
+        width: 90%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+
+    /* FOOTER */
+
+    footer .container{
+        justify-content: flex-end;
+    }
+
+}
