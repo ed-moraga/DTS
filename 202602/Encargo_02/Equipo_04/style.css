@@ -1,0 +1,128 @@
+/* CONFIGURACIÓN GENERAL */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    color: #222;
+    margin: 0;
+}
+
+/* TÍTULO */
+
+header {
+    background: linear-gradient(120deg, #833ab4, #fd1d1d, #fcb045);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin: 0;
+}
+
+/* SECCIONES */
+
+section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* TÍTULOS */
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #833ab4;
+}
+
+h3 {
+    color: #333;
+}
+
+/* INTRODUCCIÓN */
+
+.introduccion p {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* MAPA */
+
+.mapa {
+    border: 3px solid #833ab4;
+    padding: 10px;
+    margin: 30px 0;
+}
+
+.mapa img {
+    width: 100%;
+    max-height: 650px;
+    object-fit: contain;
+    display: block;
+}
+
+/* SCRIPTS 1 Y 2 */
+
+.scripts {
+    display: flex;
+    gap: 25px;
+}
+
+.script {
+    border: 1px solid #ddd;
+    background-color: white;
+    padding: 25px;
+    flex: 1;
+}
+
+.script img {
+    width: 100%;
+    max-height: 550px;
+    object-fit: contain;
+    display: block;
+}
+
+/* SCRIPT PROBLEMÁTICO */
+
+.problematico {
+    margin-top: 30px;
+    border: 2px solid #e1306c;
+    background-color: #fff5f8;
+}
+
+.problematico h3 {
+    font-size: 25px;
+}
+
+.problematico img {
+    width: 100%;
+    max-height: 550px;
+    object-fit: contain;
+    display: block;
+}
+
+/* REDISEÑO */
+
+.redisenio {
+    border: 3px solid #833ab4;
+    padding: 10px;
+    margin: 30px 0;
+}
+
+.redisenio img {
+    width: 100%;
+    max-height: 550px;
+    object-fit: contain;
+    display: block;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+}
