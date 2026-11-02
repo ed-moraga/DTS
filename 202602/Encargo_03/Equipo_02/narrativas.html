@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <title>Dts invs</title><style>
+/* =====================================================
+   Estilo de todo :D
+   mini disclaimer: Todo esta hecho a mano y revisado con Ia a escepcion del javascript
+   ===================================================== */
+:root {
+  --bg: #080808;
+  --fg: #f4f4f0;
+  --muted: #a5a5a0;
+  --line: rgba(255,255,255,.22);
+  --panel: #151515;
+  --accent: #d7ff38;
+  --max: 1180px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh; background: var(--bg); color: var(--fg);
+  font-family: Arial, Helvetica, sans-serif; overflow-x: hidden;
+}
+a { color: inherit; }
+.site-header {
+  position: fixed; z-index: 20; top: 0; left: 0; width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 5vw; background: rgba(8,8,8,.88); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.brand { text-decoration: none; font-size: 12px; letter-spacing: 3px; font-weight: 700; }
+.menu-button {
+  border: 1px solid var(--fg); background: transparent; color: var(--fg);
+  padding: 11px 17px; font-size: 11px; letter-spacing: 2px; cursor: pointer;
+  transition: .3s ease;
+}
+.menu-button:hover { background: var(--fg); color: var(--bg); }
+.menu-panel {
+  position: absolute; top: 68px; right: 5vw; width: min(290px, 90vw);
+  background: var(--fg); color: var(--bg); padding: 8px;
+  opacity: 0; visibility: hidden; transform: translateY(-10px);
+  transition: opacity .3s ease, transform .3s ease, visibility .3s;
+}
+.menu-panel.open { opacity: 1; visibility: visible; transform: translateY(0); }
+.menu-panel a { display: block; color: var(--bg); padding: 15px 13px; text-decoration: none; font-size: 12px; letter-spacing: 1px; border-bottom: 1px solid #ccc; transition: .25s; }
+.menu-panel a:last-child { border: 0; }
+.menu-panel a:hover, .menu-panel a[aria-current="page"] { background: var(--bg); color: var(--fg); padding-left: 20px; }
+main { width: min(var(--max), 90%); margin: 0 auto; padding: 150px 0 100px; animation: pageIn .8s cubic-bezier(.22,1,.36,1) both; }
+@keyframes pageIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.eyebrow { color: var(--muted); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; }
+h1 { max-width: 1000px; font-size: clamp(3.4rem, 10vw, 9rem); line-height: .88; letter-spacing: -.075em; margin: 25px 0 35px; font-weight: 800; }
+h2 { font-size: clamp(2rem, 5vw, 4.2rem); line-height: .98; letter-spacing: -.055em; margin-bottom: 22px; }
+h3 { font-size: 1.25rem; margin-bottom: 12px; }
+p { color: #d0d0cb; font-size: 1rem; line-height: 1.75; max-width: 760px; }
+.lead { font-size: clamp(1.15rem, 2vw, 1.5rem); max-width: 760px; }
+.hero { min-height: 58vh; display: flex; flex-direction: column; justify-content: center; padding: 30px 0 75px; }
+.hero-bottom { display: flex; justify-content: space-between; align-items: end; gap: 25px; border-top: 1px solid var(--line); padding-top: 20px; margin-top: 45px; }
+.hero-bottom p { font-size: .85rem; max-width: 400px; }
+.accent { color: var(--accent); }
+.section { padding: 75px 0; border-top: 1px solid var(--line); }
+.section-heading { display: grid; grid-template-columns: 100px 1fr; gap: 25px; margin-bottom: 35px; }
+.section-number { color: var(--muted); font-size: 12px; letter-spacing: 2px; padding-top: 8px; }
+.section-content { padding-left: 125px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+.card { background: var(--panel); border: 1px solid var(--line); padding: 27px; min-height: 190px; }
+.card .tag { display: block; color: var(--accent); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; }
+.card p { font-size: .92rem; }
+.placeholder { color: #b9c0a0; font-style: italic; }
+.edit-note { border-left: 2px solid var(--accent); padding: 12px 17px; margin: 22px 0; color: #c9c9c2; font-size: .85rem; line-height: 1.6; }
+.quote { font-size: clamp(1.5rem, 3vw, 2.5rem); line-height: 1.25; letter-spacing: -.03em; color: var(--fg); max-width: 900px; margin: 25px 0; }
+.pill { display: inline-block; border: 1px solid var(--line); border-radius: 99px; padding: 8px 12px; color: var(--muted); font-size: 10px; letter-spacing: 1px; margin: 5px 5px 0 0; }
+.news-card { border-top: 1px solid var(--line); padding: 25px 0; display: grid; grid-template-columns: 160px 1fr; gap: 25px; }
+.news-date { color: var(--accent); font-size: 11px; letter-spacing: 2px; }
+.news-card a { display: inline-block; margin-top: 14px; font-size: 12px; text-underline-offset: 4px; }
+.transcript { border-top: 1px solid var(--line); }
+.transcript:last-child { border-bottom: 1px solid var(--line); }
+.transcript summary { cursor: pointer; list-style: none; padding: 22px 4px; display: flex; justify-content: space-between; gap: 20px; font-size: 1.1rem; }
+.transcript summary::-webkit-details-marker { display: none; }
+.transcript summary::after { content: "+"; color: var(--accent); font-size: 1.4rem; }
+.transcript[open] summary::after { content: "−"; }
+.transcript-body { padding: 0 4px 30px; }
+.transcript-body p { margin: 12px 0; }
+.footer { border-top: 1px solid var(--line); padding: 25px 5vw; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 10px; letter-spacing: 2px; }
+.page-nav { display: flex; justify-content: space-between; gap: 20px; margin-top: 70px; padding-top: 22px; border-top: 1px solid var(--line); }
+.page-nav a { text-decoration: none; font-size: 12px; letter-spacing: 1px; }
+.page-nav a:hover { color: var(--accent); }
+.light-section { background: #f1f1ed; color: #080808; padding: 55px; margin: 30px 0; }
+.light-section p { color: #333; }
+.light-section .eyebrow { color: #555; }
+@media (max-width: 700px) {
+  .site-header { padding: 17px 5vw; }
+  main { padding-top: 120px; }
+  .hero { min-height: 55vh; }
+  .hero-bottom { align-items: start; flex-direction: column; }
+  .section { padding: 52px 0; }
+  .section-heading { grid-template-columns: 1fr; gap: 12px; }
+  .section-content { padding-left: 0; }
+  .grid { grid-template-columns: 1fr; }
+  .news-card { grid-template-columns: 1fr; gap: 10px; }
+  .light-section { padding: 28px; }
+  .footer { flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+</style></head>
+<body>
+<header class="site-header"><a class="brand" href="index.html">Encargo 03</a><button class="menu-button" aria-expanded="false" aria-controls="menuPanel">MENÚ +</button><nav class="menu-panel" id="menuPanel" aria-label="Navegación principal"><a href="index.html">Introducción</a><a href="narrativas.html" aria-current="page">Narrativas</a><a href="futuro.html">Futuro</a><a href="anexos.html">Anexos</a></nav></header>
+<main>
+  <section class="hero"><span class="eyebrow"></span><h1>LAS<br>NARRATIVAS.</h1><p class="lead placeholder">Esta investigación indaga en las narrativas y discursos cotidianos sobre la tecnología en nuestro entorno, contrastando la percepción de las personas con una reflexión crítica desde el diseño para comprender cómo los avances técnicos transforman nuestra vida social y nuestra autonomía.</p><div class="hero-bottom"><p><br></p><p><br></p></div></section>
+  <section class="section"><div class="section-heading"><span class="section-number"></span><div><h2>¿Cómo leímos<br>los relatos?</h2></div></div><div class="section-content"><p class="placeholder">Realizamos un análisis temático del corpus de entrevistas agrupando los discursos en cuatro perfiles (Usuario-Progreso, Críticos de la desconexión humana, Críticos del desarrollo tecnológico y Pragmáticos/neutrales). A partir de esta categorización, detectamos tres tensiones transversales que cruzan las distintas experiencias y visiones sobre la tecnología en la vida cotidiana.</p><div class="edit-note">
+<article class="card"><span class="tag">PERFIL 01</span><h3>USUARIO-PROGRESO</h3><p class="placeholder">Perciben la tecnología como una herramienta de progreso que facilita la vida, amplía las oportunidades y mejora el bienestar. Destacan sus beneficios en ámbitos como el conocimiento, la salud, la comunicación y las tareas cotidianas.</p><p class="quote"></p><p class="placeholder"></p></article>
+    <article class="card"><span class="tag">PERFIL 02</span><h3>CRÍTICOS DE LA DESCONEXIÓN HUMANA</h3><p class="placeholder">Reconocen la utilidad de la tecnología, pero cuestionan su uso excesivo y sus efectos en las relaciones humanas. Les preocupa que la dependencia de los dispositivos disminuya la interacción social, la creatividad y la autonomía personal.</p><p class="quote"></p></article>
+    <article class="card"><span class="tag">PERFIL 03</span><h3>CRÍTICOS DEL DESARROLLO TECNOLÓGICO</h3><p class="placeholder">Cuestionan el rumbo que ha tomado el desarrollo tecnológico, especialmente cuando responde a intereses económicos y a la optimización de procesos. Les preocupa que esto provoque la pérdida de conocimientos tradicionales y oficios manuales.</p><p class="quote"></p><p class="placeholder"></p></article>
+    <article class="card"><span class="tag">PERFIL 04</span><h3>PRAGMÁTICOS/NEUTRALES DE LA TECNOLOGÍA</h3><p class="placeholder">Consideran que la tecnología no es buena ni mala por sí misma, sino que sus efectos dependen del uso que se le dé. Mantienen una postura equilibrada y destacan la importancia de utilizarla de manera consciente y responsable.</p><p class="quote"></p><p class="placeholder"></p></article>
+    <img src="tabla.png" alt="Tabla de síntesis" width="1000px"></div></div></section>
+  <section class="section"><div class="section-heading"><span class="section-number"></span><div><h2>Lo que aparece<br>en las entrevistas.</h2></div></div><div class="section-content">
+    <div class="grid">
+      <article class="card"><span class="tag">HALLAZGO 01</span><h3>Tecnología como herramienta vs. tecnología como necesidad.</h3><p class="placeholder">Varios entrevistados reconocen que la tecnología facilita sus actividades, pero también que se ha convertido en algo indispensable para desenvolverse en la sociedad. Esto evidencia una tensión entre utilizar la tecnología voluntariamente y depender de ella para participar en la vida cotidiana.
+</p></article>
+      <article class="card"><span class="tag">HALLAZGO 02</span><h3>Optimización vs. experiencia humana.</h3><p class="placeholder">Mientras algunos valoran la rapidez y eficiencia como expresiones de progreso, otros cuestionan lo que se pierde en ese proceso: relaciones presenciales, oficios tradicionales, habilidades manuales y tiempo personal.</p></article>
+      <article class="card"><span class="tag">HALLAZGO 03</span><h3>Progreso individual vs. bienestar colectivo.</h3><p class="placeholder">Los entrevistados reconocen que la tecnología ofrece nuevas oportunidades, pero no necesariamente beneficia a todas las personas por igual. Aparecen preocupaciones relacionadas con el acceso económico, las brechas generacionales, los intereses empresariales y el impacto ambiental.</p></article>
+    </div>
+  </div></section>
+  <section class="section"><div class="section-heading"><span class="section-number"></span><div><h2>Las narrativas<br>de las personas.</h2></div></div><div class="section-content">
+    <article class="card"><span class="tag">NARRATIVA 01</span><h3>TECNO-OPTIMISMO Y PROGRESISMO</h3><p class="placeholder">Esta narrativa entiende la tecnología como una expresión del progreso humano y como una herramienta capaz de mejorar la calidad de vida. Aparece de manera explícita cuando los entrevistados relacionan los avances tecnológicos con una mayor eficiencia, comodidad, accesibilidad y desarrollo en áreas como la medicina, la educación y el trabajo.
+Se presenta como algo natural, especialmente cuando se considera que la humanidad siempre ha avanzado mediante la creación de nuevas herramientas. Una entrevistada de 69 años, por ejemplo, compara su experiencia con el trabajo manual de antes y valora positivamente las facilidades que ofrecen los electrodomésticos actuales: “Yo, 100 % positiva, porque conocí la otra. O sea, conocí las manualidades, entonces esto es maravilloso”. En otra entrevista, una persona destaca que “la tecnología nos ha hecho avanzar en muchas cosas”, mencionando la automatización y los avances médicos.
+Sin embargo, esta narrativa no siempre implica una aceptación absoluta de la tecnología. En algunos discursos se combina con preocupaciones sobre la dependencia, la desigualdad de acceso o la pérdida de interacción humana. Así, el progreso se valora, pero también se cuestiona cuando sus beneficios no llegan a todas las personas o generan nuevas dificultades.
+</p><p class="quote"></p><p class="placeholder"></p></article>
+    <article class="card"><span class="tag">NARRATIVA 02</span><h3>TECNO-PESIMISMO</h3><p class="placeholder">El tecno-pesimismo aparece en los discursos que enfatizan los efectos negativos del desarrollo tecnológico sobre la vida cotidiana, las relaciones sociales y las capacidades humanas. Se manifiesta de forma explícita mediante críticas al uso excesivo de dispositivos, la dependencia, el aislamiento y la pérdida de autonomía.
+Una de las entrevistadas señala que “Cada vez la sociedad se ha puesto más individualista y es más difícil poder comunicarse con las personas”. En una línea similar, otro entrevistado cuestiona la cultura de la productividad y afirma: “Estamos viviendo en la cultura de la optimización”. Ambas citas reflejan una preocupación por cómo la tecnología puede modificar las formas de relacionarse y vivir.
+Esta narrativa también puede aparecer de manera implícita cuando los entrevistados expresan nostalgia por formas de interacción anteriores o imaginan un futuro en el que las máquinas reemplacen actividades humanas. No obstante, no necesariamente conduce al rechazo de la tecnología: suele combinarse con el tecno-optimismo y el instrumentalismo. Esto genera una contradicción relevante: se reconocen los beneficios de la tecnología, pero se teme que su incorporación excesiva termine perjudicando aquello que debería mejorar, como la calidad de vida y las relaciones humanas.
+</p><p class="quote"></p></article>
+    <article class="card"><span class="tag">NARRATIVA 03</span><h3>INSTRUMENTALISMO</h3><p class="placeholder">El instrumentalismo entiende la tecnología como una herramienta cuyo valor depende del uso que las personas hacen de ella. En esta narrativa, la tecnología no es buena ni mala por naturaleza; sus consecuencias están determinadas por las decisiones, intenciones y responsabilidades de quienes la utilizan o desarrollan.
+Aparece de manera explícita en afirmaciones como “Depende de cómo se aplique» y «Toda la tecnología puede ser mala si se aplica de mala manera”. También se reconoce cuando los entrevistados atribuyen la responsabilidad de los efectos negativos a los usuarios o a quienes diseñan y desarrollan las herramientas.
+Esta postura suele combinarse con el tecno-optimismo y el tecno-pesimismo, ya que permite reconocer tanto los beneficios como los riesgos de una misma tecnología. Sin embargo, también puede generar una tensión: aunque se reconoce que el diseño y las condiciones de desarrollo tecnológico influyen en sus consecuencias, parte de la responsabilidad se traslada al comportamiento individual. Esto puede dejar en segundo plano factores más amplios, como los intereses económicos o las desigualdades de acceso.
+</p><p class="quote"></p></article>
+    <article class="card"><span class="tag">NARRATIVA 04</span><h3>SOLUCIONISMO TENCOLÓGICO</h3><p class="placeholder">Esta narrativa considera que los problemas sociales o cotidianos pueden resolverse, al menos parcialmente, mediante el desarrollo o la incorporación de nuevas tecnologías. Se presenta cuando los entrevistados proponen herramientas tecnológicas como respuesta a necesidades concretas, por ejemplo, mejorar la atención médica, facilitar el acceso a servicios o prevenir situaciones de riesgo.
+Una entrevistada plantea que una persona que necesita atención médica urgente podría “hacerlo de manera online”, mientras que otro entrevistado propone que “podríamos generar alertas en base a distintas mediciones” para anticipar posibles crisis. En ambos casos, la tecnología aparece como una solución práctica frente a un problema existente.
+Esta narrativa se expresa principalmente de forma explícita, a través de propuestas y ejemplos concretos. En ocasiones se combina con el tecno-optimismo, porque supone que la innovación puede producir mejoras en la sociedad. Sin embargo, también puede convivir con una mirada crítica: los entrevistados reconocen que una solución tecnológica puede tener limitaciones, depender de las condiciones de acceso o generar riesgos si falla.
+</p><p class="quote"></p></article>
+    <article class="card"><span class="tag">NARRATIVA 05</span><h3>TECNO-DEPENDENCIA</h3><p class="placeholder">La tecno-dependencia se manifiesta cuando la tecnología deja de percibirse únicamente como una herramienta y comienza a entenderse como algo indispensable para desenvolverse en la vida cotidiana. Puede aparecer de forma explícita, cuando los entrevistados reconocen que les costaría vivir sin ciertos dispositivos, o de manera implícita, cuando describen actividades que ya consideran inseparables de su uso.
+Una entrevistada señala: “A pesar de que yo me crié sin celular, ahora es indispensable para todo”. En otra entrevista se expresa una dependencia similar: “Todo lo tengo en el teléfono, me costaría mucho vivir sin él”.
+Esta narrativa resulta especialmente interesante porque no siempre se presenta como algo negativo. Puede aparecer asociada a la comodidad y a la adaptación a nuevas formas de vida, pero también genera preocupación por la pérdida de autonomía. En este sentido, se relaciona con el tecno-optimismo por las facilidades que ofrece la tecnología, y con el tecno-pesimismo por la dificultad de prescindir de ella. La contradicción está en valorar una herramienta precisamente porque facilita la vida, mientras se reconoce que esa misma facilidad puede volverla indispensable.
+</p><p class="quote"></p><p class="placeholder"></p></article>
+    <article class="card"><span class="tag">NARRATIVA 06</span><h3>TECNO-PODER Y DESIGUALDAD DE ACCESO</h3><p class="placeholder">Esta narrativa cuestiona cómo el poder económico y el control de la tecnología condicionan quiénes pueden acceder a sus beneficios y quiénes quedan excluidos. Aparece cuando los entrevistados advierten que el desarrollo tecnológico no beneficia a todas las personas por igual o que quienes controlan estas herramientas pueden concentrar poder y recursos.
+Una entrevistada plantea que existen personas que necesitan utilizar ciertos servicios tecnológicos, pero “no tienen los recursos para poder comprar o pagar”. Otro entrevistado advierte que “la gente que controla la tecnología empieza a apoderarse aún más”.
+La narrativa se presenta explícitamente al hablar de las barreras económicas y de la concentración del control tecnológico. También puede estar implícita en las críticas a la automatización cuando se relaciona con la reducción de costos o la pérdida de oficios. Se combina con el tecno-pesimismo, al cuestionar las consecuencias del desarrollo tecnológico, pero también con el tecno-optimismo, cuando se reconoce que la tecnología podría ampliar el acceso a servicios. La tensión principal es que aquello que se presenta como una herramienta de progreso puede reproducir o profundizar desigualdades si su acceso depende de la capacidad económica.
+</p><p class="quote"></p><p class="placeholder"></p></article>
+    <div class="edit-note">Las narrativas identificadas muestran que las percepciones sobre la tecnología no se organizan en dos posiciones opuestas, sino que se construyen a partir de valoraciones que pueden coexistir y contradecirse. El tecno-optimismo convive con el temor a la dependencia; el instrumentalismo reconoce los riesgos, pero los atribuye principalmente al uso; y el tecnopoder cuestiona que el progreso tecnológico beneficie a todos por igual.
+Una tensión transversal del corpus es la diferencia entre lo que la tecnología promete y los efectos que produce en la experiencia cotidiana. Aunque se la considera una herramienta que facilita la vida, también se cuestiona que esa comodidad implique una mayor dependencia, una menor interacción humana o nuevas desigualdades. De esta manera, el progreso tecnológico aparece como algo deseable, pero no necesariamente positivo en todas sus dimensiones.
+</div>
+  </div></section>
+  <section class="section"><div class="section-heading"><span class="section-number"></span><div><h2>Nuestra narrativa<br>como grupo.</h2></div></div><div class="section-content"><p class="placeholder"><img src="POSICION.png" alt="¿Cómo nos posicionamos como equipo?" width="800px">
+    Como equipo, nos posicionamos principalmente desde la teoría crítica, entendiendo que la tecnología no es neutral y que su desarrollo está condicionado por intereses económicos, políticos y sociales. Nos interesa cuestionar quiénes la desarrollan, quiénes la controlan, a quiénes benefician sus avances, quiénes quedan fuera. Esta postura se relaciona especialmente con la narrativa del tecnopoder, ya que reconocemos que la tecnología puede concentrar poder y profundizar desigualdades.
+También identificamos una presencia del tecno-pesimismo en nuestro discurso, principalmente al reflexionar sobre las consecuencias negativas que puede tener la incorporación de la tecnología en la vida cotidiana. Nos preocupa la dependencia, la pérdida de autonomía y el debilitamiento de las relaciones humanas. Sin embargo, esto no significa que rechacemos los avances tecnológicos, sino que tendemos a cuestionar sus efectos y las condiciones en que se producen y cuál es el verdadero costo de la economía de la atención.
+Por otra parte, reconocemos elementos de instrumentalismo, especialmente cuando consideramos que las consecuencias de una tecnología dependen de cómo se utiliza y de las decisiones de las personas que la desarrollan o implementan. Esto genera cierta tensión con nuestra postura crítica: por un lado, cuestionamos las estructuras que condicionan el desarrollo tecnológico y, por otro, reconocemos la capacidad humana de orientar su uso. Esta reflexión también está relacionada con nuestra formación en diseño, una disciplina estrechamente vinculada a la tecnología, tanto por las herramientas que utilizamos en nuestros procesos de creación como por la manera en que esta transforma las posibilidades de diseñar y desarrollar soluciones. Al desempeñarnos en una carrera cuyo ejercicio se ve constantemente modificado por los avances tecnológicos, reconocemos que la tecnología no solo es algo que analizamos críticamente, sino también una herramienta fundamental de nuestro ámbito. 
+Estas posturas coinciden con algunas narrativas identificadas en las entrevistas. Al igual que ciertos entrevistados, cuestionamos la dependencia tecnológica y la pérdida de interacción humana, pero también reconocemos sus posibilidades y beneficios. La diferencia está en que nuestra reflexión pone especial énfasis en las estructuras de poder que influyen en el desarrollo y acceso a la tecnología, más allá de las decisiones individuales de sus usuarios.
+En definitiva, nuestra posición no es completamente contraria al desarrollo tecnológico. Más bien, tendemos a adoptar una mirada crítica que busca comprender sus consecuencias, cuestionar los intereses que lo orientan y reconocer que el progreso tecnológico no necesariamente representa un progreso social.
+
+</p><p class="quote">El progreso tecnológico no necesariamente representa un progreso social; la comodidad tiene un costo invisible sobre nuestra autonomía.</p><p class="placeholder"></p></div></section>
+  <div class="page-nav"><a href="index.html">← VOLVER AL INICIO</a><a href="futuro.html">CONTINUAR: FUTURO ↗</a></div>
+</main><footer class="footer"><span></span><span>02 / 04</span></footer><script>
+// Menú desplegable compartido por todas las páginas.
+const menuButton = document.querySelector('.menu-button');
+const menuPanel = document.querySelector('.menu-panel');
+if (menuButton && menuPanel) {
+  menuButton.addEventListener('click', () => {
+    const open = menuPanel.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.textContent = open ? 'CERRAR −' : 'MENÚ +';
+  });
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.site-header')) {
+      menuPanel.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.textContent = 'MENÚ +';
+    }
+  });
+}
+
+</script></body></html>
