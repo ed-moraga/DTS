@@ -1,0 +1,326 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: #f7f7f5;
+    color: #171717;
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------------------
+   NAVEGACIÓN
+------------------------- */
+
+nav {
+    width: 100%;
+    padding: 22px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #bdbdbd;
+    background-color: #f7f7f5;
+}
+
+.logo {
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: #171717;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.menu a:hover {
+    color: #2563EB;
+}
+
+/* -------------------------
+   inicio
+------------------------- */
+
+.portada {
+    padding: 90px 6% 70px;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.numero {
+    color: #2563EB;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.portada h1 {
+    font-size: clamp(55px, 10vw, 140px);
+    line-height: 0.88;
+    letter-spacing: -7px;
+    text-transform: uppercase;
+    max-width: 1100px;
+    margin: 60px 0 30px;
+}
+
+.portada h1 span {
+    color: #2563EB;
+}
+
+.bajada {
+    max-width: 550px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* -------------------------
+   secciones
+------------------------- */
+
+section {
+    padding: 80px 6%;
+    border-top: 1px solid #bdbdbd;
+}
+
+.etiqueta {
+    color: #2563EB;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+section h2 {
+    font-size: clamp(35px, 6vw, 75px);
+    line-height: 0.95;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    margin: 25px 0;
+}
+
+section p {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 700px;
+}
+
+/* -------------------------
+   bloques
+------------------------- */
+
+.bloque {
+    padding: 35px 0;
+    border-top: 1px solid #bdbdbd;
+}
+
+.bloque h3 {
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.cita {
+    margin: 35px 0;
+    padding: 25px;
+    background-color: #eaeae7;
+    border-left: 4px solid #2563EB;
+    font-size: 23px;
+    line-height: 1.3;
+    font-weight: bold;
+}
+
+.autor-cita {
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 15px;
+    display: block;
+}
+
+/* integrantes */
+
+.integrantes {
+    background-color: #171717 !important;
+    color: white;
+}
+
+.integrantes h2,
+.integrantes p {
+    color: white;
+}
+
+.integrantes .etiqueta {
+    color: #00A6D6;
+}
+
+/* noticias */
+
+.bloque a {
+    color: #00A6D6;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.bloque a:hover {
+    text-decoration: underline;
+}
+/* -------------------------
+   tarjetas
+------------------------- */
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.tarjeta {
+    border: 1px solid #bdbdbd;
+    padding: 25px;
+}
+
+.tarjeta h3 {
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.tarjeta a {
+    color: #2563EB;
+    font-weight: bold;
+}
+
+/* -------------------------
+   footer
+   --------- */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 25px 6%;
+    background-color: #171717;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    z-index: 100;
+}
+
+.entrevista strong {
+    color: #2563EB;
+    font-weight: bold;
+    display: block;
+    margin-top: 25px;
+}
+
+.entrevista p {
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+
+/* -------------------------
+  nav
+------------------------- */
+
+@media (max-width: 700px) {
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .portada h1 {
+        letter-spacing: -3px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
+
+/* entrevistas*/
+
+details {
+    padding: 20px 0;
+}
+
+summary {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    list-style: none;
+}
+
+summary::after {
+    content: "+";
+    float: right;
+    color: #00A6D6;
+    font-size: 25px;
+}
+
+details[open] summary::after {
+    content: "−";
+}
+
+details p {
+    margin-top: 25px;
+}
+
+/* referencias*/
+
+.referencias {
+    padding: 100px 10%;
+    border-bottom: 1px solid #333;
+}
+
+.referencias h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+
+.referencia {
+    border-top: 1px solid #444;
+    padding: 20px 0;
+    max-width: 900px;
+}
+
+.referencia p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
