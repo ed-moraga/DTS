@@ -1,0 +1,68 @@
+
+
+.pagina-tres {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.pagina-tres .contenido {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 35px;
+    line-height: 1.8;
+
+    flex: 1;
+}
+
+/* introduccion */
+.pagina-tres .introduccion-futura {
+    margin-bottom: 40px;
+}
+
+.pagina-tres .introduccion-futura h2 {
+    color: #6A329F;
+    margin-top: 0;
+}
+
+ /* columnas */
+.pagina-tres .texto-columnas {
+    width: 100%;
+
+    column-count: 2;
+    column-gap: 40px;
+    column-rule: 1px solid #D0D0D0;
+
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.pagina-tres .texto-columnas p {
+    margin-top: 0;
+    margin-bottom: 22px;
+
+    break-inside: avoid;
+}
+
+ /* referencias*/
+.pagina-tres .referencias {
+    width: 100%;
+    margin-top: 45px;
+    padding: 25px 30px;
+    background-color: #E5E5E5;
+    border-radius: 3px;
+    line-height: 1.6;
+}
+
+/* titulo referencias */
+.pagina-tres .referencias h2 {
+    color: #6A329F;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 20px;
+}
+.pagina-tres .referencias p {
+    margin: 0 0 12px;
+    font-size: 14px;
+    text-align: left;
+}
