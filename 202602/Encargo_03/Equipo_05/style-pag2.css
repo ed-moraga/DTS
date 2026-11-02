@@ -1,0 +1,381 @@
+h1 {
+    padding-bottom: 20px;
+}
+.introduccion {
+    padding-left: 50px;
+}
+.introduccion h3 {
+    font-size: 27px;
+    color: #6B2D5C; /*violeta*/;
+    border-left: 4px solid #6B2D5C; /*violeta*/;
+}
+.introduccion p {
+    font-size: 20px;
+    padding: 20px;
+}
+
+
+/*Noticias general*/
+.noticias {
+    max-width: 80%;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+.modal-toggle {
+    display: none;
+}
+/*tarjetas noticias+resémenes*/
+.modal-trigger {
+    background-color: #FBD1A2; /*naranjo claro*/
+    border: 3px solid #FC9F5B; /*naranjo*/
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(107, 45, 95, 0.4); /*violeta*/
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.modal-trigger:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(107, 45, 95, 0.4); /*violeta*/
+}
+.modal-trigger h4 {
+    font-size: 30px;
+    color: #6B2D5C; /*violeta*/
+    margin-top: 0;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #6B2D5C; /*violeta*/
+    padding-bottom: 6px;
+    text-align: center;
+}
+.modal-trigger i {
+    color: #7DCFB6; /*turquesa*/
+}
+.modal-trigger img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #FC9F5B; /*naranjo*/
+    margin-bottom: 12px;
+}
+.noticia-resumen {
+    background-color: #F6F4F1; /*color crema*/
+    border: 2px solid #7DCFB6; /*turquesa*/
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    flex-grow: 1;
+}
+.noticia-resumen p {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #001011; /*negro*/
+    margin: 0;
+}
+.indicador-voltear {
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #FC9F5B; /*naranjo*/
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-align: center;
+}
+/*Pop-up's*/
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /*negro*/
+    backdrop-filter: blur(2.5px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#modal-1:checked ~ .modal-overlay,
+#modal-2:checked ~ .modal-overlay,
+#modal-3:checked ~ .modal-overlay,
+#modal-4:checked ~ .modal-overlay {
+    display: flex;
+}
+/* Contenido del pop-up */
+.modal-content {
+    background-color: #FBD1A2; /*naranjo claro*/
+    border: 3px solid #FC9F5B; /*naranjo*/
+    border-radius: 14px;
+    max-width: 60%;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 30px;
+    position: relative;
+    box-shadow: 0 6px 15px rgba(107, 45, 95, 0.4); /*violeta*/
+    box-sizing: border-box;
+}
+.modal-content h5 {
+    color: #6B2D5C; /*violeta*/
+    margin-top: 0;
+    font-size: 30px;
+    padding-bottom: 15px;
+}
+.modal-texto {
+    background-color:#F6F4F1; /*color crema*/
+    border: 3px solid #6B2D5C; /*violeta*/
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.modal-texto p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #001011; /*negro*/
+    margin: 0;
+}
+.modal-content .noticia-importante {
+    background-color: #F6F4F1; /*color crema*/
+    border-radius: 6px;
+    padding: 10px 15px;
+    border: 2px solid #7DCFB6; /*turquesa*/
+}
+.modal-content .noticia-importante ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #001011; /*negro*/
+    font-size: 17px;
+}
+.modal-content .noticia-citas blockquote {
+    font-style: italic;
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-left: 4px solid #6B2D5C; /*violeta*/
+    padding: 8px 12px;
+    margin: 0;
+    border-radius: 0 6px 6px 0;
+    color: #001011; /*negro*/
+}
+.modal-content .puntos-relevantes {
+    background-color: #F6F4F1; /*color crema*/
+    border-radius: 6px;
+    padding: 10px 15px;
+    border: 2px solid #7DCFB6; /*turquesa*/
+}
+.modal-content a {
+    display: inline-block;
+    background-color: #FC9F5B; /*naranjo*/
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    align-self: center;
+    transition: background-color 0.2s ease;
+}
+.modal-content a:hover {
+    background-color: #FBD1A2; /*naranjo claro*/
+    color: #001011; /*negro*/
+}
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #6B2D5C; /*violeta*/
+    border-radius: 4px;
+}
+/*Botón de cerrar*/
+.modal-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    color: #6B2D5C; /*violeta*/
+    cursor: pointer;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+.modal-cerrar:hover {
+    background-color: #6B2D5C; /*violeta*/
+    color: white;
+}
+.noticia-card input[type="checkbox"]:checked ~ .modal-overlay {
+    display: flex;
+}
+/*Toda esta parte fue usando de plantilla la entrega anterior, por lo que lo adpaté con ligeros pequeños cambios. Pero el formato en sí, es parcialmente idéntico al wireframe del rediseño que propusimos para TikTok*/
+
+/*Predicción*/
+.texto-futuro {
+    padding-left: 50px;
+}
+.texto-futuro h3 {
+    font-size: 27px;
+    color: #6B2D5C; /*violeta*/;
+    border-left: 4px solid #6B2D5C; /*violeta*/;
+    margin-top: 70px;
+}
+.texto-futuro p {
+    font-size: 20px;
+    padding: 20px;
+}
+/*Bola de cristal*/
+.crystal-ball-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+    position: relative;
+}
+.crystal-checkbox {
+    display: none;
+}
+/*Diseño bola de cristal*/
+.crystal-ball {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    background: linear-gradient(135deg, #7DCFB6, #FC9F5B, #6B2D5C);
+    background-size: 300% 300%;
+    animation: gradient-animacion 6s ease infinite;
+    
+    box-shadow: inset -10px -10px 25px rgba(0, 0, 0, 0.4),
+                inset 10px 10px 25px rgba(255, 255, 255, 0.5),
+                0 0 25px rgba(125, 207, 182, 0.6);
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+@keyframes gradient-animacion {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.crystal-ball:hover {
+    transform: scale(1.08);
+    box-shadow: inset -10px -10px 25px rgba(0, 0, 0, 0.4),
+                inset 10px 10px 25px rgba(255, 255, 255, 0.7),
+                0 0 35px #FC9F5B;
+}
+.crystal-text {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    padding: 10px;
+}
+/*Predicción pop-up*/
+.crystal-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /*negro*/
+    backdrop-filter: blur(2.5px);
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.crystal-checkbox:checked ~ .crystal-modal-overlay {
+    display: flex;
+}
+.crystal-modal-content {
+    background-color: #FBD1A2; /*naranjo claro*/
+    border: 3px solid #FC9F5B; /*naranjo*/
+    border-radius: 16px;
+    max-width: 850px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 35px;
+    position: relative;
+    box-shadow: 0 6px 15px rgba(107, 45, 95, 0.4); /*violeta*/
+    text-align: center;
+    box-sizing: border-box;
+}
+.crystal-modal-content h3 {
+    margin-top: 0;
+    font-size: 24px;
+    border-bottom: 2px solid #6B2D5C; /*violeta*/
+    padding-bottom: 10px;
+}
+.crystal-modal-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #001011; /*negro*/
+    background-color: #F6F4F1; /*color crema*/
+    border: 2px solid #7DCFB6; /*turquesa*/
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: left;
+}
+.crystal-modal-content i {
+    color: #7DCFB6; /*turquesa*/
+}
+.crystal-modal-content blockquote {
+    font-style: italic;
+    font-size: 15px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-left: 4px solid #6B2D5C; /*violeta*/
+    padding: 8px 12px;
+    margin: 0;
+    color: #001011; /*negro*/
+    text-align: left;
+}
+.crystal-modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+.crystal-modal-content::-webkit-scrollbar-thumb {
+    background-color: #6B2D5C; /*violeta*/
+    border-radius: 4px;
+}
+
+/* Botón de cerrar (X) */
+.crystal-cerrar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    color: #6B2D5C; /*violeta*/
+    cursor: pointer;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+.crystal-cerrar:hover {
+    background-color: #6B2D5C; /*violeta*/
+    color: white;
+}

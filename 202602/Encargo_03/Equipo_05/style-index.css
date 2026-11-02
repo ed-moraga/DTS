@@ -1,0 +1,88 @@
+/*Aspectos generales*/
+.index-principal {
+    max-width: 1100;
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+.inicio {
+    padding: 0 30px;
+    margin-bottom: 30px;
+}
+.inicio h3 {
+    color: #6B2D5C; /*violeta*/
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    text-align: left;
+    border-left: 4px solid #6B2D5C; /*violeta*/
+    padding-left: 20px;
+}
+.inicio p {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #001011; /*negro*/
+    max-width: 950px;
+    margin: 0 auto;
+}
+/*Análisis etarios*/
+.grid-edades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+.tarjeta-analisis {
+    background-color: #FBD1A2; /*naranjo claro*/
+    border: 3px solid #FC9F5B; /*naranjo*/
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 6px 15px rgba(107, 45, 95, 0.4); /*violeta*/
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+.tarjeta-analisis h3 {
+    color: #6B2D5C; /*violeta*/
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #6B2D5C; /*violeta*/
+    padding-bottom: 6px;
+    text-align: center;
+}
+.tarjeta-analisis p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #001011; /*negro*/
+    margin: 0;
+}
+/*Análisis de género*/
+.tarjeta-genero {
+    background-color: #7DCFB6; /*turquesa*/
+    border: 3px solid #38826b; /*turquesa oscuro*/
+    border-radius: 14px;
+    padding: 30px 35px;
+    box-shadow: 0 6px 15px rgba(56, 130, 107, 0.2);
+}
+.tarjeta-genero h3 {
+    color: #6B2D5C; /* Violeta */
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #6B2D5C;
+    padding-bottom: 8px;
+}
+.tarjeta-genero p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #001011;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.5); /* Caja translúcida interna */
+    padding: 20px;
+    border-radius: 8px;
+    border: 3px solid #38826b; /*turquesa oscuro*/
+}
+/*Toda esta página la hice por mi propia cuenta, después de harta experiencia con las otras páginas*/

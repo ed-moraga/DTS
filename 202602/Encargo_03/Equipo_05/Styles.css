@@ -1,0 +1,213 @@
+/*General*/
+* {
+	margin: 0;
+}
+body {
+	background-color: #F6F4F1; /*color crema*/
+	color: #001011; /*negro*/
+	font-family: "Charis-SIL";
+}
+h1{
+	text-align: center;
+	font-size: 35px;
+	padding: 10px;
+}
+footer {
+	text-align: center;
+    background-image: linear-gradient(rgba(246, 244, 241, 0.3), rgba(246, 244, 241, 0.3)), url('img/fondo-footer.svg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    padding: 40px 30px;
+    margin-top: 10px;
+}/*Gracias cony por enseñarnos a como poner una imagen de fondo. Gracias por tanto, perdón por tan poco
+Yyyy, la imagen que aparece, con las curvas, la creé yo. Autoría propia*/
+
+/*Links superiores*/
+.barra-superior {
+    text-align: center;
+    padding: 20px 0 10px 0;
+}
+.links-superiores {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px 20px;
+    background-image: linear-gradient(rgba(246, 244, 241, 0.3), rgba(246, 244, 241, 0.3)), url('img/fondo-links.svg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.links-superiores::after {
+	content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    height: 4px;
+    background-color: #6B2D5C;
+    border-radius: 2px;
+}
+.links-superiores a {
+    text-decoration: none;
+    color: #001011; /*negro*/
+    font-size: 18px;
+    padding: 6px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.links-superiores a:hover {
+    background-color: #7DCFB6; /*turquesa*/
+   	color: white;
+}
+.linea-divisoria {
+    border: none;
+    border-top: 1px solid #d0c8be; /*otra variación de color crema*/
+    width: 85%;
+    margin: 0 auto;
+}
+
+/*Menú lateral*/
+.menu-checkbox {
+	position: absolute;
+	opacity: 0;
+	pointer-events: none;
+	width: 0;
+	height: 0;
+}
+.menu-btn span {
+	display: none;
+}
+.menu-btn {
+	position: fixed;
+	top: 15px;
+	left: 15px;
+	z-index: 1100;
+	background-color: #FC9F5B; /*naranjo*/
+	color: white;
+	padding: 8px 12px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-family: sans-serif;
+	font-weight: bold;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease, background-color 0.3s ease;
+	animation: mostrar-boton linear;
+	animation-timeline: scroll();
+	animation-range: 120px 250px;
+}
+@keyframes mostrar-boton {
+	0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+    100% {
+        opacity: 0.85; 
+        pointer-events: auto;
+    }
+}
+@supports (animation-timeline: scroll()) {
+    .menu-btn {
+        animation-fill-mode: forwards;
+    }
+}
+.menu-btn:hover {
+    opacity: 1 !important;
+}
+.menu-btn:hover span {
+    display: inline;
+}
+@supports not (animation-timeline: scroll()) {
+    .menu-btn {
+        opacity: 0.85;
+        pointer-events: auto;
+    }
+}
+aside.menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	color: white;
+	width: 20%;
+	min-width: 200px;
+	height: 100%;
+	padding: 20px 10px;
+	background-color: #FC9F5B; /*naranjo*/
+	box-shadow: 0 6px 15px rgba(107, 45, 95, 0.4); /*violeta*/
+	box-sizing: border-box;
+	transition: transform 0.3s ease;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+}
+.menu-checkbox:not(:checked) ~ aside.menu {
+	transform: translateX(-100%);
+}
+.menu-checkbox:checked ~ .menu-btn {
+	display: none;
+}
+.menu-checkbox:checked ~ .menu-overlay {
+	display: block;
+}
+.menu-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.3); /*negro*/
+	backdrop-filter: blur(2.5px);
+	z-index: 900; 
+}
+aside ul {
+	list-style: none;
+	padding: 0;
+	margin: 20px 0 0 0;
+}
+aside li {
+	margin-bottom: 8px;
+}
+aside a {
+	color: white;
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 10px 12px;
+	transition: background-color 0.2s ease;
+	border-radius: 7px;
+}
+aside a:hover {
+	background-color: #FBD1A2; /*naranjo claro*/
+	color: #001011; /*negro*/
+}
+aside .grupo {
+	margin-top: auto;
+	padding-bottom: 20px;
+	text-align: center;
+}
+.menu-cerrar {
+	position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu-cerrar:hover {
+	background-color: #FBD1A2; /*naranjo claro*/
+	color: #001011; /*negro*/
+	margin: 0;
+	border-radius: 50%;
+}
+/*La caja de menú me ayude con Gemini, con el prompt: Quiero que el 'aside' de la izquierda, sea un menú que aparezca si se preciona, pero desaparezca en el resto de acciones para poder leer la información. Ojo que este elemento de 'aside' no está solo en la página, también hay texto a su derecha que es la información principal. Además, necesito que el 'aside' cubra toda la pantalla en su altitud, de ancho sea de un 15%; por otro lado debe ser un menú que se esconda, como una barra lateral, pero que al momento de presionarlo, se extienda, y despliegue todas las opciones.
+Aclaración importante: De igual forma, elementos com el botón de cerrar el menú y el fondo borroso lo hice por mi cuenta, usando de referencia la entrega anterior*/

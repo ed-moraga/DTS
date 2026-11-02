@@ -1,0 +1,209 @@
+/*Pregunta introductoria*/
+.pregunta {
+    max-width: 65%;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+.comentario-inicial {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: transparent; 
+    border: 3px solid #6B2D5C; /*violeta*/
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 20px;
+}
+.comentario-imagen {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+}
+.comentario-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.comentario-contenido {
+    display: flex;
+    flex-direction: column;
+}
+.comentario-contenido .nombre-usuario {
+    font-size: 23px;
+    color: #6B2D5C; /*violeta*/
+    font-weight: bold;
+    margin: 0 0 8px 0;
+}
+.comentario-contenido p {
+    font-size: 23px;
+    line-height: 1.4;
+    color: #001011; /*negro*/
+    margin: 0;
+}
+
+
+/*Post del foro de discusión*/
+/*Feed*/
+.feed-posts {
+    max-width: 80%;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+/*Posts*/
+.post {
+    position: relative;
+    display: flex;
+    gap: 25px;
+    background-color: #FBD1A2; /*naranjo claro*/
+    border: 3px solid #FC9F5B; /*naranjo*/
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 15px rgba(107, 45, 95, 0.4); /*violeta*/
+}
+.btn-like-radio,
+.btn-dislike-radio {
+    display: none;
+}
+/*Imagen*/
+.imagen-container {
+    width: 180px;
+    flex-shrink: 0;
+}
+.imagen-container img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #6B2D5C; /*violeta*/
+}
+/*Texto*/
+.post-contenido {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.nombre-usuario {
+    font-size: 23px;
+    color: #001011; /*negro*/
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+.post-texto {
+    background-color: #F6F4F1; /*color crema*/
+    border: 2px solid #7DCFB6; /*turquesa*/
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+}
+.post-texto p {
+    font-size: 17px;
+    line-height: 1.5;
+    color: #001011; /*negro*/
+    margin: 0;
+}
+.post-texto i {
+    color: #7DCFB6;
+}
+
+/*Botones de Like-Dislike*/
+.post-acciones {
+    display: flex;
+    gap: 15px;
+}
+.btn-accion {
+    background-color: #F6F4F1; /*color crema*/
+    color: #001011; /*negro*/
+    border: 2px solid #7DCFB6; /*turquesa*/
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-accion:hover {
+    background-color: #7DCFB6; /*turquesa*/
+    border: 2px solid #38826b; /*turquesa oscuro*/
+    color: #001011; /*negro*/
+}
+.emoticon-feedback {
+    position: absolute;
+    right: 20px;
+    font-size: 50px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.post:has(#like-1:checked) .emoticon-feedback,
+.post:has(#like-2:checked) .emoticon-feedback,
+.post:has(#like-3:checked) .emoticon-feedback,
+.post:has(#like-4:checked) .emoticon-feedback {
+    opacity: 1;
+    transform: scale(1);
+}
+.post:has(#like-1:checked) .emoticon-feedback::after,
+.post:has(#like-2:checked) .emoticon-feedback::after,
+.post:has(#like-3:checked) .emoticon-feedback::after,
+.post:has(#like-4:checked) .emoticon-feedback::after {
+    content: "❤️";
+}
+.post:has(#dislike-1:checked) .emoticon-feedback,
+.post:has(#dislike-2:checked) .emoticon-feedback,
+.post:has(#dislike-3:checked) .emoticon-feedback,
+.post:has(#dislike-4:checked) .emoticon-feedback {
+    opacity: 1;
+    transform: scale(1);
+}
+.post:has(#dislike-1:checked) .emoticon-feedback::after,
+.post:has(#dislike-2:checked) .emoticon-feedback::after,
+.post:has(#dislike-3:checked) .emoticon-feedback::after,
+.post:has(#dislike-4:checked) .emoticon-feedback::after {
+    content: "💔";
+}
+/*Para hacer los posts con nuestras opiniones, usé el promtp en Gemini: Quiero hacerlo estilo blog (como Reddit o Amino). Entonces, necesito que cada imagen esté a la izquierda y debajo de ella se encuentre el "nombre" (los h4). A la derecha de ello, estaría el texto <p> de cada uno. Cada texto quiero que esté enmarcado en un cuadro/contorno. Además, abajo de cada texto iría 2 botones: uno de "like" y otro de "dislike", solo se puede presionar uno a la vez, y que al presionarlo queda el emoticón en la zona superior derecha.
+No obstante, detalles de decoración, formatos de letras, uso de colores, estética general de la página, fue criterio propio
+PD: Gracias Fran por lo dibujos de nosotros versión JoJo's*/
+
+/*Aálisis general: opiniones propias+entrevistas*/
+.analisis {
+    max-width: 70%;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+.analisis-completo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: transparent; 
+    border: 3px solid #6B2D5C; /*violeta*/
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 20px;
+}
+.analisis-imagen {
+    width: 120px;
+    height: 120px;
+    flex-shrink: 0;
+}
+.analisis-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.analisis-contenido {
+    display: flex;
+    flex-direction: column;
+}
+.analisis-contenido .nombre-usuario {
+    font-size: 23px;
+    color: #6B2D5C; /*violeta*/
+    font-weight: bold;
+    margin: 0 0 8px 0;
+}
+.analisis-contenido p {
+    font-size: 17px;
+    line-height: 1.4;
+    color: #001011; /*negro*/
+    margin: 0;
+}

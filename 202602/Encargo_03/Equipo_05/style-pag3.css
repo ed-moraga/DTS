@@ -1,0 +1,136 @@
+mark {
+    background-color: rgba(107, 45, 95, 0.6); /*violeta*/
+}
+/*Para poder subrayar los puntos claves, usé la ayuda de la página https://www.w3schools.com/html/html_formatting.asp*/
+
+/*Entrevistas*/
+/*Aspectos generales*/
+.entrevistas {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.fila-entrevistas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+.entrevista-card {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 480px;
+}
+.card-toggle {
+    display: none;
+}
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(107, 45, 95, 0.4); /*violeta*/
+}
+.card-toggle:checked ~ .card-inner {
+    transform: rotateY(180deg);
+}
+/* Caras delantera y trasera */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+/*Cara Frontal*/
+.card-front {
+    background-color: #FBD1A2; /*naranjo claro*/
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    border: 3px solid #FC9F5B; /*naranjo*/
+    cursor: pointer;
+}
+.card-front img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #6B2D5C; /*violeta*/
+}
+.card-front h3 {
+    margin: 10px 0 5px 0;
+    font-size: 25px;
+}
+.indicador-voltear {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #FC9F5B; /*naranjo*/
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+/*Cara Posterior*/
+.card-back {
+    background-color: #7DCFB6; /*turquesa*/
+    color: #001011; /*negro*/
+    transform: rotateY(180deg);
+    overflow: hidden;
+    border: 3px solid #38826b; /*turquesa osuro*/
+}
+.card-back h3 {
+    font-size: 20px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+.card-back h4 {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #6B2D5C; /*violeta*/
+}
+/*Texto*/
+.texto-entrevista {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 8px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.5); /*blanco*/
+    padding: 10px;
+    border-radius: 6px;
+    border: 3px solid #38826b; /*turquesa osuro*/
+}
+.texto-entrevista::-webkit-scrollbar {
+    width: 6px;
+}
+.texto-entrevista::-webkit-scrollbar-thumb {
+    background-color: #6B2D5C; /*violeta*/
+    border-radius: 4px;
+}
+/*Botón cerrar tarjetas*/
+.btn-cerrar {
+	position: absolute;
+    top: 15px;
+    right: 20px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-cerrar:hover {
+	background-color: rgba(255, 255, 255, 0.5); /*blanco*/
+	color: #001011; /*negro*/
+	margin: 0;
+	border-radius: 50%;
+/*Para la división de entrevistas en formas de cartas interactivas, usé Gemini con el prompt: Quiero que estén distribuidas cada 3, es decir, la entrevista 1, 2 y 3, deben quedar a la misma altura horizontal; entrevista 4, 5 y 6 desben quedar debajo de las anteriores pero en el mismo formato; y así sucesivamente. De igual forma, quiero que cada una de estas entrevistas enté como en una "tarjeta", en donde la primera cara será una foto asignada a cada entrevista, al presionarla, la tarjeta se da vuelta y sale la segunda cara, la cual será todo el texto correspondiente a cada entrevista.
+Ojo: temas particulares como la estética visual de la págona y el uso de la paleta de colores, sí fue a decisión propia. Además de adaptar del botón de cerrar para que fuera coherente con la estética de las cartas
+PD: Gracias Fran por los dibujos para representar a quienes entrevistamos*/
