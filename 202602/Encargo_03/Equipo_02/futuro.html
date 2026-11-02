@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<title>Dts invs</title>
+<style>
+/* =====================================================
+   Estilo de todo :D
+   mini disclaimer: Todo esta hecho a mano y revisado con Ia a escepcion del javascript
+   ===================================================== */
+:root {
+  --bg: #080808;
+  --fg: #f4f4f0;
+  --muted: #a5a5a0;
+  --line: rgba(255,255,255,.22);
+  --panel: #151515;
+  --accent: #d7ff38;
+  --max: 1180px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh; background: var(--bg); color: var(--fg);
+  font-family: Arial, Helvetica, sans-serif; overflow-x: hidden;
+}
+a { color: inherit; }
+.site-header {
+  position: fixed; z-index: 20; top: 0; left: 0; width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 5vw; background: rgba(8,8,8,.88); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.brand { text-decoration: none; font-size: 12px; letter-spacing: 3px; font-weight: 700; }
+.menu-button {
+  border: 1px solid var(--fg); background: transparent; color: var(--fg);
+  padding: 11px 17px; font-size: 11px; letter-spacing: 2px; cursor: pointer;
+  transition: .3s ease;
+}
+.menu-button:hover { background: var(--fg); color: var(--bg); }
+.menu-panel {
+  position: absolute; top: 68px; right: 5vw; width: min(290px, 90vw);
+  background: var(--fg); color: var(--bg); padding: 8px;
+  opacity: 0; visibility: hidden; transform: translateY(-10px);
+  transition: opacity .3s ease, transform .3s ease, visibility .3s;
+}
+.menu-panel.open { opacity: 1; visibility: visible; transform: translateY(0); }
+.menu-panel a { display: block; color: var(--bg); padding: 15px 13px; text-decoration: none; font-size: 12px; letter-spacing: 1px; border-bottom: 1px solid #ccc; transition: .25s; }
+.menu-panel a:last-child { border: 0; }
+.menu-panel a:hover, .menu-panel a[aria-current="page"] { background: var(--bg); color: var(--fg); padding-left: 20px; }
+main { width: min(var(--max), 90%); margin: 0 auto; padding: 150px 0 100px; animation: pageIn .8s cubic-bezier(.22,1,.36,1) both; }
+@keyframes pageIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.eyebrow { color: var(--muted); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; }
+h1 { max-width: 1000px; font-size: clamp(3.4rem, 10vw, 9rem); line-height: .88; letter-spacing: -.075em; margin: 25px 0 35px; font-weight: 800; }
+h2 { font-size: clamp(2rem, 5vw, 4.2rem); line-height: .98; letter-spacing: -.055em; margin-bottom: 22px; }
+h3 { font-size: 1.25rem; margin-bottom: 12px; }
+p { color: #d0d0cb; font-size: 1rem; line-height: 1.75; max-width: 760px; }
+.lead { font-size: clamp(1.15rem, 2vw, 1.5rem); max-width: 760px; }
+.hero { min-height: 58vh; display: flex; flex-direction: column; justify-content: center; padding: 30px 0 75px; }
+.hero-bottom { display: flex; justify-content: space-between; align-items: end; gap: 25px; border-top: 1px solid var(--line); padding-top: 20px; margin-top: 45px; }
+.hero-bottom p { font-size: .85rem; max-width: 400px; }
+.accent { color: var(--accent); }
+.section { padding: 75px 0; border-top: 1px solid var(--line); }
+.section-heading { display: grid; grid-template-columns: 100px 1fr; gap: 25px; margin-bottom: 35px; }
+.section-number { color: var(--muted); font-size: 12px; letter-spacing: 2px; padding-top: 8px; }
+.section-content { padding-left: 125px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+.card { background: var(--panel); border: 1px solid var(--line); padding: 27px; min-height: 190px; }
+.card .tag { display: block; color: var(--accent); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; }
+.card p { font-size: .92rem; }
+.placeholder { color: #b9c0a0; font-style: italic; }
+.edit-note { border-left: 2px solid var(--accent); padding: 12px 17px; margin: 22px 0; color: #c9c9c2; font-size: .85rem; line-height: 1.6; }
+.quote { font-size: clamp(1.5rem, 3vw, 2.5rem); line-height: 1.25; letter-spacing: -.03em; color: var(--fg); max-width: 900px; margin: 25px 0; }
+.pill { display: inline-block; border: 1px solid var(--line); border-radius: 99px; padding: 8px 12px; color: var(--muted); font-size: 10px; letter-spacing: 1px; margin: 5px 5px 0 0; }
+.news-card { border-top: 1px solid var(--line); padding: 25px 0; display: grid; grid-template-columns: 160px 1fr; gap: 25px; }
+.news-date { color: var(--accent); font-size: 11px; letter-spacing: 2px; }
+.news-card a { display: inline-block; margin-top: 14px; font-size: 12px; text-underline-offset: 4px; }
+.transcript { border-top: 1px solid var(--line); }
+.transcript:last-child { border-bottom: 1px solid var(--line); }
+.transcript summary { cursor: pointer; list-style: none; padding: 22px 4px; display: flex; justify-content: space-between; gap: 20px; font-size: 1.1rem; }
+.transcript summary::-webkit-details-marker { display: none; }
+.transcript summary::after { content: "+"; color: var(--accent); font-size: 1.4rem; }
+.transcript[open] summary::after { content: "−"; }
+.transcript-body { padding: 0 4px 30px; }
+.transcript-body p { margin: 12px 0; }
+.footer { border-top: 1px solid var(--line); padding: 25px 5vw; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 10px; letter-spacing: 2px; }
+.page-nav { display: flex; justify-content: space-between; gap: 20px; margin-top: 70px; padding-top: 22px; border-top: 1px solid var(--line); }
+.page-nav a { text-decoration: none; font-size: 12px; letter-spacing: 1px; }
+.page-nav a:hover { color: var(--accent); }
+.light-section { background: #f1f1ed; color: #080808; padding: 55px; margin: 30px 0; }
+.light-section p { color: #333; }
+.light-section .eyebrow { color: #555; }
+@media (max-width: 700px) {
+  .site-header { padding: 17px 5vw; }
+  main { padding-top: 120px; }
+  .hero { min-height: 55vh; }
+  .hero-bottom { align-items: start; flex-direction: column; }
+  .section { padding: 52px 0; }
+  .section-heading { grid-template-columns: 1fr; gap: 12px; }
+  .section-content { padding-left: 0; }
+  .grid { grid-template-columns: 1fr; }
+  .news-card { grid-template-columns: 1fr; gap: 10px; }
+  .light-section { padding: 28px; }
+  .footer { flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+</style></head>
+<body>
+<header class="site-header"><a class="brand" href="index.html">Encargo 03</a><button class="menu-button" aria-expanded="false" aria-controls="menuPanel">MENÚ +</button><nav class="menu-panel" id="menuPanel" aria-label="Navegación principal"><a href="index.html">Introducción</a><a href="narrativas.html">Narrativas</a><a href="futuro.html" aria-current="page">Futuro</a><a href="anexos.html">Anexos</a></nav></header>
+<main>
+  <section class="hero"><span class="eyebrow"></span><h1>¿Y QUÉ<br>VIENE AHORA?</h1><p class="lead placeholder">Proyección especulativa fundamentada a 20 años sobre las narrativas tecnológicas dominantes en 2046, a partir de evidencias y tensiones observadas en el Chile de 2026.</p><div class="hero-bottom"><br></div></section>
+  <section class="section"><div class="section-heading"><span class="section-number"></span><div><h2>El presente como<br>punto de partida.</h2></div></div><div class="section-content"><p class="placeholder">A lo largo del tiempo, la relación entre las personas y la tecnología ha evolved desde su uso como una herramienta para facilitar actividades, hacia una integración cada vez más profunda en la vida cotidiana y el funcionamiento de la sociedad. Actualmente, predomina una visión positiva o neutral de sus avances, donde se entiende como un medio para resolver problemas, optimizar tareas y satisfacer distintas necesidades, como se observa en su incorporación a la vida diaria y a las instituciones públicas.
+
+Sin embargo, esta visión convive con preocupaciones sobre sus consecuencias, como la dependencia tecnológica, la vulneración de la intimidad y la aparición de nuevas desigualdades. También surgen cuestionamientos sobre quién controla estas tecnologías y quién obtiene sus beneficios. En conjunto, la relación entre sociedad y tecnología está pasando de centrarse principalmente en su utilidad a involucrar también discusiones sobre autonomía, responsabilidad y control.</p></div></section>
+  <section class="section"><div class="section-heading"><span class="section-number"></span><div><h2>Señales del<br>presente.</h2></div></div><div class="section-content"><p class="placeholder">Seleccionamos estas cinco noticias publicadas durante 2026 porque funcionan como evidencias empíricas de las tensiones actuales en Chile. Abarcan desde el uso de IA en dilemas emocionales y la automatización estatal, hasta ciberacoso escolar, extractivismo digital y edición genética. Estos casos reales respaldan nuestra proyección al demostrar cómo la tecnología ya está interviniendo directamente en la autonomía, la economía y la vida cotidiana.</p>
+    <article class="news-card"><div class="news-date">NOTICIA 01<br>29 / 08 / 2026</div><div><h3>Radiografía a la IA en Chile: Alto uso para dudas en salud, trabajo y dilemas emocionales</h3><p class="placeholder">Esta noticia presenta el análisis realizado por la UDP sobre el uso actual de la inteligencia artificial en la cotidianidad de la sociedad chilena, mostrando cómo se ha masificado en distintas tareas del día a día, desde consultas sobre salud y ayuda en estudios o trabajos, hasta el apoyo emocional y los consejos personales. Aunque los hallazgos indican que existe una visión positiva frente a los avances tecnológicos, también se mencionan temores e incertidumbres, destacando la preocupación por una posible dependencia de la inteligencia artificial en aspectos delicados de la vida. El estudio también evidencia diferencias en su uso según factores socioeconómicos y de género.
+Por tanto, esta noticia se presenta dentro del instrumentalismo, ya que indica los beneficios personales que ofrecen las tecnologías modernas, enfocándose en su utilidad como herramientas para satisfacer distintas necesidades. Además, tiene una narrativa que se acerca a la tecno-dependencia cotidiana de la IA.
+</p><p><span class="pill">COOPERATIVA.CL</span><span class="pill">TECNOLOGÍA / INDUSTRIA / IA</span></p><a href="https://cooperativa.cl/noticias/tecnologia/industria/ia/radiografia-a-la-ia-en-chile-alto-uso-para-dudas-en-salud-trabajo-y/2026-08-29/091646.html" target="_blank" rel="noopener">CONSULTAR NOTICIA ↗</a></div></article>
+    <article class="news-card"><div class="news-date">NOTICIA 02<br>11 / 08 / 2026</div><div><h3>Del chatbot al agente inteligente: El nuevo modelo de atención también llega al Estado</h3><p class="placeholder">Esta noticia presenta el caso de la Tesorería General de la República, institución que incorporó un agente de inteligencia artificial para apoyar la atención telefónica durante la Operación Renta. A diferencia de los chatbots tradicionales, este sistema puede comprender consultas, resolver distintos tipos de solicitudes y derivar los casos más complejos a trabajadores humanos. Durante la Operación Renta de 2025, el agente atendió más de 43 mil llamadas y logró resolver autónomamente el 60% de las consultas. Esto evidencia cómo la inteligencia artificial comienza a asumir tareas que anteriormente dependían exclusivamente de personas, permitiendo optimizar los procesos de atención y mejorar la capacidad de respuesta de las instituciones públicas.
+Por tanto, esta noticia puede relacionarse con el solucionismo, al plantear la inteligencia artificial como una respuesta a las dificultades de atención de los servicios públicos. Acercándose a la narrativa del tecno-optimismo, ya que presenta los avances tecnológicos como oportunidades para mejorar la eficiencia y resolver problemas de la sociedad.
+</p><p><span class="pill">GERENCIA.CL</span><span class="pill">TECNOLOGÍA / INDUSTRIA / IA</span></p><a href="https://www.gerencia.cl/inteligencia-artificial/del-chatbot-al-agente-inteligente-el-nuevo-modelo-de-atencion-tambien-llega-al-estado/" target="_blank" rel="noopener">CONSULTAR NOTICIA ↗</a></div></article>
+    <article class="news-card"><div class="news-date">NOTICIA 03<br>03 / 10 / 2026</div><div><h3>“Mamá, pasó algo grave”: apoderados denuncian abuso sexual digital contra sus hijas mediante IA</h3><p class="placeholder">Esta noticia expone una denuncia de abuso y acoso digital en un colegio de Puente Alto, donde fotografías de alumnas habrían sido utilizadas por otros estudiantes para generar imágenes falsas de contenido sexual mediante inteligencia artificial, las cuales posteriormente circularon entre la comunidad escolar. Esta situación evidencia la gravedad de utilizar herramientas tecnológicas para vulnerar la intimidad, dignidad e integridad de otras personas, especialmente cuando existe una intención de humillar o sexualizar a las víctimas sin su consentimiento. El caso también da cuenta de las consecuencias que este tipo de situaciones puede tener para las afectadas y de la responsabilidad de quienes participan en la creación y difusión de este contenido.
+Esta noticia se relaciona con la teoría crítica, ya que evidencia cómo las capacidades de la tecnología pueden utilizarse para vulnerar a otras personas, haciendo necesario cuestionar sus usos y establecer límites. A su vez, se acerca al tecno-pesimismo al mostrar los riesgos que pueden surgir de los avances tecnológicos y sus consecuencias sobre la dignidad y las relaciones humanas. Sin embargo, el caso refleja principalmente un uso perjudicial por parte de personas, por lo que no representa completamente la idea de un desarrollo tecnológico inevitable y fuera del control humano que plantea esta narrativa.
+</p><p><span class="pill">T13.CL</span><span class="pill">TECNOLOGÍA / SOCIEDAD / IA</span></p><a href="https://www.t13.cl/noticia/nacional/mama-paso-algo-grave-apoderados-denuncian-abuso-sexual-digital-contra-sus-hijas-3-10-2026" target="_blank" rel="noopener">CONSULTAR NOTICIA ↗</a></div></article>
+<article class="news-card"><div class="news-date">NOTICIA 04<br>24 / 07 / 2026</div><div><h3>Inteligencia artificial: ¿Soberanía tecnológica o nuevo extractivismo?</h3><p class="placeholder">Esta columna aborda los desafíos que enfrenta Chile ante la expansión de la inteligencia artificial, cuestionando el riesgo de que el país continúe dependiendo de tecnologías e infraestructuras desarrolladas por empresas extranjeras. El autor plantea que esta situación podría reproducir un modelo extractivo, donde Chile consume tecnología sin controlar su desarrollo ni los beneficios económicos que genera. También analiza cómo la automatización podría transformar el mundo laboral y cómo las ganancias derivadas de estos avances podrían concentrarse en grandes empresas. Frente a esto, se propone avanzar hacia una mayor soberanía tecnológica, desarrollando capacidades propias y buscando una distribución más equitativa de los beneficios de estos avances.
+Esta noticia se relaciona con la teoría crítica, ya que plantea que el desarrollo tecnológico no es neutral ni inevitable, sino que depende de decisiones políticas y económicas que pueden ser cuestionadas y transformadas. Asimismo, se acerca a la narrativa de tecnopoder, al destacar cómo el control de la infraestructura, los datos y los sistemas de inteligencia artificial puede concentrar poder e influir en el desarrollo económico y social de un país.
+</p><p><span class="pill">ELPAIS.COM</span><span class="pill">ECONOMÍA / INDUSTRIA / IA</span></p><a href="https://elpais.com/chile/2026-07-25/inteligencia-artificial-soberania-tecnologica-o-nuevo-extractivismo.html" target="_blank" rel="noopener">CONSULTAR NOTICIA ↗</a></div></article>
+<article class="news-card"><div class="news-date">NOTICIA 05<br>28 / 04 / 2026</div><div><h3>Chile y la desregulación de los cultivos editados: Una decisión que tensiona ciencia, transparencia y agricultura</h3><p class="placeholder">Esta noticia aborda la autorización en Chile del primer trigo editado genéticamente mediante la tecnología CRISPR/Cas9, abriendo la discusión sobre cómo estos avances podrían transformar la agricultura y la producción de alimentos. A diferencia de los organismos transgénicos tradicionales, esta técnica permite modificar partes específicas del material genético de una planta. Sin embargo, su incorporación también genera cuestionamientos sobre la transparencia de estas decisiones, sus posibles efectos en la biodiversidad y el control sobre las semillas y su producción. Este caso evidencia cómo la tecnología comienza a intervenir directamente en los organismos vivos, planteando nuevos desafíos científicos, ambientales y sociales.
+La noticia permite relacionarse con la teoría crítica, ya que la aplicación de estas tecnologías no depende únicamente de sus capacidades científicas, sino también de decisiones humanas e intereses económicos sobre cómo deberían utilizarse. Por otro lado, se puede vincular con el tecnopoder, debido a que el control de estas tecnologías puede influir en la producción y distribución de alimentos, concentrando poder en quienes tienen los recursos para desarrollarlas y aplicarlas.
+</p><p><span class="pill">INTERFERENCIA.CL</span><span class="pill">BIOTECNOLOGÍA / AGRICULTURA / CIENCIA</span></p><a href="https://interferencia.cl/articulos/chile-y-la-desregulacion-de-los-cultivos-editados-una-decision-que-tensiona-ciencia" target="_blank" rel="noopener">CONSULTAR NOTICIA ↗</a></div></article>
+   
+  </div></section>
+  <section class="section"><div class="section-heading"><span class="section-number"></span><div><h2>Imaginar lo<br>que podría pasar.</h2></div></div><div class="section-content grid">
+    <article class="card"><span class="tag">ESCENARIO A</span><h3>Sociedad de la Tecno-Dependencia Indispensable</h3><p class="placeholder">Si la tendencia actual continúa, en 2046 la tecnología habrá dejado de ser una herramienta complementaria para convertirse en una infraestructura indispensable para el funcionamiento personal, laboral e institucional, disminuyendo progresivamente la autonomía individual frente a estos sistemas.</p></article>
+    <article class="card"><span class="tag">ESCENARIO B</span><h3>Cuestionamiento Crítico y Búsqueda de Autonomía</h3><p class="placeholder">Un escenario donde aumentan las críticas hacia las tecnologías invasivas y la concentración de poder, impulsando regulaciones estrictas y la búsqueda de alternativas analógicas o locales que resuelvan problemas sin depender de nuevos desarrollos tecnológicos.</p></article>
+  </div></section>
+  <section class="section"><div class="section-heading"><span class="section-number"></span><div><h2>Nuestra proyección.</h2></div></div><div class="section-content"><p class="placeholder">A partir de lo analizado, identificamos cuatro narrativas que podrían adquirir mayor relevancia en los próximos 20 años: tecno-pesimismo, tecnopoder, tecno-dependencia y tecno-optimismo.
+
+De las narrativas identificadas, nos inclinamos por la tecno-dependencia, ya que consideramos que la evolución de los últimos 20 años da lugar a una sociedad cada vez más vinculada al funcionamiento de los sistemas tecnológicos. Esta tendencia ya se observa en las noticias analizadas: el uso de inteligencia artificial para resolver consultas personales y laborales, su incorporación en la atención telefónica de instituciones públicas y la aplicación de biotecnología en los alimentos.
+
+Aunque existen crecientes cuestionamientos sobre las consecuencias del mal uso de la tecnología, las soluciones que se proponen siguen estando ligadas a crear más tecnología. Esto refuerza una espiral de dependencia donde resulta cada vez más difícil imaginar soluciones que no dependan de ella. Si esta tendencia continúa hacia 2046, la tecnología dejará de ser algo opcional para convertirse en el soporte indispensable para realizar nuestras actividades habituales.</p><p class="quote">“Si esta tendencia continúa durante los próximos 20 años, la tecnología dejará de ser solamente una herramienta que facilita nuestras actividades para convertirse en algo indispensable para realizarlas, disminuyendo nuestra autonomía.”</p></div></section>
+<section class="section">
+    <div class="section-heading">
+      
+    </div>
+    <div class="section-content">
+      <div class="card">
+        <span class="tag">Declaración de uso de inteligencia artificial</span>
+        <p>Para la elaboración de este análisis se utilizó inteligencia artificial como herramienta de apoyo en la revisión y correcciones. Asimismo, se empleó para organizar y sintetizar los hallazgos. La interpretación final se construyó a partir de las transcripciones originales y del marco conceptual de narrativas tecnológicas trabajado en el curso.</p>
+      </div>
+    </div>
+  </section>
+  <div class="page-nav"><a href="narrativas.html">← NARRATIVAS</a><a href="anexos.html">CONTINUAR: ANEXOS ↗</a></div>
+</main><footer class="footer"><span>[NOMBRE DEL PROYECTO]</span><span>03 / 04</span></footer><script>
+// Menú desplegable compartido por todas las páginas.
+const menuButton = document.querySelector('.menu-button');
+const menuPanel = document.querySelector('.menu-panel');
+if (menuButton && menuPanel) {
+  menuButton.addEventListener('click', () => {
+    const open = menuPanel.classList.toggle('open');
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.textContent = open ? 'CERRAR −' : 'MENÚ +';
+  });
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.site-header')) {
+      menuPanel.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.textContent = 'MENÚ +';
+    }
+  });
+}
+
+</script></body></html>
