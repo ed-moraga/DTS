@@ -1,0 +1,181 @@
+ 
+ .pagina-uno {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* cada seccion */
+.pagina-uno .bloque-contenido {
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+/* rectangulos grises */
+.pagina-uno .introduccion {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    padding: 25px 35px;
+
+    background-color: #D3D3D3;
+    text-align: center;
+}
+
+.pagina-uno .introduccion h2 {
+    margin-top: 0;
+    color: #6A329F;
+}
+
+.pagina-uno .introduccion p {
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* columnas de texto */
+.pagina-uno .contenido-uno {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 30px;
+
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 35px;
+}
+
+.pagina-uno .columna-texto {
+    line-height: 1.8;
+}
+
+.pagina-uno .columna-texto h2 {
+    margin-top: 0;
+    color: #6A329F;
+}
+
+.pagina-uno .columna-texto p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* citas */
+.pagina-uno .citas {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.pagina-uno .cita {
+    background-color: #800080;
+    color: white;
+
+    padding: 25px;
+    min-height: 180px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pagina-uno .cita h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.pagina-uno .cita p {
+    line-height: 1.6;
+    margin: 5px 0;
+}
+
+.pagina-uno .cita .referencia {
+    font-size: 13px;
+    font-style: italic;
+    opacity: 0.85;
+    margin-top: 12px;
+}
+
+/* boton centrado para volver*/
+.pagina-uno .volver {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+/* imagenes de los graficos */
+.pagina-uno .imagenes-pagina1 {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: start;
+}
+
+.pagina-uno .imagen-conclusion {
+    margin: 0;
+    width: 100%;
+}
+
+.pagina-uno .espacio-imagen {
+    width: 100%;
+    min-height: 300px;
+    background-color: #E5E5E5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.pagina-uno .espacio-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+
+/* conclusion pagina1 */
+.pagina-uno .conclusion {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto 55px;
+    padding: 30px 35px;
+    background-color: #E5E5E5;
+    border-radius: 3px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* titulo conclusion */
+.pagina-uno .conclusion h2 {
+    color: #6A329F;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.pagina-uno .conclusion p {
+    margin: 0;
+}
+/* subtitulos nuevos contenedores */
+.pagina-uno .columna-texto h3 {
+    color: #6A329F;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* por eliminar las fotos */
+.pagina-uno .contenido-uno {
+    display: block;
+}
+
+.pagina-uno .columna-texto {
+    width: 100%;
+}
+
+/*"En la preparación de este documento se utilizó la herramienta de inteligencia artificial ChatGPT de OpenIA, gpt-6. Su uso estuvo enfocado exclusivamente en la corrección y funcionamiento correcto de algunos codigos css, como el codigo para insertar fotografias, despues tuve un problema con el codigo, asi que le pedi ayuda para el último css que es para eliminar fotos. El contenido generado fue revisado, contrastado y editado por el autor, quien asume la total responsabilidad de la exactitud y autoría del texto final."*/
